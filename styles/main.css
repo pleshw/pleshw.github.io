@@ -17,7 +17,7 @@ html, body{
   color: var(--gray);
   font-family: 'Amatic SC', cursive;
   user-select: none;
-  transition: .5s;
+  transition: .3s;
 }
 
 section{
@@ -75,4 +75,26 @@ li{
 img{
   max-width: 100%;
   height: auto;
+}
+
+.slave-1, .slave-2, .slave-3, .slave-4{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slave-1{
+  z-index: 4;
+}
+
+.slave-2{
+  z-index: 3;
+}
+
+.slave-3{
+  z-index: 2;
+}
+
+.slave-4{
+  z-index: 1;
 }

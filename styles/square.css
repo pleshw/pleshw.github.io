@@ -9,12 +9,15 @@
   vertical-align: middle;
   align-content: center;
   align-items: center;
+
+  z-index: 90;
 }
 
-.square:nth-child(1){
+.orange-shadow-6{
   box-shadow: 12px 101px 250px 4px var(--orange);
 }
-.square:nth-child(2){
+
+.red-shadow-6{
   box-shadow: 12px 101px 210px 4px var(--red);
 }
 
@@ -22,7 +25,7 @@
   max-width: 150px;
 }
 
-.square:hover{
+.red-shadow-6.hovered, .orange-shadow-6.hovered{
   box-shadow: 3px 3px 3px rgba( 122, 123, 123, .5);
 }
 
