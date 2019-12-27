@@ -1,0 +1,38 @@
+.square{
+  display: flex;
+  text-align: left;
+  min-height: 400px;
+  max-height: 150vh;
+  border: 1px solid var(--dark-gray);
+  background-color: white;
+
+  vertical-align: middle;
+  align-content: center;
+  align-items: center;
+}
+
+.square:nth-child(1){
+  box-shadow: 12px 101px 250px 4px var(--orange);
+}
+.square:nth-child(2){
+  box-shadow: 12px 101px 210px 4px var(--red);
+}
+
+.square img{
+  max-width: 150px;
+}
+
+.square:hover{
+  box-shadow: 3px 3px 3px rgba( 122, 123, 123, .5);
+}
+
+#square-info.square{
+  margin-top: 5vh;
+  text-align: center;
+  max-height: 70vh;
+}
+
+#square-projects.square{
+  margin-top: 20vh;
+   max-height: 72vh;
+}
