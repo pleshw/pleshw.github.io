@@ -12,9 +12,12 @@ function makeSelectable(hoveredElement, target) {
             (target || hoveredElement).classList.remove('selected');
     });
 }
+window.addEventListener('contextmenu', function (_event) {
+    _event.preventDefault();
+});
 document.addEventListener("DOMContentLoaded", function (event) {
     var elementList = document.body.getElementsByTagName("*");
-    setShadowDivFor(elementList[3]);
+    // setShadowDivFor(elementList[3]);
     for (var i = 0; i < elementList.length; i++) {
         // makeHoverable(elementList[i]);
         // makeSelectable(elementList[i])

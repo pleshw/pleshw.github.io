@@ -18,7 +18,14 @@ body {
   color: var(--gray);
   font-family: 'Titillium Web', sans-serif;
   user-select: none;
+  -webkit-user-drag: none;
   transition: .3s;
+
+
+  overflow: hidden;
+
+  /* Required for text-overflow to do anything */
+
 }
 
 section {

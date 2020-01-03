@@ -13,10 +13,14 @@ function makeSelectable(hoveredElement: Element, target?: Element) {
   });
 }
 
+window.addEventListener('contextmenu', _event => {
+  _event.preventDefault();
+});
+
 document.addEventListener("DOMContentLoaded", function (event) {
   let elementList = document.body.getElementsByTagName("*");
 
-  setShadowDivFor(elementList[3])
+  // setShadowDivFor(elementList[3]);
 
   for (let i = 0; i < elementList.length; i++) {
     // makeHoverable(elementList[i]);
