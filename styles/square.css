@@ -30,7 +30,8 @@
   align-self: center;
   text-align: center;
   max-height: 70vh;
-  box-shadow: -14px 20px 0 0 rgba(0, 0, 0, .1);
+  -webkit-box-shadow: -5px 5px 0px 0px #838383, -10px 10px 0px 0px #a3a3a3, -15px 15px 0px 0px #c3c3c3, -20px 20px 0px 0px #d3d3d3, -25px 25px 0px 0px #f3f3f3, inset -10px 50px 36px 16px rgba(0, 0, 0, 0);
+  box-shadow: -5px 5px 0px 0px #838383, -10px 10px 0px 0px #a3a3a3, -15px 15px 0px 0px #c3c3c3, -20px 20px 0px 0px #d3d3d3, -25px 25px 0px 0px #f3f3f3, inset -10px 50px 36px 16px rgba(0, 0, 0, 0);
 }
 
 #square-projects.square {
