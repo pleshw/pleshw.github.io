@@ -13,6 +13,8 @@
   <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
   <link rel="stylesheet" href="styles/square.css">
 
+  <script src="dist/shadowDiv.js"></script>
+  <script src="dist/attributeController.js"></script>
   <script src="dist/elementShape.js"></script>
   <script src="dist/squares.js"></script>
   <script src='dist/main.js'></script>
@@ -23,7 +25,8 @@
 
   <main class="container">
     <section class="row justify-content-around">
-      <div id="square-info" class="col-5 row container square ">
+
+      <div destaque-1 id="square-info" class="col-5 row container square">
         <a class="col-12">
           <img src="https://avatars.io/twitter/pleshw" alt="">
         </a>
@@ -33,13 +36,28 @@
           <li><a href="https://twitter.com/pleshw" target="_blank">Twitter</a></li>
           <li><a href="https://www.facebook.com/wplesh" target="_blank">Facebook</a></li>
         </ul>
+
+
+        <button destacar="destaque-1"></button>
       </div>
 
+      <!-- Fazer pequenos círculos ficarem espalhados pelo background, 
+  e quando o mouse parar em cima dos cartões esses círculos vão orbitar ao redor deles  -->
 
-      <div id="square-projects" class="col-5 row container square">
-        <video src=""></video>
+      <div destaque-2 id="square-projects" class="col-5 row container square">
 
-        <div class="list-selector">
+
+        <div class="row">
+          <button class=" offset-2 col-8" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8 btn-1" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8 btn-2" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8 btn-3" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8" disabled destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
 
         </div>
       </div>
