@@ -59,7 +59,7 @@ ul {
 
 li {
   list-style: none;
-  margin-bottom: 9%;
+  margin-bottom: 3% !important;
 }
 
 .right-align {
