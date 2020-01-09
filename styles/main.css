@@ -2,6 +2,7 @@
 
 :root {
   --orange: #ff7500;
+  --lightgray: #8d8d8d;
   --gray: #5f5f5f;
   --red: #f06960;
   --green: #85ed93;
@@ -138,9 +139,6 @@ button {
   font-style: italic;
 }
 
-button:hover:enabled {
-  transform: translate(-1px, 1px) !important;
-}
 
 button:disabled {
   border-color: lightgrey;
@@ -151,9 +149,26 @@ button:hover:disabled {
   transform: none !important;
 }
 
+.btn {
+  border: none;
+}
 
-button:hover {
+.btn:hover:enabled {
+  color: var(--lightgray);
+}
+
+
+.btn-1:hover:enabled,
+.btn-2:hover:enabled,
+.btn-3:hover:enabled {
   transform: translate(-1px, 1px) !important;
+}
+
+button:hover:disabled,
+.btn-1:hover:disabled,
+.btn-2:hover:disabled,
+.btn-3:hover:disabled {
+  transform: none !important;
 }
 
 .btn-1 {
@@ -170,12 +185,15 @@ button:hover {
 }
 
 .btn-2:hover {
-  box-shadow: none;
+  background-color: black;
+  color: white;
 }
+
 
 .btn-2:focus {
   outline-color: grey;
   box-shadow: none;
+  outline: 2px solid;
 }
 
 .btn-3 {
@@ -186,6 +204,7 @@ button:hover {
 .btn-3:hover {
   box-shadow: none;
 }
+
 
 
 .btn-3:disabled {
@@ -327,10 +346,6 @@ button {
   font-style: italic;
 }
 
-button:hover:enabled {
-  transform: translate(-1px, 1px) !important;
-}
-
 button:disabled {
   border-color: lightgrey;
   color: lightgrey;
@@ -338,11 +353,6 @@ button:disabled {
 
 button:hover:disabled {
   transform: none !important;
-}
-
-
-button:hover {
-  transform: translate(-1px, 1px) !important;
 }
 
 .btn-1 {
