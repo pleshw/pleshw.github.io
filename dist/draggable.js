@@ -21,22 +21,8 @@ var Draggable = /** @class */ (function (_super) {
         _this.htmlElement = _this.element;
         Draggable.instances.push(_this);
         _this.setHoldingEvents();
-        _this.setMouseMoveEvents();
         return _this;
     }
-    Draggable.prototype.overrideElements = function () {
-        this.htmlElement.style.zIndex =
-            (this.getGreaterZIndex() + Draggable.instances.length).toString();
-    };
-    Draggable.prototype.setMouseMoveEvents = function () {
-        var _this = this;
-        window.addEventListener('mousemove', function (_event) {
-            if (_this.holding === true) {
-                _this.x = _event.clientX + window.scrollX - _this.holdingPosition.x;
-                _this.y = _event.clientY + window.scrollY - _this.holdingPosition.y;
-            }
-        });
-    };
     Draggable.prototype.getGreaterZIndex = function () {
         /// Converting the list to a list of htmlElements, then i can get style property
         var elementList = document.body.getElementsByTagName("*");
@@ -54,20 +40,35 @@ var Draggable = /** @class */ (function (_super) {
         }
         return greaterZIndex;
     };
+    Draggable.prototype.overrideElements = function () {
+        this.htmlElement.style.zIndex =
+            (this.getGreaterZIndex() + Draggable.instances.length).toString();
+    };
+    Draggable.prototype.setMouseMoveEvents = function () {
+        var _this = this;
+        window.onmousemove = function (_event) {
+            _this.x = _event.clientX + window.scrollX - _this.holdingPosition.x;
+            _this.y = _event.clientY + window.scrollY - _this.holdingPosition.y;
+        };
+    };
     Draggable.prototype.setHoldingEvents = function () {
         var _this = this;
-        this.htmlElement.addEventListener('mousedown', function (_event) {
-            // _event.preventDefault();
+        window.onmousemove = null;
+        this.htmlElement.onmousedown = function (_event) {
             _event.stopPropagation();
             _event.stopImmediatePropagation();
             _this.holding = true;
             _this.overrideElements();
             _this.holdingPosition.x = (_event.pageX - _this.htmlElement.offsetLeft);
             _this.holdingPosition.y = (_event.pageY - _this.htmlElement.offsetTop);
-        });
-        window.addEventListener('mouseup', function (_event) {
-            _this.holding = false;
-        });
+            _this.setMouseMoveEvents();
+        };
+        window.onmouseup = function (_event) {
+            _this.clearEvents();
+        };
+    };
+    Draggable.prototype.clearEvents = function () {
+        window.onmousemove = null;
     };
     Draggable.instances = [];
     return Draggable;
