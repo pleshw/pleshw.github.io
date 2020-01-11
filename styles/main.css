@@ -23,7 +23,7 @@ body {
   transition: .3s;
 
 
-  /* overflow: hidden; */
+  overflow: hidden;
 
   /* Required for text-overflow to do anything */
 
