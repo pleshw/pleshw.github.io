@@ -2,8 +2,8 @@
  * Return a shadow div to a specific square.
  * A shadow div is a div that fits an element
  */
-function setShadowDivFor(element: Element): Element {
-  let shadow = document.createElement("div");
+function getShadowDivFor(element: HTMLElement): HTMLElement {
+  const shadow = document.createElement("div");
   shadow.setAttribute('shadow-of', element.id)
 
   setInterval(() => window.requestAnimationFrame(() => {

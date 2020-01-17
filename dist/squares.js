@@ -5,10 +5,11 @@
 function getSquares() {
     return document.getElementsByClassName('square');
 }
-function applyShadowToAllSquares() {
-    var square = getSquares();
-    for (var i = 0; i < square.length; i++) {
-        var shadow = setShadowDivFor(square.item(i));
-        makeHoverable(square.item(i), shadow);
+function applyShadowDivToSquares() {
+    var squares = getSquares();
+    for (var i = 0; i < squares.length; i++) {
+        var square = squares.item(i);
+        var shadow = getShadowDivFor(square);
+        makeHoverable(square, shadow);
     }
 }

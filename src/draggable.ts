@@ -1,64 +1,53 @@
 class Draggable extends MobileElement {
-  private htmlElement: HTMLElement;
-  private holdingPosition: { x: number, y: number } = { x: 0, y: 0 };
+  private holdingAt: { x: number, y: number } = { x: 0, y: 0 };
 
-  private static instances: Draggable[] = [];
+  private static elements: HTMLElement[] = [];
 
-  constructor(element: Element, stepWidth: number, stepHeight: number) {
+  constructor(element: HTMLElement, stepWidth: number, stepHeight: number) {
     super(element, stepWidth, stepHeight);
+    element.classList.add("draggable");
 
-    this.htmlElement = <HTMLElement>this.element;
+    Draggable.elements.push(this.element);
+    this.elementStyle.zIndex = Draggable.elements.length.toString();
 
-    Draggable.instances.push(this);
-
-    this.setHoldingEvents();
+    this.initHoldingEvent();
   }
 
+  private override() {
+    if (Draggable.elements.length <= 1) return;
 
+    const zindex = +this.elementStyle.zIndex!;
+    const greaterZIndex = Draggable.elements.length;
+    if (zindex < greaterZIndex)
+      for (let i = zindex; i < greaterZIndex; i++) {
+        Draggable.elements[i].style.zIndex = i.toString();
 
-  private getGreaterZIndex(): number {
-    /// Converting the list to a list of htmlElements, then i can get style property
-    let elementList = <HTMLCollectionOf<HTMLElement>>document.body.getElementsByTagName("*");
-    let greaterZIndex = 0;
-
-    /// Get the greater z-index of elements to element that is dragged stay over all elements
-    for (let i = 0; i < elementList.length; i++) {
-      if (elementList[i].style.zIndex !== "") {
-        if (+elementList[i].style.zIndex! > greaterZIndex) {
-          greaterZIndex = (+elementList[i].style.zIndex!) || 0;
-        }
-      } else {
-        elementList[i].style.zIndex = "0";
+        let aux = Draggable.elements[i - 1];
+        Draggable.elements[i - 1] = Draggable.elements[i];
+        Draggable.elements[i] = aux;
       }
-    }
-    return greaterZIndex;
+
+    this.elementStyle.zIndex = (Draggable.elements.length).toString();
   }
 
-
-  private overrideElements() {
-    this.htmlElement.style.zIndex =
-      (this.getGreaterZIndex() + Draggable.instances.length).toString();
-  }
-
-
-  private setMouseMoveEvents() {
+  private initMouseMoveEvents() {
     window.onmousemove = (_event: MouseEvent) => {
-      this.x = _event.clientX + window.scrollX - this.holdingPosition.x;
-      this.y = _event.clientY + window.scrollY - this.holdingPosition.y;
+      this.x = _event.clientX + window.scrollX - this.holdingAt.x;
+      this.y = _event.clientY + window.scrollY - this.holdingAt.y;
     };
   }
 
-  private setHoldingEvents() {
+  private initHoldingEvent() {
     window.onmousemove = null;
-    this.htmlElement.onmousedown = (_event: MouseEvent) => {
+    this.element.onmousedown = (_event: MouseEvent) => {
       _event.stopPropagation();
       _event.stopImmediatePropagation();
 
-      this.overrideElements();
-      this.holdingPosition.x = (_event.pageX - this.htmlElement.offsetLeft);
-      this.holdingPosition.y = (_event.pageY - this.htmlElement.offsetTop);
+      this.override();
+      this.holdingAt.x = (_event.pageX - this.element.offsetLeft);
+      this.holdingAt.y = (_event.pageY - this.element.offsetTop);
 
-      this.setMouseMoveEvents();
+      this.initMouseMoveEvents();
     };
 
     window.onmouseup = (_event: MouseEvent) => {

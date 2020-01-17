@@ -129,6 +129,10 @@ button {
   color: black;
 
   text-shadow: none !important;
+  text-align: center !important;
+
+
+  max-height: 120px !important;
 
   transition: transform .1s;
   transition: box-shadow .1s;
@@ -389,4 +393,9 @@ button:hover:disabled {
 .btn-3:focus {
   outline: 3px solid lightgrey;
   box-shadow: none;
+}
+
+.draggable {
+  transition: top 0s !important;
+  transition: left 0s !important;
 }

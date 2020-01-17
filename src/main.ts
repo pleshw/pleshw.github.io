@@ -1,30 +1,29 @@
-function makeHoverable(hoveredElement: Element, target?: Element) {
-  hoveredElement.addEventListener('mouseover', _event => (target || hoveredElement).classList.add('hovered'));
-  hoveredElement.addEventListener('mouseleave', _event => (target || hoveredElement).classList.remove('hovered'));
+function makeHoverable(hoveredElement: HTMLElement, target?: HTMLElement) {
+  hoveredElement
+    .onmouseover = () => (target || hoveredElement).classList.add('hovered');
+
+  hoveredElement
+    .onmouseleave = () => (target || hoveredElement).classList.remove('hovered');
 }
 
-function makeSelectable(hoveredElement: Element, target?: Element) {
-  hoveredElement.addEventListener('click', _event => {
+function makeSelectable(selectedElement: HTMLElement, target?: HTMLElement) {
+  selectedElement.onclick = _event => {
     _event.stopPropagation();
-    if (!hoveredElement.classList.contains('selected'))
-      (target || hoveredElement).classList.add('selected');
+    if (!selectedElement.classList.contains('selected'))
+      (target || selectedElement).classList.add('selected');
     else
-      (target || hoveredElement).classList.remove('selected');
-  });
+      (target || selectedElement).classList.remove('selected');
+  }
 }
 
 window.addEventListener('contextmenu', _event => {
   _event.preventDefault();
 });
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  let elementList = document.body.getElementsByTagName("*");
-
-  // setShadowDivFor(elementList[3]);
+document.addEventListener("DOMContentLoaded", function () {
+  const elementList = <HTMLCollectionOf<HTMLElement>>document.body.getElementsByTagName("*");
 
   for (let i = 0; i < elementList.length; i++) {
-    // makeHoverable(elementList[i]);
-    // makeSelectable(elementList[i])
 
   }
 });

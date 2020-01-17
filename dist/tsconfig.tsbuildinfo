@@ -1,0 +1,112 @@
+{
+  "program": {
+    "fileInfos": {
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts": {
+        "version": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0",
+        "signature": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1",
+        "signature": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f",
+        "signature": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
+        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
+        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      },
+      "../src/attributecontroller.ts": {
+        "version": "5e807181ad4ee9f839fcea993dece43cd05bc473bf8b8874d5466d3a80baeef3",
+        "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
+      },
+      "../src/circles.ts": {
+        "version": "7bcc2edf7cd798791860197b2cee1dfd635b0ee826d29d83ae4ec91fe0b857ec",
+        "signature": "a4793ef7caf088a28db7890d0ea2cdf2ccd61d16f66afce357b96a378341348d"
+      },
+      "../src/colision.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "../src/draggable.ts": {
+        "version": "1adf811d3dc5be23a2a71a21debee4bf000b59810cf13f874f4a80c22ab6a503",
+        "signature": "472d37ce4a21c3759b617b24e640e1feb4bdb27a1defa87a4e71211188cb598d"
+      },
+      "../src/elementshape.ts": {
+        "version": "2dad3e04cbbd62a8cc78ec5a6aaa059f55d3fa6525cdee2dc1d488117dd1bb96",
+        "signature": "300f6dd4696c26da9b0b77330b7ec5f63a736948830442f6d159997f78524c35"
+      },
+      "../src/fusion.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "../src/gridelement.ts": {
+        "version": "99b74846f0d96458bf2c01a13069bae3d0401c63d93ab40268b5535a20df64ee",
+        "signature": "ee2f5becd9a95925ed501f4b38cc41d69f78616f74742b15ae4bf0e7e43c64fb"
+      },
+      "../src/main.ts": {
+        "version": "4d280fcd4ea8643e3c3380caf8ebbe908c17ddfb7988e314988a18152fd4a1b1",
+        "signature": "1f3b2fd673f09cbc48729da99bce1f608f36f86ddba84299c77f422767918ffb"
+      },
+      "../src/mobileelement.ts": {
+        "version": "a65b6f20cde4c2f0806bfda3b90be02e9432590df08ac7c4e57bb6dc8794ab4c",
+        "signature": "5ac45eb8d4dfe824814f5037d274123405a60c9985572b00af100dc8574c9db7"
+      },
+      "../src/shadowdiv.ts": {
+        "version": "6d61bf92cb5353ecf080a060bbde3d73bb94ff5879328163b5cc5d593bf4682e",
+        "signature": "c9aecc5ed8d684552de86118492f7b67f71456c2fe53826c0d4fcdc22ac1fed1"
+      },
+      "../src/squares.ts": {
+        "version": "a0f84c7100ae57b75f12b27d87e7bc9283e8facfa1d3d36223fee23ffe1e9a2f",
+        "signature": "333efe4f062d129549decc83bc779df604972d0f6e01b25338994942a4464942"
+      }
+    },
+    "options": {
+      "incremental": true,
+      "target": 1,
+      "module": 1,
+      "outDir": "./",
+      "downlevelIteration": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "esModuleInterop": true,
+      "configFilePath": "../src/tsconfig.json"
+    },
+    "referencedMap": {},
+    "exportedModulesMap": {},
+    "semanticDiagnosticsPerFile": [
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "../src/attributecontroller.ts",
+      "../src/circles.ts",
+      "../src/colision.ts",
+      "../src/draggable.ts",
+      "../src/elementshape.ts",
+      "../src/fusion.ts",
+      "../src/gridelement.ts",
+      "../src/main.ts",
+      "../src/mobileelement.ts",
+      "../src/shadowdiv.ts",
+      "../src/squares.ts"
+    ]
+  },
+  "version": "3.6.4"
+}

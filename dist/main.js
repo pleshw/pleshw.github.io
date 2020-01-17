@@ -1,25 +1,24 @@
 "use strict";
 function makeHoverable(hoveredElement, target) {
-    hoveredElement.addEventListener('mouseover', function (_event) { return (target || hoveredElement).classList.add('hovered'); });
-    hoveredElement.addEventListener('mouseleave', function (_event) { return (target || hoveredElement).classList.remove('hovered'); });
+    hoveredElement
+        .onmouseover = function () { return (target || hoveredElement).classList.add('hovered'); };
+    hoveredElement
+        .onmouseleave = function () { return (target || hoveredElement).classList.remove('hovered'); };
 }
-function makeSelectable(hoveredElement, target) {
-    hoveredElement.addEventListener('click', function (_event) {
+function makeSelectable(selectedElement, target) {
+    selectedElement.onclick = function (_event) {
         _event.stopPropagation();
-        if (!hoveredElement.classList.contains('selected'))
-            (target || hoveredElement).classList.add('selected');
+        if (!selectedElement.classList.contains('selected'))
+            (target || selectedElement).classList.add('selected');
         else
-            (target || hoveredElement).classList.remove('selected');
-    });
+            (target || selectedElement).classList.remove('selected');
+    };
 }
 window.addEventListener('contextmenu', function (_event) {
     _event.preventDefault();
 });
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
     var elementList = document.body.getElementsByTagName("*");
-    // setShadowDivFor(elementList[3]);
     for (var i = 0; i < elementList.length; i++) {
-        // makeHoverable(elementList[i]);
-        // makeSelectable(elementList[i])
     }
 });

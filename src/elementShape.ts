@@ -2,9 +2,10 @@
 * Get the dimensions of an element.
 */
 function getElementDimensions(element: Element): { width: number, height: number } {
+  const rect = element.getBoundingClientRect();
   return {
-    width: element.getBoundingClientRect().width,
-    height: element.getBoundingClientRect().height
+    width: rect.width,
+    height: rect.height
   }
 }
 
@@ -12,9 +13,10 @@ function getElementDimensions(element: Element): { width: number, height: number
 * Get the position of an element.
 */
 function getElementPosition(element: Element): { x: number, y: number } {
+  const rect = element.getBoundingClientRect();
   return {
-    x: element.getBoundingClientRect().left,
-    y: element.getBoundingClientRect().top
+    x: rect.left,
+    y: rect.top
   }
 }
 
@@ -22,26 +24,20 @@ function getElementPosition(element: Element): { x: number, y: number } {
 * Check if two elements have the same width *and* height.
 */
 function hasSameDimensions(element1: Element, element2: Element): boolean {
-  let a = getElementDimensions(element1);
-  let b = getElementDimensions(element2);
+  const a = getElementDimensions(element1);
+  const b = getElementDimensions(element2);
 
-  let sameWidth = (a.width === b.width);
-  let sameHeight = (a.height === b.height);
-
-  return sameWidth && sameHeight;
+  return (a.width === b.width) && (a.height === b.height);
 }
 
 /**
 * Check if two elements have the same position.
 */
 function hasSamePosition(element1: Element, element2: Element): boolean {
-  let a = getElementPosition(element1);
-  let b = getElementPosition(element2);
+  const a = getElementPosition(element1);
+  const b = getElementPosition(element2);
 
-  let sameLeft = (a.x === b.x);
-  let sameTop = (a.y === b.y);
-
-  return sameLeft && sameTop;
+  return (a.x === b.x) && (a.y === b.y);
 }
 
 /**
@@ -50,9 +46,10 @@ function hasSamePosition(element1: Element, element2: Element): boolean {
 * @param sub The element that will be transformed.
 */
 function makeElementsProportional(base: Element, sub: HTMLDivElement): void {
-  let dimensions = getElementDimensions(base);
-  sub.style.width = dimensions.width.toString().concat('px');
-  sub.style.height = dimensions.height.toString().concat('px');
+  const dimensions = getElementDimensions(base);
+  const subElementStyle = sub.style;
+  subElementStyle.width = dimensions.width.toString().concat('px');
+  subElementStyle.height = dimensions.height.toString().concat('px');
 }
 
 /**
@@ -61,9 +58,10 @@ function makeElementsProportional(base: Element, sub: HTMLDivElement): void {
 * @param sub The element that will be transformed.
 */
 function stackElements(base: Element, sub: HTMLDivElement): void {
-  let position = getElementPosition(base);
-  sub.style.left = position.x.toString().concat('px');
-  sub.style.top = position.y.toString().concat('px');
+  const position = getElementPosition(base);
+  const subElementStyle = sub.style;
+  subElementStyle.left = position.x.toString().concat('px');
+  subElementStyle.top = position.y.toString().concat('px');
 }
 
 /**

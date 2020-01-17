@@ -3,18 +3,20 @@
 * Get the dimensions of an element.
 */
 function getElementDimensions(element) {
+    var rect = element.getBoundingClientRect();
     return {
-        width: element.getBoundingClientRect().width,
-        height: element.getBoundingClientRect().height
+        width: rect.width,
+        height: rect.height
     };
 }
 /**
 * Get the position of an element.
 */
 function getElementPosition(element) {
+    var rect = element.getBoundingClientRect();
     return {
-        x: element.getBoundingClientRect().left,
-        y: element.getBoundingClientRect().top
+        x: rect.left,
+        y: rect.top
     };
 }
 /**
@@ -23,9 +25,7 @@ function getElementPosition(element) {
 function hasSameDimensions(element1, element2) {
     var a = getElementDimensions(element1);
     var b = getElementDimensions(element2);
-    var sameWidth = (a.width === b.width);
-    var sameHeight = (a.height === b.height);
-    return sameWidth && sameHeight;
+    return (a.width === b.width) && (a.height === b.height);
 }
 /**
 * Check if two elements have the same position.
@@ -33,9 +33,7 @@ function hasSameDimensions(element1, element2) {
 function hasSamePosition(element1, element2) {
     var a = getElementPosition(element1);
     var b = getElementPosition(element2);
-    var sameLeft = (a.x === b.x);
-    var sameTop = (a.y === b.y);
-    return sameLeft && sameTop;
+    return (a.x === b.x) && (a.y === b.y);
 }
 /**
 * Transform a sub-element so that it has the same width and height as the base element.
@@ -44,8 +42,9 @@ function hasSamePosition(element1, element2) {
 */
 function makeElementsProportional(base, sub) {
     var dimensions = getElementDimensions(base);
-    sub.style.width = dimensions.width.toString().concat('px');
-    sub.style.height = dimensions.height.toString().concat('px');
+    var subElementStyle = sub.style;
+    subElementStyle.width = dimensions.width.toString().concat('px');
+    subElementStyle.height = dimensions.height.toString().concat('px');
 }
 /**
 * Transform a sub-element so that it has the same position as the base element.
@@ -54,8 +53,9 @@ function makeElementsProportional(base, sub) {
 */
 function stackElements(base, sub) {
     var position = getElementPosition(base);
-    sub.style.left = position.x.toString().concat('px');
-    sub.style.top = position.y.toString().concat('px');
+    var subElementStyle = sub.style;
+    subElementStyle.left = position.x.toString().concat('px');
+    subElementStyle.top = position.y.toString().concat('px');
 }
 /**
 * Checks if two elements have the same size and position

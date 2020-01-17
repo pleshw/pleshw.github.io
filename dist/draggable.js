@@ -16,52 +16,44 @@ var Draggable = /** @class */ (function (_super) {
     __extends(Draggable, _super);
     function Draggable(element, stepWidth, stepHeight) {
         var _this = _super.call(this, element, stepWidth, stepHeight) || this;
-        _this.holding = false;
-        _this.holdingPosition = { x: 0, y: 0 };
-        _this.htmlElement = _this.element;
-        Draggable.instances.push(_this);
-        _this.setHoldingEvents();
+        _this.holdingAt = { x: 0, y: 0 };
+        element.classList.add("draggable");
+        Draggable.elements.push(_this.element);
+        _this.elementStyle.zIndex = Draggable.elements.length.toString();
+        _this.initHoldingEvent();
         return _this;
     }
-    Draggable.prototype.getGreaterZIndex = function () {
-        /// Converting the list to a list of htmlElements, then i can get style property
-        var elementList = document.body.getElementsByTagName("*");
-        var greaterZIndex = 0;
-        /// Get the greater z-index of elements to element that is dragged stay over all elements
-        for (var i = 0; i < elementList.length; i++) {
-            if (elementList[i].style.zIndex !== "") {
-                if (+elementList[i].style.zIndex > greaterZIndex) {
-                    greaterZIndex = (+elementList[i].style.zIndex) || 0;
-                }
+    Draggable.prototype.override = function () {
+        if (Draggable.elements.length <= 1)
+            return;
+        var zindex = +this.elementStyle.zIndex;
+        var greaterZIndex = Draggable.elements.length;
+        if (zindex < greaterZIndex)
+            for (var i = zindex; i < greaterZIndex; i++) {
+                Draggable.elements[i].style.zIndex = i.toString();
+                var aux = Draggable.elements[i - 1];
+                Draggable.elements[i - 1] = Draggable.elements[i];
+                Draggable.elements[i] = aux;
             }
-            else {
-                elementList[i].style.zIndex = "0";
-            }
-        }
-        return greaterZIndex;
+        this.elementStyle.zIndex = (Draggable.elements.length).toString();
     };
-    Draggable.prototype.overrideElements = function () {
-        this.htmlElement.style.zIndex =
-            (this.getGreaterZIndex() + Draggable.instances.length).toString();
-    };
-    Draggable.prototype.setMouseMoveEvents = function () {
+    Draggable.prototype.initMouseMoveEvents = function () {
         var _this = this;
         window.onmousemove = function (_event) {
-            _this.x = _event.clientX + window.scrollX - _this.holdingPosition.x;
-            _this.y = _event.clientY + window.scrollY - _this.holdingPosition.y;
+            _this.x = _event.clientX + window.scrollX - _this.holdingAt.x;
+            _this.y = _event.clientY + window.scrollY - _this.holdingAt.y;
         };
     };
-    Draggable.prototype.setHoldingEvents = function () {
+    Draggable.prototype.initHoldingEvent = function () {
         var _this = this;
         window.onmousemove = null;
-        this.htmlElement.onmousedown = function (_event) {
+        this.element.onmousedown = function (_event) {
             _event.stopPropagation();
             _event.stopImmediatePropagation();
-            _this.holding = true;
-            _this.overrideElements();
-            _this.holdingPosition.x = (_event.pageX - _this.htmlElement.offsetLeft);
-            _this.holdingPosition.y = (_event.pageY - _this.htmlElement.offsetTop);
-            _this.setMouseMoveEvents();
+            _this.override();
+            _this.holdingAt.x = (_event.pageX - _this.element.offsetLeft);
+            _this.holdingAt.y = (_event.pageY - _this.element.offsetTop);
+            _this.initMouseMoveEvents();
         };
         window.onmouseup = function (_event) {
             _this.clearEvents();
@@ -70,6 +62,6 @@ var Draggable = /** @class */ (function (_super) {
     Draggable.prototype.clearEvents = function () {
         window.onmousemove = null;
     };
-    Draggable.instances = [];
+    Draggable.elements = [];
     return Draggable;
 }(MobileElement));

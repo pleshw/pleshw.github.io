@@ -1,17 +1,16 @@
 /**
  * Return all elements with the square class.
  */
-function getSquares(): HTMLCollectionOf<Element> {
-  return document.getElementsByClassName('square');
+function getSquares(): HTMLCollectionOf<HTMLElement> {
+  return <HTMLCollectionOf<HTMLElement>>document.getElementsByClassName('square');
 }
 
+function applyShadowDivToSquares() {
+  const squares = getSquares();
 
-
-function applyShadowToAllSquares() {
-  let square = getSquares();
-
-  for (let i = 0; i < square.length; i++) {
-    let shadow = setShadowDivFor(square.item(i)!);
-    makeHoverable(square.item(i)!, shadow);
+  for (let i = 0; i < squares.length; i++) {
+    const square = squares.item(i)!
+    const shadow = getShadowDivFor(square);
+    makeHoverable(square, shadow);
   }
 }

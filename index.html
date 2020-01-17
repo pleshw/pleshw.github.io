@@ -13,6 +13,7 @@
   <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
   <link rel="stylesheet" href="styles/square.css">
 
+  <!-- <script src="dist/globals.js"></script> -->
   <script src="dist/mobileElement.js"></script>
   <script src="dist/draggable.js"></script>
   <script src="dist/shadowDiv.js"></script>
@@ -28,7 +29,7 @@
   <main class="container">
     <section class="row justify-content-around">
 
-      <div destaque-1 id="square-info" class="col-5 row container square">
+      <div destaque-1 id="square-info" class="col-3 row container square">
         <a class="col-12">
           <img src="https://avatars.io/twitter/pleshw" alt="">
         </a>
@@ -41,12 +42,7 @@
 
       </div>
 
-      <!-- Fazer pequenos círculos ficarem espalhados pelo background, 
-  e quando o mouse parar em cima dos cartões esses círculos vão orbitar ao redor deles  -->
-
       <div destaque-2 id="square-projects" class="col-5 row container square">
-
-
         <div class="row">
           <hr class="col-12">
           <button class=" offset-2 col-8" destacar="destaque-2">Don't press this button!</button>
@@ -61,21 +57,24 @@
           <hr class="col-12">
           <button class=" offset-2 col-8" disabled destacar="destaque-2">Don't press this button!</button>
           <hr class="col-12">
-
         </div>
       </div>
+
+
     </section>
+
+
   </main>
 
   <footer></footer>
 
 
   <script>
-    let test = document.getElementById('square-info')
-    let testDrag = new Draggable(test, 1, 1)
+    const test = document.getElementById('square-info')
+    const testDrag = new Draggable(test, 1, 1)
 
-    let test2 = document.getElementById('square-projects')
-    let testDrag2 = new Draggable(test2, 1, 1)
+    const test2 = document.getElementById('square-projects')
+    const testDrag2 = new Draggable(test2, 1, 1)
   </script>
 </body>
 

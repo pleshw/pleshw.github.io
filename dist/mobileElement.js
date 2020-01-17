@@ -2,36 +2,30 @@
 var MobileElement = /** @class */ (function () {
     function MobileElement(element, stepWidth, stepHeight) {
         this.element = element;
-        this.element.style.position = "absolute";
+        this.elementRect = element.getBoundingClientRect();
+        this.elementStyle = this.element.style;
+        this.elementStyle.position = "absolute";
         this.stepWidth = stepWidth;
         this.stepHeight = stepHeight;
     }
     Object.defineProperty(MobileElement.prototype, "x", {
         get: function () {
-            return this.element.getBoundingClientRect().left;
+            return this.elementRect.left;
         },
         set: function (val) {
-            var _this = this;
-            window.requestAnimationFrame(function () {
-                _this.element
-                    .style
-                    .left = (val * _this.stepWidth).toString() + 'px';
-            });
+            this.elementStyle
+                .left = val * this.stepWidth + "px";
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(MobileElement.prototype, "y", {
         get: function () {
-            return this.element.getBoundingClientRect().top;
+            return this.elementRect.top;
         },
         set: function (val) {
-            var _this = this;
-            window.requestAnimationFrame(function () {
-                _this.element
-                    .style
-                    .top = (val * _this.stepHeight).toString() + 'px';
-            });
+            this.elementStyle
+                .top = val * this.stepHeight + "px";
         },
         enumerable: true,
         configurable: true
