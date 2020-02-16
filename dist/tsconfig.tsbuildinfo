@@ -30,8 +30,8 @@
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
       "../src/draggable.ts": {
-        "version": "f9aa4481e06e86fb5dc6454118deebc85e08d1514c0208287bacf73a10b0cbee",
-        "signature": "d19b617bc7d9faf95a7103d8e0d8808748dbf7b3736d7504bd7e80ee41802602"
+        "version": "42b4099b86fc7f32f2c54635e76090688672f47158a4d4e8a150adf34233c9a0",
+        "signature": "c4c10f7a7c0851acdf4cc09bd579f0cdd2eb00b4d2355ed3638a5b4943795a6d"
       },
       "../src/elementshape.ts": {
         "version": "2dad3e04cbbd62a8cc78ec5a6aaa059f55d3fa6525cdee2dc1d488117dd1bb96",
@@ -78,19 +78,19 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
-      "../src/main.ts",
-      "../src/attributecontroller.ts",
-      "../src/colision.ts",
-      "../src/draggable.ts",
-      "../src/elementshape.ts",
-      "../src/mobileelement.ts",
-      "../src/shadowdiv.ts",
-      "../src/squares.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts"
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "../src/attributecontroller.ts",
+      "../src/colision.ts",
+      "../src/draggable.ts",
+      "../src/elementshape.ts",
+      "../src/main.ts",
+      "../src/mobileelement.ts",
+      "../src/shadowdiv.ts",
+      "../src/squares.ts"
     ]
   },
   "version": "3.6.4"

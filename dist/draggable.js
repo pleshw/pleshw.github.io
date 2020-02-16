@@ -44,10 +44,18 @@ var Draggable = /** @class */ (function (_super) {
             _this.y = _event.clientY + window.scrollY - _this.holdingAt.y;
         };
     };
+    /**
+     * Store the mouse position of an event in reference to the page
+     * @param mouseEvent
+     */
     Draggable.prototype.trackHolding = function (mouseEvent) {
         this.holdingAt.x = (mouseEvent.pageX - this.element.offsetLeft);
         this.holdingAt.y = (mouseEvent.pageY - this.element.offsetTop);
     };
+    /**
+     * Init the drag events, and set the last dragged element over other elements
+     * @param mouseEvent
+     */
     Draggable.prototype.onHold = function (mouseEvent) {
         mouseEvent.stopPropagation();
         mouseEvent.stopImmediatePropagation();
@@ -55,6 +63,9 @@ var Draggable = /** @class */ (function (_super) {
         this.trackHolding(mouseEvent);
         this.initMouseMoveEvents();
     };
+    /**
+     * Starts the onHold events when mouse is dragging this element, and clear the event when it drops
+     */
     Draggable.prototype.initHoldingEvent = function () {
         var _this = this;
         window.onmousemove = null;

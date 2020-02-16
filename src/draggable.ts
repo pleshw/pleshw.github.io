@@ -37,11 +37,19 @@ class Draggable extends MobileElement {
     };
   }
 
+  /**
+   * Store the mouse position of an event in reference to the page
+   * @param mouseEvent 
+   */
   private trackHolding(mouseEvent: MouseEvent): void {
     this.holdingAt.x = (mouseEvent.pageX - this.element.offsetLeft);
     this.holdingAt.y = (mouseEvent.pageY - this.element.offsetTop);
   }
 
+  /**
+   * Init the drag events, and set the last dragged element over other elements
+   * @param mouseEvent 
+   */
   private onHold(mouseEvent: MouseEvent) {
     mouseEvent.stopPropagation();
     mouseEvent.stopImmediatePropagation();
@@ -52,6 +60,9 @@ class Draggable extends MobileElement {
     this.initMouseMoveEvents();
   }
 
+  /**
+   * Starts the onHold events when mouse is dragging this element, and clear the event when it drops
+   */
   private initHoldingEvent() {
     window.onmousemove = null;
     this.element.onmousedown = (evt) => { this.onHold(evt) }
