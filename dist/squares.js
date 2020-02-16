@@ -5,11 +5,13 @@
 function getSquares() {
     return document.getElementsByClassName('square');
 }
-function applyShadowDivToSquares() {
+/**
+ * Sets a shadow div for every element with square class
+ */
+function setShadowDivForSquares() {
     var squares = getSquares();
     for (var i = 0; i < squares.length; i++) {
         var square = squares.item(i);
-        var shadow = getShadowDivFor(square);
-        makeHoverable(square, shadow);
+        setShadowDiv(square);
     }
 }

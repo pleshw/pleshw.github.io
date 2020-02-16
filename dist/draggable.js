@@ -44,23 +44,33 @@ var Draggable = /** @class */ (function (_super) {
             _this.y = _event.clientY + window.scrollY - _this.holdingAt.y;
         };
     };
+    Draggable.prototype.trackHolding = function (mouseEvent) {
+        this.holdingAt.x = (mouseEvent.pageX - this.element.offsetLeft);
+        this.holdingAt.y = (mouseEvent.pageY - this.element.offsetTop);
+    };
+    Draggable.prototype.onHold = function (mouseEvent) {
+        mouseEvent.stopPropagation();
+        mouseEvent.stopImmediatePropagation();
+        this.override();
+        this.trackHolding(mouseEvent);
+        this.initMouseMoveEvents();
+    };
     Draggable.prototype.initHoldingEvent = function () {
         var _this = this;
         window.onmousemove = null;
-        this.element.onmousedown = function (_event) {
-            _event.stopPropagation();
-            _event.stopImmediatePropagation();
-            _this.override();
-            _this.holdingAt.x = (_event.pageX - _this.element.offsetLeft);
-            _this.holdingAt.y = (_event.pageY - _this.element.offsetTop);
-            _this.initMouseMoveEvents();
-        };
-        window.onmouseup = function (_event) {
-            _this.clearEvents();
-        };
+        this.element.onmousedown = function (evt) { _this.onHold(evt); };
+        window.onmouseup = function () { _this.clearEvents(); };
     };
     Draggable.prototype.clearEvents = function () {
         window.onmousemove = null;
+    };
+    Draggable.prototype.pin = function () {
+        if (!this.element.classList.contains('pinned'))
+            this.element.classList.add('pinned');
+    };
+    Draggable.prototype.unpin = function () {
+        if (this.element.classList.contains('pinned'))
+            this.element.classList.remove('pinned');
     };
     Draggable.elements = [];
     return Draggable;

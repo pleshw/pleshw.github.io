@@ -16,6 +16,7 @@ var __values = (this && this.__values) || function(o) {
 function getElementsByAttribute(attrName) {
     var elementList = document.body.getElementsByTagName("*");
     var result = [];
+    // guarda todos os elementos com o atributo selecionado na lista que é retornada como resultado
     for (var i = 0; i < elementList.length; i++) {
         if (elementList[i].getAttribute(attrName) !== null)
             result.push(elementList[i]);
@@ -37,6 +38,7 @@ function getAttributeTriggers(attrName) {
     var elementList = getElementsByAttribute(attrName);
     var triggers = [];
     try {
+        // guarda cada elemento como element e todos os seus alvos como targets
         for (var elementList_1 = __values(elementList), elementList_1_1 = elementList_1.next(); !elementList_1_1.done; elementList_1_1 = elementList_1.next()) {
             var element = elementList_1_1.value;
             triggers.push({

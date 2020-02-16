@@ -8,6 +8,8 @@ type t_trigger = {
 function getElementsByAttribute(attrName: string) {
   const elementList = document.body.getElementsByTagName("*");
   let result: Element[] = [];
+
+  // guarda todos os elementos com o atributo selecionado na lista que é retornada como resultado
   for (let i = 0; i < elementList.length; i++) {
     if (elementList[i].getAttribute(attrName) !== null)
       result.push(elementList[i])
@@ -28,6 +30,8 @@ function getElementsByAttribute(attrName: string) {
 function getAttributeTriggers(attrName: string) {
   const elementList = getElementsByAttribute(attrName);
   const triggers: t_trigger[] = [];
+
+  // guarda cada elemento como element e todos os seus alvos como targets
   for (const element of elementList) {
     triggers.push({
       element: element,

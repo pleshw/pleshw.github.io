@@ -37,26 +37,40 @@ class Draggable extends MobileElement {
     };
   }
 
+  private trackHolding(mouseEvent: MouseEvent): void {
+    this.holdingAt.x = (mouseEvent.pageX - this.element.offsetLeft);
+    this.holdingAt.y = (mouseEvent.pageY - this.element.offsetTop);
+  }
+
+  private onHold(mouseEvent: MouseEvent) {
+    mouseEvent.stopPropagation();
+    mouseEvent.stopImmediatePropagation();
+
+    this.override();
+    this.trackHolding(mouseEvent);
+
+    this.initMouseMoveEvents();
+  }
+
   private initHoldingEvent() {
     window.onmousemove = null;
-    this.element.onmousedown = (_event: MouseEvent) => {
-      _event.stopPropagation();
-      _event.stopImmediatePropagation();
+    this.element.onmousedown = (evt) => { this.onHold(evt) }
 
-      this.override();
-      this.holdingAt.x = (_event.pageX - this.element.offsetLeft);
-      this.holdingAt.y = (_event.pageY - this.element.offsetTop);
-
-      this.initMouseMoveEvents();
-    };
-
-    window.onmouseup = (_event: MouseEvent) => {
-      this.clearEvents();
-    };
+    window.onmouseup = () => { this.clearEvents(); };
   }
 
   clearEvents() {
     window.onmousemove = null;
+  }
+
+  pin() {
+    if (!this.element.classList.contains('pinned'))
+      this.element.classList.add('pinned')
+  }
+
+  unpin() {
+    if (this.element.classList.contains('pinned'))
+      this.element.classList.remove('pinned')
   }
 }
 

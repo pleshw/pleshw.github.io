@@ -23,7 +23,7 @@ body {
   transition: .3s;
 
 
-  overflow: hidden;
+  overflow-x: hidden;
 
   /* Required for text-overflow to do anything */
 
@@ -32,7 +32,7 @@ body {
 section {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 a {
@@ -398,4 +398,8 @@ button:hover:disabled {
 .draggable {
   transition: top 0s !important;
   transition: left 0s !important;
+}
+
+.pinned {
+  position: fixed !important;
 }
