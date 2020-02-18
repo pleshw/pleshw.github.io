@@ -42,7 +42,7 @@
 
       </div>
 
-      <div destaque-2 id="square-projects" class="col-5 row container square">
+      <div id="square-projects" class="col-5 row container square">
         <div class="row">
           <hr class="col-12">
           <button class=" offset-2 col-8" destacar="destaque-2">Don't press this button!</button>
@@ -63,8 +63,24 @@
 
     </section>
 
-    <section>
-
+    <section class="row justify-content-around">
+      <div id="square-draggable" class="col-8 row container square">
+        <div class="row">
+          <hr class="col-12">
+          <button class=" offset-2 col-8" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class="offset-2 col-8 btn">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8 btn-1" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8 btn-2" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8 btn-3" destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+          <button class=" offset-2 col-8" disabled destacar="destaque-2">Don't press this button!</button>
+          <hr class="col-12">
+        </div>
+      </div>
     </section>
   </main>
 
@@ -75,8 +91,8 @@
     // const test = document.getElementById('square-info')
     // const testDrag = new Draggable(test, 1, 1)
 
-    const test2 = document.getElementById('square-projects')
-    const testDrag2 = new Draggable(test2, 1, 1)
+    const test2 = document.getElementById('square-draggable')
+    const testDrag2 = new Draggable(test2)
 
     testDrag2.pin();
   </script>

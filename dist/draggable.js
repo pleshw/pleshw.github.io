@@ -14,15 +14,21 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Draggable = /** @class */ (function (_super) {
     __extends(Draggable, _super);
-    function Draggable(element, stepWidth, stepHeight) {
-        var _this = _super.call(this, element, stepWidth, stepHeight) || this;
+    function Draggable(element) {
+        var _this = _super.call(this, element) || this;
         _this.holdingAt = { x: 0, y: 0 };
-        element.classList.add("draggable");
-        Draggable.elements.push(_this.element);
-        _this.elementStyle.zIndex = Draggable.elements.length.toString();
+        _this.setDraggable();
+        _this.windowMouseMoveEvent = function (evt) { _this.onMouseMove(evt); };
         _this.initHoldingEvent();
         return _this;
     }
+    Draggable.prototype.setDraggable = function () {
+        if (!this.element.classList.contains("draggable")) {
+            this.element.classList.add("draggable");
+        }
+        Draggable.elements.push(this.element);
+        this.elementStyle.zIndex = Draggable.elements.length.toString();
+    };
     Draggable.prototype.override = function () {
         if (Draggable.elements.length <= 1)
             return;
@@ -37,12 +43,18 @@ var Draggable = /** @class */ (function (_super) {
             }
         this.elementStyle.zIndex = (Draggable.elements.length).toString();
     };
+    /**
+     * Calculate the mouse position in reference to the page
+     * @param mouseEvent
+     *
+     * Problem: It says that holdingAt is undefined
+     */
+    Draggable.prototype.onMouseMove = function (mouseEvent) {
+        this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
+        this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
+    };
     Draggable.prototype.initMouseMoveEvents = function () {
-        var _this = this;
-        window.onmousemove = function (_event) {
-            _this.x = _event.clientX + window.scrollX - _this.holdingAt.x;
-            _this.y = _event.clientY + window.scrollY - _this.holdingAt.y;
-        };
+        window.addEventListener('mousemove', this.windowMouseMoveEvent, false);
     };
     /**
      * Store the mouse position of an event in reference to the page
@@ -73,15 +85,23 @@ var Draggable = /** @class */ (function (_super) {
         window.onmouseup = function () { _this.clearEvents(); };
     };
     Draggable.prototype.clearEvents = function () {
-        window.onmousemove = null;
+        window.removeEventListener('mousemove', this.windowMouseMoveEvent, false);
     };
     Draggable.prototype.pin = function () {
-        if (!this.element.classList.contains('pinned'))
+        var prev = { x: this.x + this.element.offsetLeft, y: this.y };
+        if (!this.element.classList.contains('pinned')) {
             this.element.classList.add('pinned');
+            this.x = prev.x;
+            this.y = prev.y;
+        }
     };
     Draggable.prototype.unpin = function () {
-        if (this.element.classList.contains('pinned'))
+        var prev = { x: this.x, y: this.y };
+        if (this.element.classList.contains('pinned')) {
             this.element.classList.remove('pinned');
+            this.x = prev.x;
+            this.y = prev.y;
+        }
     };
     Draggable.elements = [];
     return Draggable;

@@ -25,13 +25,9 @@
         "version": "1e3d36699762ea46519ab963854a425e30144d78ad8374b7f84b9dfee5f372f5",
         "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
       },
-      "../src/colision.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
       "../src/draggable.ts": {
-        "version": "42b4099b86fc7f32f2c54635e76090688672f47158a4d4e8a150adf34233c9a0",
-        "signature": "c4c10f7a7c0851acdf4cc09bd579f0cdd2eb00b4d2355ed3638a5b4943795a6d"
+        "version": "4ea311ffbd8dfd57619d05568c64a448352492b27f921ea861a1741ab8c6899a",
+        "signature": "a508aea6756c7346ccadb31830d926d1d0041e0d466619acc6749113d6b91c68"
       },
       "../src/elementshape.ts": {
         "version": "2dad3e04cbbd62a8cc78ec5a6aaa059f55d3fa6525cdee2dc1d488117dd1bb96",
@@ -42,8 +38,8 @@
         "signature": "a8537b1b3327fe3a9f22bf2f41779c8d187f5df30b7bd98a56ad78dbd9591123"
       },
       "../src/mobileelement.ts": {
-        "version": "a65b6f20cde4c2f0806bfda3b90be02e9432590df08ac7c4e57bb6dc8794ab4c",
-        "signature": "5ac45eb8d4dfe824814f5037d274123405a60c9985572b00af100dc8574c9db7"
+        "version": "646db282031cef5bfc158a7dbdbc08b77b621565de574bc239bdd5aa0bfb9d0e",
+        "signature": "97e58eb6d70ce51cbd4efe86c43abcb73a06ae077d82d827d889be1d32031ab7"
       },
       "../src/shadowdiv.ts": {
         "version": "6f84dec23464cc52193a226d44d4c240302118ad37cc5fc6223194e73f8d1648",
@@ -84,13 +80,12 @@
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts",
       "../src/attributecontroller.ts",
-      "../src/colision.ts",
-      "../src/draggable.ts",
       "../src/elementshape.ts",
       "../src/main.ts",
       "../src/mobileelement.ts",
       "../src/shadowdiv.ts",
-      "../src/squares.ts"
+      "../src/squares.ts",
+      "../src/draggable.ts"
     ]
   },
   "version": "3.6.4"

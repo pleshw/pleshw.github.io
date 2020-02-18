@@ -396,6 +396,7 @@ button:hover:disabled {
 }
 
 .draggable {
+  position: absolute;
   transition: top 0s !important;
   transition: left 0s !important;
 }

@@ -1,16 +1,28 @@
 class Draggable extends MobileElement {
+
   private holdingAt: { x: number, y: number } = { x: 0, y: 0 };
 
   private static elements: HTMLElement[] = [];
 
-  constructor(element: HTMLElement, stepWidth: number, stepHeight: number) {
-    super(element, stepWidth, stepHeight);
-    element.classList.add("draggable");
+  windowMouseMoveEvent: (event: MouseEvent) => void;
 
-    Draggable.elements.push(this.element);
-    this.elementStyle.zIndex = Draggable.elements.length.toString();
+  constructor(element: HTMLElement) {
+    super(element);
+
+    this.setDraggable();
+
+    this.windowMouseMoveEvent = (evt: MouseEvent) => { this.onMouseMove(evt) }
+
 
     this.initHoldingEvent();
+  }
+
+  private setDraggable() {
+    if (!this.element.classList.contains("draggable")) {
+      this.element.classList.add("draggable");
+    }
+    Draggable.elements.push(this.element);
+    this.elementStyle.zIndex = Draggable.elements.length.toString();
   }
 
   private override() {
@@ -30,11 +42,19 @@ class Draggable extends MobileElement {
     this.elementStyle.zIndex = (Draggable.elements.length).toString();
   }
 
+  /**
+   * Calculate the mouse position in reference to the page
+   * @param mouseEvent 
+   * 
+   * Problem: It says that holdingAt is undefined
+   */
+  private onMouseMove(mouseEvent: MouseEvent) {
+    this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
+    this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
+  }
+
   private initMouseMoveEvents() {
-    window.onmousemove = (_event: MouseEvent) => {
-      this.x = _event.clientX + window.scrollX - this.holdingAt.x;
-      this.y = _event.clientY + window.scrollY - this.holdingAt.y;
-    };
+    window.addEventListener('mousemove', this.windowMouseMoveEvent, false);
   }
 
   /**
@@ -71,17 +91,25 @@ class Draggable extends MobileElement {
   }
 
   clearEvents() {
-    window.onmousemove = null;
+    window.removeEventListener('mousemove', this.windowMouseMoveEvent, false);
   }
 
   pin() {
-    if (!this.element.classList.contains('pinned'))
+    let prev: { x: number, y: number } = { x: this.x, y: this.y };
+    if (!this.element.classList.contains('pinned')) {
       this.element.classList.add('pinned')
+      this.x = prev.x;
+      this.y = prev.y;
+    }
   }
 
   unpin() {
-    if (this.element.classList.contains('pinned'))
+    let prev: { x: number, y: number } = { x: this.x, y: this.y };
+    if (this.element.classList.contains('pinned')) {
       this.element.classList.remove('pinned')
+      this.x = prev.x;
+      this.y = prev.y;
+    }
   }
 }
 

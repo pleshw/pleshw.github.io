@@ -3,19 +3,16 @@ class MobileElement {
   elementRect: DOMRect;
   elementStyle: CSSStyleDeclaration;
 
-  stepWidth: number;
-  stepHeight: number;
+  stepWidth: number = 1;
+  stepHeight: number = 1;
 
 
-  constructor(element: Element, stepWidth: number, stepHeight: number) {
-    this.element = <HTMLElement>element;
+  constructor(element: HTMLElement) {
+    this.element = element;
+    this.elementStyle = element.style;
     this.elementRect = <DOMRect>element.getBoundingClientRect();
-    this.elementStyle = this.element.style;
 
-    this.elementStyle.position = "absolute";
-
-    this.stepWidth = stepWidth;
-    this.stepHeight = stepHeight;
+    this.setElementPosition('absolute')
   }
 
   get x(): number {
@@ -34,5 +31,12 @@ class MobileElement {
   set y(val: number) {
     this.elementStyle
       .top = `${val * this.stepHeight}px`;
+  }
+
+  setElementPosition(position: string) {
+    let prev: { x: number, y: number } = { x: this.element.offsetLeft, y: this.element.offsetLeft };
+    this.elementStyle.position = position;
+    this.x = prev.x;
+    this.y = prev.y;
   }
 }
