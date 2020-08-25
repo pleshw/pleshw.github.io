@@ -6,7 +6,7 @@ var MobileElement = /** @class */ (function () {
         this.element = element;
         this.elementStyle = element.style;
         this.elementRect = element.getBoundingClientRect();
-        this.setElementPosition('absolute');
+        this.setAbsolute();
     }
     Object.defineProperty(MobileElement.prototype, "x", {
         get: function () {
@@ -14,7 +14,14 @@ var MobileElement = /** @class */ (function () {
         },
         set: function (val) {
             this.elementStyle
-                .left = val * this.stepWidth + "px";
+                .left = val + "px";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MobileElement.prototype, "xScroll", {
+        get: function () {
+            return this.elementRect.left + window.scrollX;
         },
         enumerable: true,
         configurable: true
@@ -25,14 +32,21 @@ var MobileElement = /** @class */ (function () {
         },
         set: function (val) {
             this.elementStyle
-                .top = val * this.stepHeight + "px";
+                .top = val + "px";
         },
         enumerable: true,
         configurable: true
     });
-    MobileElement.prototype.setElementPosition = function (position) {
-        var prev = { x: this.element.offsetLeft, y: this.element.offsetLeft };
-        this.elementStyle.position = position;
+    Object.defineProperty(MobileElement.prototype, "yScroll", {
+        get: function () {
+            return this.elementRect.top + window.scrollY;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MobileElement.prototype.setAbsolute = function () {
+        var prev = { x: this.element.offsetLeft, y: this.element.offsetTop };
+        this.elementStyle.position = 'absolute';
         this.x = prev.x;
         this.y = prev.y;
     };

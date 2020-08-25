@@ -13,7 +13,7 @@
   <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
   <link rel="stylesheet" href="styles/square.css">
 
-  <!-- <script src="dist/globals.js"></script> -->
+  <script src="dist/elementBuilder.js"></script>
   <script src="dist/mobileElement.js"></script>
   <script src="dist/draggable.js"></script>
   <script src="dist/shadowDiv.js"></script>
@@ -27,59 +27,10 @@
   <header></header>
 
   <main class="container">
-    <section class="row justify-content-around">
 
-      <div destaque-1 id="square-info" class="col-3 row container square">
-        <a class="col-12">
-          <img src="https://avatars.io/twitter/pleshw" alt="">
-        </a>
-        <hr class="col-2 ">
-        <ul class="col-12 center-align">
-          <li><a href="https://github.com/pleshw" target="_blank">Github</a></li>
-          <li><a href="https://twitter.com/pleshw" target="_blank">Twitter</a></li>
-          <li><a href="https://www.facebook.com/wplesh" target="_blank">Facebook</a></li>
-        </ul>
-
-      </div>
-
-      <div id="square-projects" class="col-5 row container square">
-        <div class="row">
-          <hr class="col-12">
-          <button class=" offset-2 col-8" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class="offset-2 col-8 btn">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8 btn-1" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8 btn-2" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8 btn-3" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8" disabled destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-        </div>
-      </div>
-
-
-    </section>
 
     <section class="row justify-content-around">
-      <div id="square-draggable" class="col-8 row container square">
-        <div class="row">
-          <hr class="col-12">
-          <button class=" offset-2 col-8" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class="offset-2 col-8 btn">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8 btn-1" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8 btn-2" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8 btn-3" destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-          <button class=" offset-2 col-8" disabled destacar="destaque-2">Don't press this button!</button>
-          <hr class="col-12">
-        </div>
+      <div id="square-draggable" class="col-2 row container square">
       </div>
     </section>
   </main>
@@ -94,7 +45,7 @@
     const test2 = document.getElementById('square-draggable')
     const testDrag2 = new Draggable(test2)
 
-    testDrag2.pin();
+    // testDrag2.pin();
   </script>
 </body>
 

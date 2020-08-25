@@ -12,30 +12,38 @@ class MobileElement {
     this.elementStyle = element.style;
     this.elementRect = <DOMRect>element.getBoundingClientRect();
 
-    this.setElementPosition('absolute')
+    this.setAbsolute();
   }
 
   get x(): number {
     return this.elementRect.left;
   }
 
+  get xScroll(): number {
+    return this.elementRect.left + window.scrollX;
+  }
+
   get y(): number {
     return this.elementRect.top;
   }
 
+  get yScroll(): number {
+    return this.elementRect.top + window.scrollY;
+  }
+
   set x(val: number) {
     this.elementStyle
-      .left = `${val * this.stepWidth}px`;
+      .left = `${val}px`;
   }
 
   set y(val: number) {
     this.elementStyle
-      .top = `${val * this.stepHeight}px`;
+      .top = `${val}px`;
   }
 
-  setElementPosition(position: string) {
-    let prev: { x: number, y: number } = { x: this.element.offsetLeft, y: this.element.offsetLeft };
-    this.elementStyle.position = position;
+  setAbsolute() {
+    let prev: { x: number, y: number } = { x: this.element.offsetLeft, y: this.element.offsetTop };
+    this.elementStyle.position = 'absolute';
     this.x = prev.x;
     this.y = prev.y;
   }

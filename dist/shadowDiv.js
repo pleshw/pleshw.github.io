@@ -1,7 +1,7 @@
 "use strict";
 /**
- * Create and return a shadow div for 'element'.
- * A shadow div is a div that will always fit an element
+ * Cria e retorna uma div que funciona como uma sombra para um elemento
+ * Essa div sempre vai ter a mesma posição e as mesmas dimensões do elemento base
  */
 function setShadowDiv(element) {
     var shadow = document.createElement("div");

@@ -22,6 +22,10 @@ var Draggable = /** @class */ (function (_super) {
         _this.initHoldingEvent();
         return _this;
     }
+    /**
+     * Adiciona a classe 'draggable' ao elemento
+     * Também adiciona o elemento a lista de elementos arrastáveis
+     */
     Draggable.prototype.setDraggable = function () {
         if (!this.element.classList.contains("draggable")) {
             this.element.classList.add("draggable");
@@ -29,25 +33,29 @@ var Draggable = /** @class */ (function (_super) {
         Draggable.elements.push(this.element);
         this.elementStyle.zIndex = Draggable.elements.length.toString();
     };
+    /**
+     * Checa a prioridade do elemento em relação aos outros, permitindo que o ultimo elemento arrastado da lista seja mostrado em destaque.
+     * Também garante que a lista vai permanecer com os elementos ordenados por ordem do ultimo arraste.
+     */
     Draggable.prototype.override = function () {
         if (Draggable.elements.length <= 1)
             return;
         var zindex = +this.elementStyle.zIndex;
         var greaterZIndex = Draggable.elements.length;
-        if (zindex < greaterZIndex)
+        if (zindex < greaterZIndex) {
             for (var i = zindex; i < greaterZIndex; i++) {
                 Draggable.elements[i].style.zIndex = i.toString();
                 var aux = Draggable.elements[i - 1];
                 Draggable.elements[i - 1] = Draggable.elements[i];
                 Draggable.elements[i] = aux;
             }
+        }
         this.elementStyle.zIndex = (Draggable.elements.length).toString();
     };
     /**
-     * Calculate the mouse position in reference to the page
-     * @param mouseEvent
+     * Calcula e altera a posição do elemento com base na posição do mouse na tela
+     * @param mouseEvent Evento como parâmetro
      *
-     * Problem: It says that holdingAt is undefined
      */
     Draggable.prototype.onMouseMove = function (mouseEvent) {
         this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
@@ -57,7 +65,7 @@ var Draggable = /** @class */ (function (_super) {
         window.addEventListener('mousemove', this.windowMouseMoveEvent, false);
     };
     /**
-     * Store the mouse position of an event in reference to the page
+     * Guarda a posição do mouse em relação a tela
      * @param mouseEvent
      */
     Draggable.prototype.trackHolding = function (mouseEvent) {
@@ -65,7 +73,7 @@ var Draggable = /** @class */ (function (_super) {
         this.holdingAt.y = (mouseEvent.pageY - this.element.offsetTop);
     };
     /**
-     * Init the drag events, and set the last dragged element over other elements
+     * Inicia os eventos de mouse em relação ao elemento e começa a armazenar a posição do mouse
      * @param mouseEvent
      */
     Draggable.prototype.onHold = function (mouseEvent) {
@@ -76,7 +84,7 @@ var Draggable = /** @class */ (function (_super) {
         this.initMouseMoveEvents();
     };
     /**
-     * Starts the onHold events when mouse is dragging this element, and clear the event when it drops
+     * Inicia os eventos que ocorrem quando o usuário segura o elemento com o mouse
      */
     Draggable.prototype.initHoldingEvent = function () {
         var _this = this;
@@ -86,22 +94,6 @@ var Draggable = /** @class */ (function (_super) {
     };
     Draggable.prototype.clearEvents = function () {
         window.removeEventListener('mousemove', this.windowMouseMoveEvent, false);
-    };
-    Draggable.prototype.pin = function () {
-        var prev = { x: this.x + this.element.offsetLeft, y: this.y };
-        if (!this.element.classList.contains('pinned')) {
-            this.element.classList.add('pinned');
-            this.x = prev.x;
-            this.y = prev.y;
-        }
-    };
-    Draggable.prototype.unpin = function () {
-        var prev = { x: this.x, y: this.y };
-        if (this.element.classList.contains('pinned')) {
-            this.element.classList.remove('pinned');
-            this.x = prev.x;
-            this.y = prev.y;
-        }
     };
     Draggable.elements = [];
     return Draggable;

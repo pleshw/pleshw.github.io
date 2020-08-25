@@ -1,6 +1,6 @@
 "use strict";
 /**
-* Get the dimensions of an element.
+* Retorna as dimensões em altura e largura dos elementos.
 */
 function getElementDimensions(element) {
     var rect = element.getBoundingClientRect();
@@ -10,7 +10,7 @@ function getElementDimensions(element) {
     };
 }
 /**
-* Get the position of an element.
+* Retorna a posição do elemento em relação a viewport.
 */
 function getElementPosition(element) {
     var rect = element.getBoundingClientRect();
@@ -20,7 +20,7 @@ function getElementPosition(element) {
     };
 }
 /**
-* Check if two elements have the same width *and* height.
+* Checa se dois elementos tem mesma altura e largura.
 */
 function hasSameDimensions(element1, element2) {
     var a = getElementDimensions(element1);
@@ -28,7 +28,7 @@ function hasSameDimensions(element1, element2) {
     return (a.width === b.width) && (a.height === b.height);
 }
 /**
-* Check if two elements have the same position.
+* Checa se dois elementos estão na mesma posição.
 */
 function hasSamePosition(element1, element2) {
     var a = getElementPosition(element1);
@@ -36,9 +36,9 @@ function hasSamePosition(element1, element2) {
     return (a.x === b.x) && (a.y === b.y);
 }
 /**
-* Transform a sub-element so that it has the same width and height as the base element.
-* @param base The base element.
-* @param sub The element that will be transformed.
+* Faz com que dois elementos fiquem com a mesma altura e largura
+* @param base O elemento usado como base.
+* @param sub O elemento que vai ter suas dimensões alteradas.
 */
 function makeElementsProportional(base, sub) {
     var dimensions = getElementDimensions(base);
@@ -47,9 +47,9 @@ function makeElementsProportional(base, sub) {
     subElementStyle.height = dimensions.height.toString().concat('px');
 }
 /**
-* Transform a sub-element so that it has the same position as the base element.
-* @param base The base element.
-* @param sub The element that will be transformed.
+* Faz com que dois elementos tenham as mesmas posições.
+* @param base O elemento usado como base.
+* @param sub O elemento que vai ter sua posição alterada.
 */
 function stackElements(base, sub) {
     var position = getElementPosition(base);
@@ -58,13 +58,13 @@ function stackElements(base, sub) {
     subElementStyle.top = position.y.toString().concat('px');
 }
 /**
-* Checks if two elements have the same size and position
+* Checa se dois elementos tem a mesma posição e dimensões
 */
 function elementsFit(a, b) {
     return hasSameDimensions(a, b) || hasSamePosition(a, b);
 }
 /**
- * Transform a sub-element so that it has the same size and position of a base element.
+ * Faz com que dois elementos fiquem na mesma posição e do mesmo tamanho
  */
 function coverElement(base, sub) {
     stackElements(base, sub);

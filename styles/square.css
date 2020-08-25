@@ -1,7 +1,7 @@
 .square {
   display: flex;
   text-align: left;
-  min-height: 400px;
+  min-height: 60px;
   max-height: 150vh;
   border: 2px solid var(--dark-gray);
   background-color: white;

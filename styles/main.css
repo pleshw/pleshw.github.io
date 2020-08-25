@@ -400,7 +400,3 @@ button:hover:disabled {
   transition: top 0s !important;
   transition: left 0s !important;
 }
-
-.pinned {
-  position: fixed !important;
-}

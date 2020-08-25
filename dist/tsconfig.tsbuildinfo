@@ -26,24 +26,32 @@
         "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
       },
       "../src/draggable.ts": {
-        "version": "4ea311ffbd8dfd57619d05568c64a448352492b27f921ea861a1741ab8c6899a",
-        "signature": "a508aea6756c7346ccadb31830d926d1d0041e0d466619acc6749113d6b91c68"
+        "version": "7bd31f074d508a7015bb655a60d696201b9b7873f3506c82d64dbe3f73b64e3d",
+        "signature": "2dac4643c2a1bb80a301a5a710130f29354cc2db1b3745f0c19cd4379000b84f"
+      },
+      "../src/elementbuilder.ts": {
+        "version": "39f4b25b942f9f9c1814a9e17e617ed39797a42cad2b875688a6a37fff275058",
+        "signature": "b4d06daa95e88085172e9467db815959dd28a5510cb1dedf96e0df2933969c9b"
       },
       "../src/elementshape.ts": {
-        "version": "2dad3e04cbbd62a8cc78ec5a6aaa059f55d3fa6525cdee2dc1d488117dd1bb96",
-        "signature": "300f6dd4696c26da9b0b77330b7ec5f63a736948830442f6d159997f78524c35"
+        "version": "e5a6c13cec175205f6517ba9f8f394681057be7e13dd0fce16697fafda2bf104",
+        "signature": "8414b4c794e8696d683a580cb611c1d41dcffba38a918cb90a62bf48165c8beb"
       },
       "../src/main.ts": {
-        "version": "0484ee331220af8580dd32bda996213b0e273d4cdd23103a97c21c37a4af18e7",
-        "signature": "a8537b1b3327fe3a9f22bf2f41779c8d187f5df30b7bd98a56ad78dbd9591123"
+        "version": "ab4059880e8494056384700c739721eb5ed0f181553c556bdf1cf8df62bfecd4",
+        "signature": "78873e36f21cc4d30545498f582e67d72054a8d4f65b223250416e8d479eb743"
       },
       "../src/mobileelement.ts": {
-        "version": "646db282031cef5bfc158a7dbdbc08b77b621565de574bc239bdd5aa0bfb9d0e",
-        "signature": "97e58eb6d70ce51cbd4efe86c43abcb73a06ae077d82d827d889be1d32031ab7"
+        "version": "43d1e429628577f74035ec83541b20694eb1ea8faaddad56ae765d585b8a3018",
+        "signature": "0a6812b92f1198ce68cee083242b75c3f8aa955564df61e650cc43e0e3acb5a0"
+      },
+      "../src/popwindow.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
       "../src/shadowdiv.ts": {
-        "version": "6f84dec23464cc52193a226d44d4c240302118ad37cc5fc6223194e73f8d1648",
-        "signature": "beb505ac84dc60937ebfb9d7148894b2df962e7eaea5c7edc388224f0caa32d9"
+        "version": "be1e83b4282b9bab50afc1a1bb42159cd622c34a5ad1b22895004729cc95af73",
+        "signature": "f0c539cfe95df5ddfbf2042046946c209ba93f44a8532418a33ae5a022140cbb"
       },
       "../src/squares.ts": {
         "version": "7952d04066e5742ce3f6d3ad28d598d2134a6b0b478be22e010a1d7507835635",
@@ -74,18 +82,33 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
+      "../src/elementbuilder.ts",
+      "../src/attributecontroller.ts",
+      "../src/draggable.ts",
+      "../src/elementshape.ts",
+      [
+        "../src/main.ts",
+        [
+          {
+            "file": "../src/main.ts",
+            "start": 1597,
+            "length": 1,
+            "messageText": "'b' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
+      "../src/mobileelement.ts",
+      "../src/popwindow.ts",
+      "../src/shadowdiv.ts",
+      "../src/squares.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts",
-      "../src/attributecontroller.ts",
-      "../src/elementshape.ts",
-      "../src/main.ts",
-      "../src/mobileelement.ts",
-      "../src/shadowdiv.ts",
-      "../src/squares.ts",
-      "../src/draggable.ts"
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts"
     ]
   },
   "version": "3.6.4"
