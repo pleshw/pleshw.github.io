@@ -7,7 +7,7 @@ class MobileElement {
   stepHeight: number = 1;
 
 
-  constructor(element: HTMLElement) {
+  constructor( element: HTMLElement ) {
     this.element = element;
     this.elementStyle = element.style;
     this.elementRect = <DOMRect>element.getBoundingClientRect();
@@ -15,33 +15,42 @@ class MobileElement {
     this.setAbsolute();
   }
 
-  get x(): number {
+  /**
+   * Acessadores de posição
+   */
+  public get x(): number {
     return this.elementRect.left;
   }
-
-  get xScroll(): number {
-    return this.elementRect.left + window.scrollX;
-  }
-
-  get y(): number {
+  public get y(): number {
     return this.elementRect.top;
   }
 
-  get yScroll(): number {
-    return this.elementRect.top + window.scrollY;
+  /**
+   * Acessadores de posição relativo a janela scrollada
+   */
+  public get xScroll(): number {
+    return this.x + window.scrollX;
   }
 
-  set x(val: number) {
-    this.elementStyle
-      .left = `${val}px`;
+  public get yScroll(): number {
+    return this.y + window.scrollY;
   }
 
-  set y(val: number) {
-    this.elementStyle
-      .top = `${val}px`;
+  public set x( val: number ) {
+    window.requestAnimationFrame( () => {
+      this.elementStyle
+        .left = `${val}px`;
+    } );
   }
 
-  setAbsolute() {
+  public set y( val: number ) {
+    window.requestAnimationFrame( () => {
+      this.elementStyle
+        .top = `${val}px`;
+    } );
+  }
+
+  private setAbsolute() {
     let prev: { x: number, y: number } = { x: this.element.offsetLeft, y: this.element.offsetTop };
     this.elementStyle.position = 'absolute';
     this.x = prev.x;

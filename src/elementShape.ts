@@ -8,38 +8,6 @@ function getElementDimensions( element: Element ): { width: number, height: numb
     height: rect.height
   }
 }
-
-/**
-* Retorna a posição do elemento em relação a viewport.
-*/
-function getElementPosition( element: Element ): { x: number, y: number } {
-  const rect = element.getBoundingClientRect();
-  return {
-    x: rect.left,
-    y: rect.top
-  }
-}
-
-/**
-* Checa se dois elementos tem mesma altura e largura.
-*/
-function hasSameDimensions( element1: Element, element2: Element ): boolean {
-  const a = getElementDimensions( element1 );
-  const b = getElementDimensions( element2 );
-
-  return ( a.width === b.width ) && ( a.height === b.height );
-}
-
-/**
-* Checa se dois elementos estão na mesma posição.
-*/
-function hasSamePosition( element1: Element, element2: Element ): boolean {
-  const a = getElementPosition( element1 );
-  const b = getElementPosition( element2 );
-
-  return ( a.x === b.x ) && ( a.y === b.y );
-}
-
 /**
 * Faz com que dois elementos fiquem com a mesma altura e largura
 * @param base O elemento usado como base.

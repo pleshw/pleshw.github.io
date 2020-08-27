@@ -9,9 +9,9 @@ function getSquares() {
  * Sets a shadow div for every element with square class
  */
 function setShadowDivForSquares() {
-    var squares = getSquares();
-    for (var i = 0; i < squares.length; i++) {
-        var square = squares.item(i);
+    const squares = getSquares();
+    for (let i = 0; i < squares.length; i++) {
+        const square = squares.item(i);
         setShadowDiv(square);
     }
 }

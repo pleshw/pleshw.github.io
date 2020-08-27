@@ -1,6 +1,6 @@
 "use strict";
-var MobileElement = /** @class */ (function () {
-    function MobileElement(element) {
+class MobileElement {
+    constructor(element) {
         this.stepWidth = 1;
         this.stepHeight = 1;
         this.element = element;
@@ -8,47 +8,40 @@ var MobileElement = /** @class */ (function () {
         this.elementRect = element.getBoundingClientRect();
         this.setAbsolute();
     }
-    Object.defineProperty(MobileElement.prototype, "x", {
-        get: function () {
-            return this.elementRect.left;
-        },
-        set: function (val) {
+    /**
+     * Acessadores de posição
+     */
+    get x() {
+        return this.elementRect.left;
+    }
+    get y() {
+        return this.elementRect.top;
+    }
+    /**
+     * Acessadores de posição relativo a janela scrollada
+     */
+    get xScroll() {
+        return this.x + window.scrollX;
+    }
+    get yScroll() {
+        return this.y + window.scrollY;
+    }
+    set x(val) {
+        window.requestAnimationFrame(() => {
             this.elementStyle
-                .left = val + "px";
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MobileElement.prototype, "xScroll", {
-        get: function () {
-            return this.elementRect.left + window.scrollX;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MobileElement.prototype, "y", {
-        get: function () {
-            return this.elementRect.top;
-        },
-        set: function (val) {
+                .left = `${val}px`;
+        });
+    }
+    set y(val) {
+        window.requestAnimationFrame(() => {
             this.elementStyle
-                .top = val + "px";
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MobileElement.prototype, "yScroll", {
-        get: function () {
-            return this.elementRect.top + window.scrollY;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MobileElement.prototype.setAbsolute = function () {
-        var prev = { x: this.element.offsetLeft, y: this.element.offsetTop };
+                .top = `${val}px`;
+        });
+    }
+    setAbsolute() {
+        let prev = { x: this.element.offsetLeft, y: this.element.offsetTop };
         this.elementStyle.position = 'absolute';
         this.x = prev.x;
         this.y = prev.y;
-    };
-    return MobileElement;
-}());
+    }
+}

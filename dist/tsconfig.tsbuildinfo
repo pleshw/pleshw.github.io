@@ -1,17 +1,25 @@
 {
   "program": {
     "fileInfos": {
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts": {
-        "version": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0",
-        "signature": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0"
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es6.d.ts": {
+        "version": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da",
+        "signature": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da"
       },
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts": {
         "version": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1",
         "signature": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1"
       },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96",
+        "signature": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96"
+      },
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts": {
         "version": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f",
         "signature": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
+        "version": "f42b5c6ad71e2229f1fea2065bc28b887344bc7e7acd9d87e2e53d6376736890",
+        "signature": "f42b5c6ad71e2229f1fea2065bc28b887344bc7e7acd9d87e2e53d6376736890"
       },
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
         "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
@@ -21,29 +29,73 @@
         "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
         "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
       },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "4ab19088d508f9e62bfc61c157e8a65b2afaefa251ecca315e7d20b5b97b256f",
+        "signature": "4ab19088d508f9e62bfc61c157e8a65b2afaefa251ecca315e7d20b5b97b256f"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0",
+        "signature": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "765e0e9c9d74cf4d031ca8b0bdb269a853e7d81eda6354c8510218d03db12122",
+        "signature": "765e0e9c9d74cf4d031ca8b0bdb269a853e7d81eda6354c8510218d03db12122"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "285958e7699f1babd76d595830207f18d719662a0c30fac7baca7df7162a9210",
+        "signature": "285958e7699f1babd76d595830207f18d719662a0c30fac7baca7df7162a9210"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2",
+        "signature": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe",
+        "signature": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976",
+        "signature": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230",
+        "signature": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230"
+      },
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
+        "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
+      },
       "../src/attributecontroller.ts": {
         "version": "1e3d36699762ea46519ab963854a425e30144d78ad8374b7f84b9dfee5f372f5",
         "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
       },
       "../src/draggable.ts": {
-        "version": "7bd31f074d508a7015bb655a60d696201b9b7873f3506c82d64dbe3f73b64e3d",
-        "signature": "2dac4643c2a1bb80a301a5a710130f29354cc2db1b3745f0c19cd4379000b84f"
+        "version": "29bd798657f1a0592f72e91095662b46c8c594c0586a9c135718b01c085f463e",
+        "signature": "a0586dc6af64c005b89824289ab868c331a8cfc701b230040ddc4ea9c99ff50d"
+      },
+      "../src/elementactions.ts": {
+        "version": "32e2ea41a2c405f1d1a7919c69c2ae19f22328e8130a8efeb4729127d0b6861a",
+        "signature": "2a29d4521d6eb3913a814e0a3918ea63be2610ecf5f3efa35a3f9b16f74aa29d"
       },
       "../src/elementbuilder.ts": {
         "version": "39f4b25b942f9f9c1814a9e17e617ed39797a42cad2b875688a6a37fff275058",
         "signature": "b4d06daa95e88085172e9467db815959dd28a5510cb1dedf96e0df2933969c9b"
       },
+      "../src/elementgeometric.ts": {
+        "version": "37dcb14e7fd70fb25fdf18de46e9265e8403e9860b108d308d7bccfb3f5c093b",
+        "signature": "34cb25958458fd0b222cf6a8f780c26da1899d9c22cad0d3d1c2c451595a43f8"
+      },
       "../src/elementshape.ts": {
-        "version": "e5a6c13cec175205f6517ba9f8f394681057be7e13dd0fce16697fafda2bf104",
-        "signature": "8414b4c794e8696d683a580cb611c1d41dcffba38a918cb90a62bf48165c8beb"
+        "version": "356b03bb6eb19f77ddaedd7462fae4f83909589d7581ba8f92529280130e142b",
+        "signature": "899340021f1b2a6faf82073d140d396f82d82418981ecc0cf7cca436dee2e047"
       },
       "../src/main.ts": {
-        "version": "ab4059880e8494056384700c739721eb5ed0f181553c556bdf1cf8df62bfecd4",
-        "signature": "78873e36f21cc4d30545498f582e67d72054a8d4f65b223250416e8d479eb743"
+        "version": "37dcc2bd58d3e69300d98db03826b06637809ac69b35d08d3394893bec9b58cd",
+        "signature": "de68198eea8ac63480f8eae7379fa4b68d287d977049337e0f81411749b726ab"
       },
       "../src/mobileelement.ts": {
-        "version": "43d1e429628577f74035ec83541b20694eb1ea8faaddad56ae765d585b8a3018",
-        "signature": "0a6812b92f1198ce68cee083242b75c3f8aa955564df61e650cc43e0e3acb5a0"
+        "version": "9cc79244cecf82d5b76e5db6ccbbde04d9a84d58ecd3e610e0684db817536b16",
+        "signature": "f1cfe819f7a5cedb8d3f069841ac23592d0424662d61e9383978a1a8f020e805"
       },
       "../src/popwindow.ts": {
         "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -56,11 +108,19 @@
       "../src/squares.ts": {
         "version": "7952d04066e5742ce3f6d3ad28d598d2134a6b0b478be22e010a1d7507835635",
         "signature": "6aa0116be05d6011adbcb98e0549dd31acbd7ea0127f9b122774ff4311b0d431"
+      },
+      "../src/stickyelement.ts": {
+        "version": "fc1edf321df0ab9e7cfdd1b1c99246651bd90336bb3262e405366222136960f2",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "../src/zindexqueue.ts": {
+        "version": "d89aba1b2226affa4d1671586954288c68ac6e6443393f98f0db8339b4cdce40",
+        "signature": "3f8742baff5bd714960b224ff798d60a8b599db2416a54c97d98e3dcabf013e9"
       }
     },
     "options": {
       "incremental": true,
-      "target": 1,
+      "target": 2,
       "module": 1,
       "outDir": "./",
       "downlevelIteration": true,
@@ -82,33 +142,35 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
-      "../src/elementbuilder.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es6.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
       "../src/attributecontroller.ts",
-      "../src/draggable.ts",
+      "../src/elementactions.ts",
+      "../src/elementbuilder.ts",
+      "../src/elementgeometric.ts",
       "../src/elementshape.ts",
-      [
-        "../src/main.ts",
-        [
-          {
-            "file": "../src/main.ts",
-            "start": 1597,
-            "length": 1,
-            "messageText": "'b' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          }
-        ]
-      ],
+      "../src/main.ts",
       "../src/mobileelement.ts",
       "../src/popwindow.ts",
       "../src/shadowdiv.ts",
       "../src/squares.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts"
+      "../src/stickyelement.ts",
+      "../src/zindexqueue.ts",
+      "../src/draggable.ts"
     ]
   },
   "version": "3.6.4"

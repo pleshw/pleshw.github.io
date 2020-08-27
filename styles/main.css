@@ -307,22 +307,6 @@ img {
   left: 0;
 }
 
-.slave-1 {
-  z-index: 4;
-}
-
-.slave-2 {
-  z-index: 3;
-}
-
-.slave-3 {
-  z-index: 2;
-}
-
-.slave-4 {
-  z-index: 1;
-}
-
 button {
   background-color: white;
 

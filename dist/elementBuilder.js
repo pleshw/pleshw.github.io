@@ -1,62 +1,61 @@
 "use strict";
-var ElementBuilder = /** @class */ (function () {
-    function ElementBuilder(tag) {
+class ElementBuilder {
+    constructor(tag) {
         this.parent = document.body;
         this.adjacentElement = null;
         this.adjacentPosition = 'beforebegin';
         this.element = document.createElement(tag);
     }
-    ElementBuilder.prototype.setAttribute = function (attrName, value) {
+    setAttribute(attrName, value) {
         this.element.setAttribute(attrName, value);
         return this;
-    };
-    ElementBuilder.prototype.addClass = function (value) {
+    }
+    addClass(value) {
         this.element.classList.add(value);
         return this;
-    };
-    ElementBuilder.prototype.setWidth = function (value) {
+    }
+    setWidth(value) {
         this.element.style.width = value.toString().concat('px');
         return this;
-    };
-    ElementBuilder.prototype.setHeight = function (value) {
+    }
+    setHeight(value) {
         this.element.style.height = value.toString().concat('px');
         return this;
-    };
-    ElementBuilder.prototype.setParent = function (element) {
+    }
+    setParent(element) {
         this.parent = element;
         return this;
-    };
-    ElementBuilder.prototype.insertBefore = function (element) {
+    }
+    insertBefore(element) {
         this.adjacentPosition = 'beforebegin';
         this.adjacentElement = element;
         return this;
-    };
-    ElementBuilder.prototype.insertInnerBefore = function (element) {
+    }
+    insertInnerBefore(element) {
         this.adjacentPosition = 'afterbegin';
         this.adjacentElement = element;
         return this;
-    };
-    ElementBuilder.prototype.insertInnerAfter = function (element) {
+    }
+    insertInnerAfter(element) {
         this.adjacentPosition = 'beforeend';
         this.adjacentElement = element;
         return this;
-    };
-    ElementBuilder.prototype.insertAfter = function (element) {
+    }
+    insertAfter(element) {
         this.adjacentPosition = 'afterend';
         this.adjacentElement = element;
         return this;
-    };
-    ElementBuilder.prototype.setPosition = function (pos) {
+    }
+    setPosition(pos) {
         this.element.style.left = pos.x.toString().concat('px');
         this.element.style.top = pos.y.toString().concat('px');
         return this;
-    };
-    ElementBuilder.prototype.build = function () {
+    }
+    build() {
         if (this.adjacentElement !== null)
             this.adjacentElement.insertAdjacentElement(this.adjacentPosition, this.element);
         else
             this.parent.appendChild(this.element);
         return this.element;
-    };
-    return ElementBuilder;
-}());
+    }
+}

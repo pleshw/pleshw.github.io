@@ -1,7 +1,7 @@
 class Draggable extends MobileElement {
 
   private holdingAt: { x: number, y: number } = { x: 0, y: 0 };
-  private static elements: HTMLElement[] = [];
+  public static elements: ZIndexQueue = new ZIndexQueue();
 
   windowMouseMoveEvent: ( event: MouseEvent ) => void;
 
@@ -21,27 +21,20 @@ class Draggable extends MobileElement {
     if ( !this.element.classList.contains( "draggable" ) ) {
       this.element.classList.add( "draggable" );
     }
-    Draggable.elements.push( this.element );
-    this.elementStyle.zIndex = Draggable.elements.length.toString();
+    Draggable.elements.add( this.element );
   }
 
   /**
-   * Checa a prioridade do elemento em relação aos outros, permitindo que o ultimo elemento arrastado da lista seja mostrado em destaque. 
-   * Também garante que a lista vai permanecer com os elementos ordenados por ordem do ultimo arraste.
+   * Faz com que quando este elemento for arrastado ele sobreponha todos os outros na lista de arrastáveis
    */
   private override() {
     if ( Draggable.elements.length <= 1 ) return;
-    const zindex = +this.elementStyle.zIndex!;
-    const greaterZIndex = Draggable.elements.length;
-    if ( zindex < greaterZIndex ) {
-      for ( let i = zindex; i < greaterZIndex; i++ ) {
-        Draggable.elements[i].style.zIndex = i.toString();
-        let aux = Draggable.elements[i - 1];
-        Draggable.elements[i - 1] = Draggable.elements[i];
-        Draggable.elements[i] = aux;
-      }
-    }
-    this.elementStyle.zIndex = ( Draggable.elements.length ).toString();
+
+    const i = Draggable.elements.indexOf( this.element );
+    const last = Draggable.elements.length - 1;
+    if ( i === last ) return;
+
+    Draggable.elements.swap( i, last );
   }
 
   /**
@@ -55,7 +48,7 @@ class Draggable extends MobileElement {
   }
 
   private initMouseMoveEvents() {
-    window.addEventListener( 'mousemove', this.windowMouseMoveEvent, false );
+    this.element.addEventListener( 'mousemove', this.windowMouseMoveEvent, false );
   }
 
   /**
@@ -84,13 +77,16 @@ class Draggable extends MobileElement {
    * Inicia os eventos que ocorrem quando o usuário segura o elemento com o mouse
    */
   private initHoldingEvent() {
-    window.onmousemove = null;
+    this.element.onmousemove = null;
     this.element.onmousedown = ( evt ) => { this.onHold( evt ) }
-    window.onmouseup = () => { this.clearEvents(); };
+    this.element.onmouseup = () => { this.clearEvents(); };
+    this.element.onmouseout = () => {
+      console.log( 0 );
+    };
   }
 
   clearEvents() {
-    window.removeEventListener( 'mousemove', this.windowMouseMoveEvent, false );
+    this.element.removeEventListener( 'mousemove', this.windowMouseMoveEvent, false );
   }
 }
 
