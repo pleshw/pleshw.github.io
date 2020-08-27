@@ -75,6 +75,7 @@ class Draggable extends MobileElement {
 
   /**
    * Inicia os eventos que ocorrem quando o usuário segura o elemento com o mouse
+   * PROBLEMA: Preciso limpar os eventos assim que o mouse sair de cima do elemento
    */
   private initHoldingEvent() {
     this.element.onmousemove = null;
