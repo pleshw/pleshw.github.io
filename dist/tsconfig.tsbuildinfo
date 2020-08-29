@@ -70,8 +70,8 @@
         "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
       },
       "../src/draggable.ts": {
-        "version": "29bd798657f1a0592f72e91095662b46c8c594c0586a9c135718b01c085f463e",
-        "signature": "a0586dc6af64c005b89824289ab868c331a8cfc701b230040ddc4ea9c99ff50d"
+        "version": "89323ca0dabb81216c4442e98347ee6a95dddfa47094207831cfd65e63c930c3",
+        "signature": "319a7b73ece5e010c90cc87046dea7cdba23fa9436e2b36bceb467a5d53f3bb2"
       },
       "../src/elementactions.ts": {
         "version": "32e2ea41a2c405f1d1a7919c69c2ae19f22328e8130a8efeb4729127d0b6861a",
@@ -90,11 +90,11 @@
         "signature": "899340021f1b2a6faf82073d140d396f82d82418981ecc0cf7cca436dee2e047"
       },
       "../src/main.ts": {
-        "version": "37dcc2bd58d3e69300d98db03826b06637809ac69b35d08d3394893bec9b58cd",
+        "version": "24570c97cb32d760ca06762c96be838039dfe18d68721908d9a4e2e26005e40d",
         "signature": "de68198eea8ac63480f8eae7379fa4b68d287d977049337e0f81411749b726ab"
       },
       "../src/mobileelement.ts": {
-        "version": "9cc79244cecf82d5b76e5db6ccbbde04d9a84d58ecd3e610e0684db817536b16",
+        "version": "2a95c74f4b1da078411971ced634e6b0e6e1949e7a90f0918301a20216873958",
         "signature": "f1cfe819f7a5cedb8d3f069841ac23592d0424662d61e9383978a1a8f020e805"
       },
       "../src/popwindow.ts": {
@@ -159,18 +159,18 @@
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
       "../src/attributecontroller.ts",
+      "../src/draggable.ts",
       "../src/elementactions.ts",
       "../src/elementbuilder.ts",
       "../src/elementgeometric.ts",
       "../src/elementshape.ts",
       "../src/main.ts",
-      "../src/mobileelement.ts",
       "../src/popwindow.ts",
       "../src/shadowdiv.ts",
       "../src/squares.ts",
       "../src/stickyelement.ts",
       "../src/zindexqueue.ts",
-      "../src/draggable.ts"
+      "../src/mobileelement.ts"
     ]
   },
   "version": "3.6.4"

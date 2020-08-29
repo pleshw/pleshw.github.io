@@ -11,6 +11,5 @@ document.addEventListener("DOMContentLoaded", function () {
 function _main() {
     const elementList = document.body.getElementsByTagName("*");
     for (let i = 0; i < elementList.length; i++) {
-        elementList[i].style.zIndex = '0';
     }
 }

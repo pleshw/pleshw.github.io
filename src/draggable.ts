@@ -9,7 +9,7 @@ class Draggable extends MobileElement {
     super( element );
 
     this.setDraggable();
-    this.windowMouseMoveEvent = ( evt: MouseEvent ) => { this.onMouseMove( evt ) }
+    this.windowMouseMoveEvent = ( evt: MouseEvent ) => { this.mouseMove( evt ) }
     this.initHoldingEvent();
   }
 
@@ -42,7 +42,7 @@ class Draggable extends MobileElement {
    * @param mouseEvent Evento como parâmetro 
    * 
    */
-  private onMouseMove( mouseEvent: MouseEvent ) {
+  private mouseMove( mouseEvent: MouseEvent ) {
     this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
     this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
   }
@@ -77,12 +77,19 @@ class Draggable extends MobileElement {
    * Inicia os eventos que ocorrem quando o usuário segura o elemento com o mouse
    * PROBLEMA: Preciso limpar os eventos assim que o mouse sair de cima do elemento
    */
+  isMouseDown: boolean = false;
   private initHoldingEvent() {
     this.element.onmousemove = null;
-    this.element.onmousedown = ( evt ) => { this.onHold( evt ) }
-    this.element.onmouseup = () => { this.clearEvents(); };
-    this.element.onmouseout = () => {
-      console.log( 0 );
+    this.element.addEventListener( "mousedown", ( evt ) => {
+      this.isMouseDown = true;
+      this.onHold( evt )
+    } )
+    window.addEventListener( "mouseup", () => {
+      this.isMouseDown = false;
+      this.clearEvents();
+    } )
+    this.element.onmouseout = ( evt ) => {
+      if ( this.isMouseDown ) this.mouseMove( evt );
     };
   }
 

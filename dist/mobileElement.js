@@ -40,7 +40,6 @@ class MobileElement {
     }
     setAbsolute() {
         let prev = { x: this.element.offsetLeft, y: this.element.offsetTop };
-        this.elementStyle.position = 'absolute';
         this.x = prev.x;
         this.y = prev.y;
     }

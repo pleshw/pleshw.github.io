@@ -379,8 +379,9 @@ button:hover:disabled {
   box-shadow: none;
 }
 
+
 .draggable {
   position: absolute;
-  transition: top 0s !important;
-  transition: left 0s !important;
+  max-width: inherit !important;
+  transition: left 0s, top 0s !important;
 }
