@@ -1,10 +1,6 @@
 "use strict";
-window.addEventListener('contextmenu', _event => {
-    _event.preventDefault();
-});
-document.addEventListener("DOMContentLoaded", function () {
-    _main();
-});
+window.addEventListener('contextmenu', _event => _event.preventDefault());
+document.addEventListener("DOMContentLoaded", () => _main());
 /**
  * Chamado assim que o conteúdo do DOM é carregado
  */

@@ -62,11 +62,11 @@ li>a:hover {
 }
 
 ul {
-  list-style: none;
+  list-style: circle;
 }
 
 li {
-  list-style: none;
+  list-style: circle;
   margin-bottom: 3% !important;
 }
 
