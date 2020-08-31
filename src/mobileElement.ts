@@ -11,8 +11,6 @@ class MobileElement {
     this.element = element;
     this.elementStyle = element.style;
     this.elementRect = <DOMRect>element.getBoundingClientRect();
-
-    this.setAbsolute();
   }
 
   /**
@@ -50,9 +48,4 @@ class MobileElement {
     } );
   }
 
-  private setAbsolute() {
-    let prev: { x: number, y: number } = { x: this.element.offsetLeft, y: this.element.offsetTop };
-    this.x = prev.x;
-    this.y = prev.y;
-  }
 }

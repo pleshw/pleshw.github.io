@@ -3,23 +3,28 @@ class Draggable extends MobileElement {
     constructor(element) {
         super(element);
         this.holdingAt = { x: 0, y: 0 };
-        /**
-         * Inicia os eventos que ocorrem quando o usuário segura o elemento com o mouse
-         * PROBLEMA: Preciso limpar os eventos assim que o mouse sair de cima do elemento
-         */
-        this.isMouseDown = false;
+        this.isDragging = false;
+        this.addMoveListener = () => window.addEventListener('mousemove', this.mouseMoveEvent, false);
+        this.clearEvents = () => window.removeEventListener('mousemove', this.mouseMoveEvent);
         this.setDraggable();
-        this.windowMouseMoveEvent = (evt) => { this.mouseMove(evt); };
+        this.mouseMoveEvent = (evt) => this.mouseMove(evt);
         this.initHoldingEvent();
+        // set timeout para zero porque assim a função é chamada somente após o elemento renderizar
+        setTimeout(() => this.setAbsolute(), 0);
+    }
+    setAbsolute() {
+        let prev = { x: this.x, y: this.y };
+        this.element.style.position = 'absolute';
+        this.x = prev.x;
+        this.y = prev.y;
     }
     /**
      * Adiciona a classe 'draggable' ao elemento
      * Também adiciona o elemento a lista de elementos arrastáveis
      */
     setDraggable() {
-        if (!this.element.classList.contains("draggable")) {
+        if (!this.element.classList.contains("draggable"))
             this.element.classList.add("draggable");
-        }
         Draggable.elements.add(this.element);
     }
     /**
@@ -43,9 +48,6 @@ class Draggable extends MobileElement {
         this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
         this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
     }
-    initMouseMoveEvents() {
-        this.element.addEventListener('mousemove', this.windowMouseMoveEvent, false);
-    }
     /**
      * Guarda a posição do mouse em relação a tela
      * @param mouseEvent
@@ -58,30 +60,19 @@ class Draggable extends MobileElement {
      * Inicia os eventos de mouse em relação ao elemento e começa a armazenar a posição do mouse
      * @param mouseEvent
      */
-    onHold(mouseEvent) {
+    onClick(mouseEvent) {
         mouseEvent.stopPropagation();
         mouseEvent.stopImmediatePropagation();
         this.override();
         this.trackHolding(mouseEvent);
-        this.initMouseMoveEvents();
+        this.addMoveListener();
     }
+    /**
+     * Inicia os eventos que ocorrem quando o usuário segura o elemento com o mouse
+     */
     initHoldingEvent() {
-        this.element.onmousemove = null;
-        this.element.addEventListener("mousedown", (evt) => {
-            this.isMouseDown = true;
-            this.onHold(evt);
-        });
-        window.addEventListener("mouseup", () => {
-            this.isMouseDown = false;
-            this.clearEvents();
-        });
-        this.element.onmouseout = (evt) => {
-            if (this.isMouseDown)
-                this.mouseMove(evt);
-        };
-    }
-    clearEvents() {
-        this.element.removeEventListener('mousemove', this.windowMouseMoveEvent, false);
+        this.element.onmousedown = (evt) => this.onClick(evt);
+        window.addEventListener("mouseup", () => this.clearEvents());
     }
 }
 Draggable.elements = new ZIndexQueue();

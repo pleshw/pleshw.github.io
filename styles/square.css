@@ -16,6 +16,9 @@
   overflow: hidden;
 }
 
+.square.small {
+  max-height: 120px;
+}
 
 .square img {
   max-width: 150px;

@@ -6,7 +6,6 @@ class MobileElement {
         this.element = element;
         this.elementStyle = element.style;
         this.elementRect = element.getBoundingClientRect();
-        this.setAbsolute();
     }
     /**
      * Acessadores de posição
@@ -37,10 +36,5 @@ class MobileElement {
             this.elementStyle
                 .top = `${val}px`;
         });
-    }
-    setAbsolute() {
-        let prev = { x: this.element.offsetLeft, y: this.element.offsetTop };
-        this.x = prev.x;
-        this.y = prev.y;
     }
 }

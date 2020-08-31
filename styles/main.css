@@ -381,7 +381,5 @@ button:hover:disabled {
 
 
 .draggable {
-  position: absolute;
-  max-width: inherit !important;
   transition: left 0s, top 0s !important;
 }
