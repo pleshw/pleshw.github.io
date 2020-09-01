@@ -15,33 +15,35 @@
 
   <script src="dist/elementActions.js"></script>
   <script src="dist/elementBuilder.js"></script>
+
+  <script src="dist/defaultElement.js"></script>
   <script src="dist/mobileElement.js"></script>
   <script src="dist/zindexQueue.js"></script>
-  <script src="dist/draggable.js"></script>
+  <script src="dist/draggableElement.js"></script>
+  <script src="dist/sensitiveElement.js"></script>
+
   <script src="dist/shadowDiv.js"></script>
-  <script src="dist/attributeController.js"></script>
+  <script src="dist/elementAttributes.js"></script>
   <script src="dist/elementGeometric.js"></script>
   <script src="dist/elementShape.js"></script>
-  <script src="dist/squares.js"></script>
   <script src='dist/main.js'></script>
 </head>
 
 <body>
   <header></header>
-  <!-- 
-  <main class="container">
-    <section class="container row justify-content-around"></section>
-    </section>
-  </main> -->
 
-  <ul style="list-style:circle;">
-    <li id="square-drag-1" class="col-4 small row container square"></li>
-    <li id="square-drag-2" class="col-4 small row container square"></li>
-    <li id="square-drag-3" class="col-4 small row container square"></li>
-    <li id="square-drag-4" class="col-4 small row container square"></li>
-    <li id="square-drag-5" class="col-4 small row container square"></li>
-    <li id="square-drag-6" class="col-4 small row container square"></li>
-  </ul>
+  <main class="container">
+    <section class="container row">
+      <ul class="col-6">
+        <li id="square-drag-1" class="col-4 small rectangle green"></li>
+        <li id="square-drag-2" class="col-4 small rectangle blue"></li>
+        <li id="square-drag-3" class="col-4 small rectangle yellow"></li>
+      </ul>
+
+      <div id="sensitive" class="col-4  row container rectangle square" style="z-index: -1;"></div>
+    </section>
+  </main>
+
 
 
 
@@ -50,17 +52,11 @@
 
   <script>
     const test1 = document.getElementById('square-drag-1')
-    const testDrag1 = new Draggable(test1)
+    const testDrag1 = new DraggableElement(test1)
     const test2 = document.getElementById('square-drag-2')
-    const testDrag2 = new Draggable(test2)
+    const testDrag2 = new DraggableElement(test2)
     const test3 = document.getElementById('square-drag-3')
-    const testDrag3 = new Draggable(test3)
-    const test4 = document.getElementById('square-drag-4')
-    const testDrag4 = new Draggable(test4)
-    const test5 = document.getElementById('square-drag-5')
-    const testDrag5 = new Draggable(test5)
-    const test6 = document.getElementById('square-drag-6')
-    const testDrag6 = new Draggable(test6)
+    const testDrag3 = new DraggableElement(test3)
   </script>
 </body>
 

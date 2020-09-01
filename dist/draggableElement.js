@@ -1,5 +1,5 @@
 "use strict";
-class Draggable extends MobileElement {
+class DraggableElement extends MobileElement {
     constructor(element) {
         super(element);
         this.holdingAt = { x: 0, y: 0 };
@@ -25,19 +25,19 @@ class Draggable extends MobileElement {
     setDraggable() {
         if (!this.element.classList.contains("draggable"))
             this.element.classList.add("draggable");
-        Draggable.elements.add(this.element);
+        DraggableElement.elements.add(this.element);
     }
     /**
      * Faz com que quando este elemento for arrastado ele sobreponha todos os outros na lista de arrastáveis
      */
     override() {
-        if (Draggable.elements.length <= 1)
+        if (DraggableElement.elements.length <= 1)
             return;
-        const i = Draggable.elements.indexOf(this.element);
-        const last = Draggable.elements.length - 1;
+        const i = DraggableElement.elements.indexOf(this.element);
+        const last = DraggableElement.elements.length - 1;
         if (i === last)
             return;
-        Draggable.elements.swap(i, last);
+        DraggableElement.elements.swap(i, last);
     }
     /**
      * Calcula e altera a posição do elemento com base na posição do mouse na tela
@@ -75,4 +75,4 @@ class Draggable extends MobileElement {
         window.addEventListener("mouseup", () => this.clearEvents());
     }
 }
-Draggable.elements = new ZIndexQueue();
+DraggableElement.elements = new ZIndexQueue();

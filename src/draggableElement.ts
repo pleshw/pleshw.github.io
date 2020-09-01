@@ -1,4 +1,4 @@
-class Draggable extends MobileElement {
+class DraggableElement extends MobileElement {
 
   private holdingAt: { x: number, y: number } = { x: 0, y: 0 };
   public static elements: ZIndexQueue = new ZIndexQueue();
@@ -34,20 +34,20 @@ class Draggable extends MobileElement {
   private setDraggable() {
     if ( !this.element.classList.contains( "draggable" ) )
       this.element.classList.add( "draggable" );
-    Draggable.elements.add( this.element );
+    DraggableElement.elements.add( this.element );
   }
 
   /**
    * Faz com que quando este elemento for arrastado ele sobreponha todos os outros na lista de arrastáveis
    */
   private override() {
-    if ( Draggable.elements.length <= 1 ) return;
+    if ( DraggableElement.elements.length <= 1 ) return;
 
-    const i = Draggable.elements.indexOf( this.element );
-    const last = Draggable.elements.length - 1;
+    const i = DraggableElement.elements.indexOf( this.element );
+    const last = DraggableElement.elements.length - 1;
     if ( i === last ) return;
 
-    Draggable.elements.swap( i, last );
+    DraggableElement.elements.swap( i, last );
   }
 
   /**

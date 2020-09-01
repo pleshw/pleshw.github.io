@@ -9,5 +9,6 @@ function _main() {
   const elementList = <HTMLCollectionOf<HTMLElement>>document.body.getElementsByTagName( "*" );
 
   for ( let i = 0; i < elementList.length; i++ ) {
+
   }
 }

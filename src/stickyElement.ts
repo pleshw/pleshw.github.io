@@ -1,1 +1,0 @@
-// function makeSticky( element: MobileElement, target: HTMLElement, threshold: number ) { }

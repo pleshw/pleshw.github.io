@@ -1,11 +1,7 @@
 "use strict";
-class MobileElement {
+class MobileElement extends DefaultElement {
     constructor(element) {
-        this.stepWidth = 1;
-        this.stepHeight = 1;
-        this.element = element;
-        this.elementStyle = element.style;
-        this.elementRect = element.getBoundingClientRect();
+        super(element);
     }
     /**
      * Acessadores de posição

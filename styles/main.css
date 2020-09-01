@@ -24,6 +24,7 @@ body {
 
 
   overflow-x: hidden;
+  overflow-y: auto;
 
   /* Required for text-overflow to do anything */
 
@@ -63,6 +64,7 @@ li>a:hover {
 
 ul {
   list-style: circle;
+  overflow: visible;
 }
 
 li {

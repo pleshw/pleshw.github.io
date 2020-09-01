@@ -1,16 +1,6 @@
-class MobileElement {
-  element: HTMLElement;
-  elementRect: DOMRect;
-  elementStyle: CSSStyleDeclaration;
-
-  stepWidth: number = 1;
-  stepHeight: number = 1;
-
-
+class MobileElement extends DefaultElement {
   constructor( element: HTMLElement ) {
-    this.element = element;
-    this.elementStyle = element.style;
-    this.elementRect = <DOMRect>element.getBoundingClientRect();
+    super( element );
   }
 
   /**
