@@ -8,10 +8,10 @@ function setShadowDiv( element: HTMLElement ): HTMLElement {
 
   setInterval( () => window.requestAnimationFrame( () => {
     if ( !elementsFit( element, shadow ) )
-      coverElement( element, shadow );
+      makeCover( element, shadow );
   } ), 100 );
 
-  coverElement( element, shadow );
+  makeCover( element, shadow );
   shadow.classList.add( 'slave-1' );
   element.insertAdjacentElement( 'beforebegin', shadow );
 

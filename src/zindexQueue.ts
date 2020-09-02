@@ -1,3 +1,7 @@
+/**
+ * Um container que muda o zindex do elemento que é inserido nele
+ * O elemento inserido terá o zindex alterado para o 'level' do container 
+ */
 class ZIndexContainer {
   private _level: number;
   private _element: HTMLElement;
@@ -25,16 +29,21 @@ class ZIndexContainer {
   }
 }
 
+
+
+/**
+ * Uma fila que organiza os elementos por ordem de ZIndex
+ */
 class ZIndexQueue {
   private arr: ZIndexContainer[] = new Array();
 
-  public add( value: HTMLElement ): void {
-    this.arr.push( new ZIndexContainer( value, this.arr.length ) );
-  }
-
   get length(): number { return this.arr.length }
 
-  indexOf = ( value: HTMLElement ) => this.arr.map( ( { element } ) => element ).indexOf( value );
+  public indexOf =
+    ( value: HTMLElement ) => this.arr.map( ( { element } ) => element ).indexOf( value );
+
+  public add =
+    ( value: HTMLElement ): void => { this.arr.push( new ZIndexContainer( value, this.arr.length ) ); }
 
   public remove( index: number ): void;
   public remove( value: HTMLElement ): void;
@@ -46,9 +55,6 @@ class ZIndexQueue {
       this.arr[j].level -= 1;
   }
 
-  public swap( a: number, b: number ): void {
-    let aux = this.arr[a].element;
-    this.arr[a].element = this.arr[b].element;
-    this.arr[b].element = aux;
-  }
+  public swap =
+    ( a: number, b: number ) => { [this.arr[a].element, this.arr[b].element] = [this.arr[b].element, this.arr[a].element]; }
 }

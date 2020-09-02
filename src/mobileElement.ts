@@ -3,9 +3,6 @@ class MobileElement extends DefaultElement {
     super( element );
   }
 
-  /**
-   * Acessadores de posição
-   */
   public get x(): number {
     return this.elementRect.left;
   }

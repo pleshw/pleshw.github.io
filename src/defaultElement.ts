@@ -1,4 +1,4 @@
-abstract class DefaultElement {
+class DefaultElement {
   protected element: HTMLElement;
   protected elementRect: DOMRect;
   protected elementStyle: CSSStyleDeclaration;

@@ -66,8 +66,8 @@
         "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
       },
       "../src/defaultelement.ts": {
-        "version": "4bbb16f813c22b8c56d437312e36f4dfac04ffb89435090ec3e16eab8fdac790",
-        "signature": "0e4b4df69f8b3cdcb2678ef8f15d30515b3cec3011de2b4748b1c2fa021076a0"
+        "version": "de9680fb098c27f421e4ebd52b6917e255d944cd496d149e6fb4a89785602ce2",
+        "signature": "094dacd42b917cb59bd38533dc8aacd09ae39b4d299c2c26426fe0270247f2ad"
       },
       "../src/draggableelement.ts": {
         "version": "728efbb6c9d3e3ae9456dd24b29acb71757b93a3bd455edf3473f19f4a816d6b",
@@ -86,27 +86,23 @@
         "signature": "b4d06daa95e88085172e9467db815959dd28a5510cb1dedf96e0df2933969c9b"
       },
       "../src/elementgeometric.ts": {
-        "version": "37dcb14e7fd70fb25fdf18de46e9265e8403e9860b108d308d7bccfb3f5c093b",
-        "signature": "34cb25958458fd0b222cf6a8f780c26da1899d9c22cad0d3d1c2c451595a43f8"
-      },
-      "../src/elementshape.ts": {
-        "version": "356b03bb6eb19f77ddaedd7462fae4f83909589d7581ba8f92529280130e142b",
-        "signature": "899340021f1b2a6faf82073d140d396f82d82418981ecc0cf7cca436dee2e047"
+        "version": "0083dcf988c795f0312b6b4a46b20d02c8ac53701e505f753f2938388915788e",
+        "signature": "19afd3257a5130ebbde7c922351b232f1dca5399b508a2e1f3d30c95431f6a67"
       },
       "../src/main.ts": {
-        "version": "0a878df7dbc1d248c40211f91b5cf9d0796d041ed2c627d303734c9246d714db",
+        "version": "e1273d206e766ced5852aedf60a193249fb0677dcf9e79692eccdf3e27686d64",
         "signature": "de68198eea8ac63480f8eae7379fa4b68d287d977049337e0f81411749b726ab"
       },
       "../src/mobileelement.ts": {
-        "version": "e6106a0a39ce9bbe1fdf28eede3a0cf27509fe33fa2324bbdc5a0d54a02ec60d",
-        "signature": "0980bff57d43736ce27006c6ee3c807bd5c0dadd00a6d4a50dd77fa10eaf7420"
+        "version": "99d736f043734bdd7fb9d607059c89ec1cb75ce77cfd552a6b9a7cb1b3414c4e",
+        "signature": "b5da72761be48ff1cca695b0f445fd1663d9e956d9888f44277e368573e09818"
       },
       "../src/sensitiveelement.ts": {
         "version": "022549fd0f38a9bd296a592796e8a73c6b3d2bacac97b78d78ea9335b67b50f5",
         "signature": "0111d6e13ad3ec70ae7a7f3bf808e813507923734f1681f82814fd75f8220a55"
       },
       "../src/shadowdiv.ts": {
-        "version": "be1e83b4282b9bab50afc1a1bb42159cd622c34a5ad1b22895004729cc95af73",
+        "version": "c6d82fa8f7f4ca6fe8265bb2af31a91bbfa053ae441f140fed2bbe00328568c1",
         "signature": "f0c539cfe95df5ddfbf2042046946c209ba93f44a8532418a33ae5a022140cbb"
       },
       "../src/stickyelement.ts": {
@@ -114,8 +110,8 @@
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
       "../src/zindexqueue.ts": {
-        "version": "d89aba1b2226affa4d1671586954288c68ac6e6443393f98f0db8339b4cdce40",
-        "signature": "3f8742baff5bd714960b224ff798d60a8b599db2416a54c97d98e3dcabf013e9"
+        "version": "58e62ace42654d160c6ae6bd9a3e3eb84af6619e1c4abb31ca84230e15d650e2",
+        "signature": "0bba7b447ea85206a8020a2e35c68311289b6d74ab16714fcba5efff3252f724"
       }
     },
     "options": {
@@ -149,7 +145,6 @@
       "../src/elementattributes.ts",
       "../src/elementbuilder.ts",
       "../src/elementgeometric.ts",
-      "../src/elementshape.ts",
       "../src/main.ts",
       "../src/mobileelement.ts",
       "../src/sensitiveelement.ts",
