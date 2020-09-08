@@ -2,10 +2,19 @@
 type trigger_func = () => boolean;
 
 class SensitiveElement extends DefaultElement {
-  //relatedElements: Map<trigger_func, ElementAnimator> = new Map();
+  animator: IElementAnimator;
+  trigger: trigger_func;
 
+  // Número de vezes, por segundo, em que se é checado se o elemento deve ser alterado
+  tickRate: number;
 
-  constructor( element: HTMLElement ) {
+  constructor( element: HTMLElement, animator: IElementAnimator, trigger: trigger_func, ticksPerSecond: number = 1 ) {
     super( element );
+    this.trigger = trigger;
+    this.animator = animator;
+    this.tickRate = Math.floor( 1000 / ticksPerSecond );
+    this.init();
   }
+
+  init = () => setInterval( () => this.trigger() ? this.animator.animate( this.element ) : {}, this.tickRate )
 }

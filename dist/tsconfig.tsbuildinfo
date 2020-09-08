@@ -65,6 +65,10 @@
         "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
         "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
       },
+      "../src/ielementanimator.ts": {
+        "version": "a8b97a0c8f898d05989e1a75e053e0fa1b9320edee238bae8aaacafcbc11398a",
+        "signature": "f9d5ec9ceef4020a7b2976e77e64c8f62a400ea31de1d9e5b69d9afc9a158a52"
+      },
       "../src/defaultelement.ts": {
         "version": "de9680fb098c27f421e4ebd52b6917e255d944cd496d149e6fb4a89785602ce2",
         "signature": "094dacd42b917cb59bd38533dc8aacd09ae39b4d299c2c26426fe0270247f2ad"
@@ -98,8 +102,8 @@
         "signature": "b5da72761be48ff1cca695b0f445fd1663d9e956d9888f44277e368573e09818"
       },
       "../src/sensitiveelement.ts": {
-        "version": "022549fd0f38a9bd296a592796e8a73c6b3d2bacac97b78d78ea9335b67b50f5",
-        "signature": "0111d6e13ad3ec70ae7a7f3bf808e813507923734f1681f82814fd75f8220a55"
+        "version": "687fad7eb31d99d16ebdee2051a36630ac0b0666eafa98c820d1273e96a37a9d",
+        "signature": "0714e861344681c5a2b855cf1a64920a307d160f6e901067921ecddf097aba74"
       },
       "../src/shadowdiv.ts": {
         "version": "c6d82fa8f7f4ca6fe8265bb2af31a91bbfa053ae441f140fed2bbe00328568c1",
@@ -138,7 +142,7 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es6.d.ts",
+      "../src/ielementanimator.ts",
       "../src/defaultelement.ts",
       "../src/draggableelement.ts",
       "../src/elementactions.ts",
@@ -151,8 +155,9 @@
       "../src/shadowdiv.ts",
       "../src/stickyelement.ts",
       "../src/zindexqueue.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es6.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.dom.iterable.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
