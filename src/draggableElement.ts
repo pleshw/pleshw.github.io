@@ -24,6 +24,11 @@ class DraggableElement extends MobileElement {
     this.element.style.position = 'absolute'
     this.x = prev.x;
     this.y = prev.y;
+
+    if ( this.element.parentElement !== null ) {
+      this.element.parentElement.style.height = "100%";
+      this.element.parentElement.style.overflow = "visible";
+    }
   }
 
 

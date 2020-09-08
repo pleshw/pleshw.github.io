@@ -74,7 +74,7 @@
         "signature": "094dacd42b917cb59bd38533dc8aacd09ae39b4d299c2c26426fe0270247f2ad"
       },
       "../src/draggableelement.ts": {
-        "version": "728efbb6c9d3e3ae9456dd24b29acb71757b93a3bd455edf3473f19f4a816d6b",
+        "version": "55cfe2cc0c39c200baa42b727b09b3a9f27fa08c64b77ac2236efebc13feb8cc",
         "signature": "842c0ebd99a0016072ff81f5f67cdbf6b68042b65b1f4a01e0d82c85a27cbbc9"
       },
       "../src/elementactions.ts": {
@@ -102,7 +102,7 @@
         "signature": "b5da72761be48ff1cca695b0f445fd1663d9e956d9888f44277e368573e09818"
       },
       "../src/sensitiveelement.ts": {
-        "version": "687fad7eb31d99d16ebdee2051a36630ac0b0666eafa98c820d1273e96a37a9d",
+        "version": "8eb2e6c56afbf15dfac6fd3739880735a90d02e03fea7d1ca6be6fa6019fda0a",
         "signature": "0714e861344681c5a2b855cf1a64920a307d160f6e901067921ecddf097aba74"
       },
       "../src/shadowdiv.ts": {
@@ -142,19 +142,6 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
-      "../src/ielementanimator.ts",
-      "../src/defaultelement.ts",
-      "../src/draggableelement.ts",
-      "../src/elementactions.ts",
-      "../src/elementattributes.ts",
-      "../src/elementbuilder.ts",
-      "../src/elementgeometric.ts",
-      "../src/main.ts",
-      "../src/mobileelement.ts",
-      "../src/sensitiveelement.ts",
-      "../src/shadowdiv.ts",
-      "../src/stickyelement.ts",
-      "../src/zindexqueue.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es6.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts",
@@ -170,7 +157,20 @@
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts"
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../src/ielementanimator.ts",
+      "../src/defaultelement.ts",
+      "../src/elementactions.ts",
+      "../src/elementattributes.ts",
+      "../src/elementbuilder.ts",
+      "../src/elementgeometric.ts",
+      "../src/main.ts",
+      "../src/mobileelement.ts",
+      "../src/sensitiveelement.ts",
+      "../src/shadowdiv.ts",
+      "../src/stickyelement.ts",
+      "../src/zindexqueue.ts",
+      "../src/draggableelement.ts"
     ]
   },
   "version": "3.6.4"
