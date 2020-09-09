@@ -14,9 +14,12 @@ class DraggableElement extends MobileElement {
     }
     setAbsolute() {
         let prev = { x: this.x, y: this.y };
-        this.element.style.position = 'absolute';
+        this.element.style.position = 'absolute', "important";
         this.x = prev.x;
         this.y = prev.y;
+        this.flexAdjust();
+    }
+    flexAdjust() {
         if (this.element.parentElement !== null) {
             this.element.parentElement.style.height = "100%";
             this.element.parentElement.style.overflow = "visible";
@@ -51,6 +54,7 @@ class DraggableElement extends MobileElement {
     mouseMove(mouseEvent) {
         this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
         this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
+        // console.log( this.element.id, this.x, this.y );
     }
     /**
      * Guarda a posição do mouse em relação a tela

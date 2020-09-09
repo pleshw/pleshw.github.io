@@ -74,8 +74,8 @@
         "signature": "094dacd42b917cb59bd38533dc8aacd09ae39b4d299c2c26426fe0270247f2ad"
       },
       "../src/draggableelement.ts": {
-        "version": "55cfe2cc0c39c200baa42b727b09b3a9f27fa08c64b77ac2236efebc13feb8cc",
-        "signature": "842c0ebd99a0016072ff81f5f67cdbf6b68042b65b1f4a01e0d82c85a27cbbc9"
+        "version": "24ee4bd25d47fa1754a72add53a64b8273ddfb7ccb141cf24a3e2eb31cd38f19",
+        "signature": "dfd924cab3a54cc209c6d594540a63943db0678a68e494d2a16c7ae4588476cf"
       },
       "../src/elementactions.ts": {
         "version": "32e2ea41a2c405f1d1a7919c69c2ae19f22328e8130a8efeb4729127d0b6861a",
@@ -86,8 +86,8 @@
         "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
       },
       "../src/elementbuilder.ts": {
-        "version": "39f4b25b942f9f9c1814a9e17e617ed39797a42cad2b875688a6a37fff275058",
-        "signature": "b4d06daa95e88085172e9467db815959dd28a5510cb1dedf96e0df2933969c9b"
+        "version": "3a8d17724e1923aa1736edfa8cbb7b30f6d58071ed58ef2961384e0ce84f12e8",
+        "signature": "346ee91713a1adccbc86c2c0d28e9948d8f38943907fc1f742ba35122d786bbc"
       },
       "../src/elementgeometric.ts": {
         "version": "0083dcf988c795f0312b6b4a46b20d02c8ac53701e505f753f2938388915788e",
@@ -98,8 +98,8 @@
         "signature": "de68198eea8ac63480f8eae7379fa4b68d287d977049337e0f81411749b726ab"
       },
       "../src/mobileelement.ts": {
-        "version": "99d736f043734bdd7fb9d607059c89ec1cb75ce77cfd552a6b9a7cb1b3414c4e",
-        "signature": "b5da72761be48ff1cca695b0f445fd1663d9e956d9888f44277e368573e09818"
+        "version": "5d17ade7753e14c6e61837199625cef9db326d15d7e05f673bc9ad0a3fb44c95",
+        "signature": "843d0486a9fc86ba4386722c0105c8d90623fab6ebf40e71f1a12bb618b5aab6"
       },
       "../src/sensitiveelement.ts": {
         "version": "8eb2e6c56afbf15dfac6fd3739880735a90d02e03fea7d1ca6be6fa6019fda0a",
@@ -160,6 +160,7 @@
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
       "../src/ielementanimator.ts",
       "../src/defaultelement.ts",
+      "../src/draggableelement.ts",
       "../src/elementactions.ts",
       "../src/elementattributes.ts",
       "../src/elementbuilder.ts",
@@ -169,8 +170,7 @@
       "../src/sensitiveelement.ts",
       "../src/shadowdiv.ts",
       "../src/stickyelement.ts",
-      "../src/zindexqueue.ts",
-      "../src/draggableelement.ts"
+      "../src/zindexqueue.ts"
     ]
   },
   "version": "3.6.4"

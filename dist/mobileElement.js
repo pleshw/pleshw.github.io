@@ -2,12 +2,17 @@
 class MobileElement extends DefaultElement {
     constructor(element) {
         super(element);
+        this.offsetParent = (this.element.offsetParent);
     }
     get x() {
-        return this.elementRect.left;
+        return (this.offsetParent === null)
+            ? this.elementRect.left
+            : this.elementRect.left - this.offsetParent.offsetLeft;
     }
     get y() {
-        return this.elementRect.top;
+        return (this.offsetParent === null)
+            ? this.elementRect.top
+            : this.elementRect.top;
     }
     /**
      * Acessadores de posição relativo a janela scrollada

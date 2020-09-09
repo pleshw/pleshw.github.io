@@ -2,6 +2,7 @@
 class ElementBuilder {
     constructor(tag) {
         this.parent = document.body;
+        this.children = new Map();
         this.adjacentElement = null;
         this.adjacentPosition = 'beforebegin';
         this.element = document.createElement(tag);
@@ -10,20 +11,31 @@ class ElementBuilder {
         this.element.setAttribute(attrName, value);
         return this;
     }
-    addClass(value) {
-        this.element.classList.add(value);
+    setClass(...value) {
+        this.element.classList.add(...value);
         return this;
     }
     setWidth(value) {
-        this.element.style.width = value.toString().concat('px');
-        return this;
+        return this.setStyle('width', value);
     }
     setHeight(value) {
-        this.element.style.height = value.toString().concat('px');
-        return this;
+        return this.setStyle('height', value);
+    }
+    setMargin(value) {
+        return this.setStyle('margin', value);
+    }
+    setMaxWidth(value) {
+        return this.setStyle('max-width', value);
+    }
+    setFlex(value) {
+        return this.setStyle('flex', value);
     }
     setParent(element) {
         this.parent = element;
+        return this;
+    }
+    setChildren(id, element) {
+        this.children.set(id, element);
         return this;
     }
     insertBefore(element) {
@@ -51,11 +63,17 @@ class ElementBuilder {
         this.element.style.top = pos.y.toString().concat('px');
         return this;
     }
+    setStyle(property, value) {
+        console.log(property, value);
+        this.element.style.setProperty(property, (typeof value === 'string') ? value : value.toString().concat('px'));
+        return this;
+    }
     build() {
         if (this.adjacentElement !== null)
             this.adjacentElement.insertAdjacentElement(this.adjacentPosition, this.element);
         else
             this.parent.appendChild(this.element);
+        this.children.forEach((c) => { this.element.appendChild(c); });
         return this.element;
     }
 }

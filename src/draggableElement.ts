@@ -21,10 +21,13 @@ class DraggableElement extends MobileElement {
 
   protected setAbsolute() {
     let prev: { x: number, y: number } = { x: this.x, y: this.y };
-    this.element.style.position = 'absolute'
+    this.element.style.position = 'absolute', "important";
     this.x = prev.x;
     this.y = prev.y;
+    this.flexAdjust();
+  }
 
+  private flexAdjust() {
     if ( this.element.parentElement !== null ) {
       this.element.parentElement.style.height = "100%";
       this.element.parentElement.style.overflow = "visible";
@@ -63,6 +66,7 @@ class DraggableElement extends MobileElement {
   private mouseMove( mouseEvent: MouseEvent ) {
     this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
     this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
+    // console.log( this.element.id, this.x, this.y );
   }
 
   private addMoveListener =

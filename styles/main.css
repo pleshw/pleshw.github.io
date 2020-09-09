@@ -164,7 +164,8 @@ button:hover:disabled {
 }
 
 
-.btn-1:hover:enabled,
+
+.btn-1:active:enabled,
 .btn-2:hover:enabled,
 .btn-3:hover:enabled {
   transform: translate(-1px, 1px) !important;
@@ -196,7 +197,7 @@ button:hover:disabled,
 }
 
 
-.btn-2:focus {
+.btn-2:active {
   outline-color: grey;
   box-shadow: none;
   outline: 2px solid;
@@ -208,6 +209,10 @@ button:hover:disabled,
 }
 
 .btn-3:hover {
+  box-shadow: none;
+}
+
+.btn-3:focus {
   box-shadow: none;
 }
 
@@ -376,7 +381,7 @@ button:hover:disabled {
   box-shadow: none;
 }
 
-.btn-3:focus {
+.btn-3:active {
   outline: 3px solid lightgrey;
   box-shadow: none;
 }
