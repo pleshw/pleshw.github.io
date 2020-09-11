@@ -1,3 +1,3 @@
 interface IElementAnimator {
-  animate( element: HTMLElement ): void;
+  animate( elements: HTMLElement ): void;
 }

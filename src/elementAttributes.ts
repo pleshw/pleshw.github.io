@@ -1,5 +1,23 @@
 type t_trigger = { element: Element, targets: Element[] };
 
+
+
+function getChildrenWithTag( element: HTMLElement, tagname: string ): HTMLElement[] {
+  const children = element.children;
+  const result = [];
+
+  for ( let child of children ) {
+    if ( child.hasChildNodes() )
+      result.push( ...getChildrenWithTag( <HTMLElement>child, tagname ) );
+
+    if ( child.tagName.toLowerCase() === tagname )
+      result.push( <HTMLElement>child );
+  }
+  return result;
+}
+
+
+
 /**
  * Return all elements with the following attribute name.
  */

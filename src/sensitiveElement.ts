@@ -1,7 +1,7 @@
 // uma função que será analisada a cada interação dos objetos relacionados ao SensitiveElement
 type trigger_func = () => boolean;
 
-class SensitiveElement extends DefaultElement {
+abstract class SensitiveElement extends DefaultElement {
   animator: IElementAnimator;
   trigger: trigger_func;
 
@@ -16,5 +16,7 @@ class SensitiveElement extends DefaultElement {
     this.init();
   }
 
-  init = () => setInterval( () => this.trigger() ? this.animator.animate( this.element ) : {}, this.tickRate )
+  abstract animate(): void;
+
+  init = () => setInterval( () => this.trigger() ? this.animate() : {}, this.tickRate )
 }

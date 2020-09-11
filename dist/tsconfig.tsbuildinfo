@@ -65,9 +65,21 @@
         "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
         "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
       },
+      "../src/changeimganimation.ts": {
+        "version": "8d05c612fa23efc4ab80a485ab0770379f8d6ed5a172df5bf67fd815a6903ee2",
+        "signature": "9f1f8da2db62e58957be7fb995da1141b5ab8e44e3168beb151a7536495f1a7c"
+      },
+      "../src/colliderelement.ts": {
+        "version": "e06c3f0c83224ef999a49c37e1a0c81fc806e6186572d91a1bf999497248fcb7",
+        "signature": "5787bd4264412ccb9cee1f7cab81b136f57fb849e5eec5797989920cf3052e2b"
+      },
       "../src/ielementanimator.ts": {
-        "version": "a8b97a0c8f898d05989e1a75e053e0fa1b9320edee238bae8aaacafcbc11398a",
-        "signature": "f9d5ec9ceef4020a7b2976e77e64c8f62a400ea31de1d9e5b69d9afc9a158a52"
+        "version": "62bb572c1c2ee9ad2f74ac3199c0412d0e88d96556c390916c8501cb243d0a23",
+        "signature": "f0636155e6b742c616267a80542041ff1090c471196a14038b56d19b66f91f1d"
+      },
+      "../src/loganimation.ts": {
+        "version": "e0614ed2696268209353efa41f51257096a8bdf799df53605c9c63a0858ceba3",
+        "signature": "fec6663140b5fb8026fe9d374a06a432db60c798d57c94151bc3b669fefca47b"
       },
       "../src/defaultelement.ts": {
         "version": "de9680fb098c27f421e4ebd52b6917e255d944cd496d149e6fb4a89785602ce2",
@@ -78,12 +90,12 @@
         "signature": "dfd924cab3a54cc209c6d594540a63943db0678a68e494d2a16c7ae4588476cf"
       },
       "../src/elementactions.ts": {
-        "version": "32e2ea41a2c405f1d1a7919c69c2ae19f22328e8130a8efeb4729127d0b6861a",
+        "version": "7d391408b5c32fbb141238b81a1ca55b6b1d69a38adfb3165fc445c04638016f",
         "signature": "2a29d4521d6eb3913a814e0a3918ea63be2610ecf5f3efa35a3f9b16f74aa29d"
       },
       "../src/elementattributes.ts": {
-        "version": "55ca8e1115297a7914c9ecd17e88312f0d88cb635a0d16595e2b16eedcea00b9",
-        "signature": "0c11c8e49287bd564cfa195b6f79ba99f5890c11a78fd08c78bd609b36376578"
+        "version": "a134ee4bfb6c5212393363e52c66022986b5eca6b93fcbef2d2166050786f710",
+        "signature": "e65d68b52920ec9f491e6bb459b01019474e165d1db4ffd6f89d0a836ec0e0ed"
       },
       "../src/elementbuilder.ts": {
         "version": "3a8d17724e1923aa1736edfa8cbb7b30f6d58071ed58ef2961384e0ce84f12e8",
@@ -94,7 +106,7 @@
         "signature": "19afd3257a5130ebbde7c922351b232f1dca5399b508a2e1f3d30c95431f6a67"
       },
       "../src/main.ts": {
-        "version": "e1273d206e766ced5852aedf60a193249fb0677dcf9e79692eccdf3e27686d64",
+        "version": "63c46de11066f884a1aeec9c6305f6a0d9bf508c8b9e9baa8bb19f8a69a7422a",
         "signature": "de68198eea8ac63480f8eae7379fa4b68d287d977049337e0f81411749b726ab"
       },
       "../src/mobileelement.ts": {
@@ -102,16 +114,12 @@
         "signature": "843d0486a9fc86ba4386722c0105c8d90623fab6ebf40e71f1a12bb618b5aab6"
       },
       "../src/sensitiveelement.ts": {
-        "version": "8eb2e6c56afbf15dfac6fd3739880735a90d02e03fea7d1ca6be6fa6019fda0a",
-        "signature": "0714e861344681c5a2b855cf1a64920a307d160f6e901067921ecddf097aba74"
+        "version": "996ea3d2c550d0f8814109356e458c727767a027c61ffc49667f600446ce15ff",
+        "signature": "69af7f828ceed56c2d976fd286522531d5a5b4a5d3f150369591ff24edb47a35"
       },
       "../src/shadowdiv.ts": {
         "version": "c6d82fa8f7f4ca6fe8265bb2af31a91bbfa053ae441f140fed2bbe00328568c1",
         "signature": "f0c539cfe95df5ddfbf2042046946c209ba93f44a8532418a33ae5a022140cbb"
-      },
-      "../src/stickyelement.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
       "../src/zindexqueue.ts": {
         "version": "58e62ace42654d160c6ae6bd9a3e3eb84af6619e1c4abb31ca84230e15d650e2",
@@ -158,7 +166,10 @@
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../src/changeimganimation.ts",
+      "../src/colliderelement.ts",
       "../src/ielementanimator.ts",
+      "../src/loganimation.ts",
       "../src/defaultelement.ts",
       "../src/draggableelement.ts",
       "../src/elementactions.ts",
@@ -169,7 +180,6 @@
       "../src/mobileelement.ts",
       "../src/sensitiveelement.ts",
       "../src/shadowdiv.ts",
-      "../src/stickyelement.ts",
       "../src/zindexqueue.ts"
     ]
   },

@@ -7,13 +7,7 @@ document.addEventListener( "DOMContentLoaded", () => _main() );
  */
 function _main() {
   // const elementList = <HTMLCollectionOf<HTMLElement>>document.body.getElementsByTagName( "*" );
-  const test1 = document.getElementById( 'square-drag-1' )
-  const test2 = document.getElementById( 'square-drag-2' )
-
-  setInterval( () => {
-    if ( collide( test1!, test2! ) )
-      console.log( "!!!" );
-  }, 500 )
+getElementsByAttribute
 
   // for ( let i = 0; i < elementList.length; i++ ) {
 

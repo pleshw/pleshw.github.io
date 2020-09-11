@@ -1,4 +1,15 @@
 "use strict";
+function getChildrenWithTag(element, tagname) {
+    const children = element.children;
+    const result = [];
+    for (let child of children) {
+        if (child.hasChildNodes())
+            result.push(...getChildrenWithTag(child, tagname));
+        if (child.tagName.toLowerCase() === tagname)
+            result.push(child);
+    }
+    return result;
+}
 /**
  * Return all elements with the following attribute name.
  */
