@@ -66,7 +66,6 @@ class DraggableElement extends MobileElement {
   private mouseMove( mouseEvent: MouseEvent ) {
     this.x = mouseEvent.clientX + window.scrollX - this.holdingAt.x;
     this.y = mouseEvent.clientY + window.scrollY - this.holdingAt.y;
-    // console.log( this.element.id, this.x, this.y );
   }
 
   private addMoveListener =

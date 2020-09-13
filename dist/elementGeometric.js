@@ -57,7 +57,7 @@ function getPosition(element) {
 /**
 * Retorna a posição e as dimensões do elemento.
 */
-let getElementRect = (element) => (Object.assign(Object.assign({}, getPosition(element)), getDimensions(element)));
+let getElementRect = (element) => ({ ...getPosition(element), ...getDimensions(element) });
 /**
 * Checa se dois elementos tem mesma altura e largura.
 */

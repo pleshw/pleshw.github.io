@@ -7,7 +7,7 @@ document.addEventListener( "DOMContentLoaded", () => _main() );
  */
 function _main() {
   // const elementList = <HTMLCollectionOf<HTMLElement>>document.body.getElementsByTagName( "*" );
-getElementsByAttribute
+
 
   // for ( let i = 0; i < elementList.length; i++ ) {
 
