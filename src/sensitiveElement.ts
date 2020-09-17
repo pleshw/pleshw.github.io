@@ -17,21 +17,29 @@ class SensitiveElement extends DefaultElement {
   }
 
   /**  
-   * Se houverem containers não nulos, verifica-se então se existem animadores não nulos
-   * então verifica-se se os seus gatilhos devem ser acionados. 
+   * Se houverem containers não nulos, verifica se os seus gatilhos devem ser acionados,
+   * verifica se existem animadores não nulos então anima o elemento caso haja um disponível. 
    * Se foram acionados então a classe chama a função de animação para aquele gatilho
   */
   init =
     () => setInterval(
       () => this.animators.forEach(
-        container =>
-          container
-            ? container.trigger()
-              ? container.animator() !== null
-                ? container.animator()!.animate( this.element )
-                : {}
-              : {}
-            : {} ),
+        container => {
+          if ( container )
+            if ( container.trigger() && container.animator() ) {
+              if ( container.animator()!.ready )
+                switch ( container.animator()!.iteration ) {
+                  case 'infinite':
+                    container.animator()!.animate( this.element )
+                    break;
+                  default:
+                    container.animator()!.animate( this.element )
+                    container.animator()!.ready = false;
+                    break;
+                }
+            }
+        }
+      ),
       this.tickRate )
 
 }
