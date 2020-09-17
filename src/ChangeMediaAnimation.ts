@@ -23,7 +23,7 @@ class ChangeMediaAnimation implements IElementAnimator {
       const src = element.src.substr( element.src.length - this.src.length );
       if ( element.classList.contains( 'mutable' ) ) {
         info.count++;
-        if ( src !== this.src ) {
+        if ( src !== this.src || src === '' ) {
           element.src = this.src;
           info.srcChanged = true;
         }

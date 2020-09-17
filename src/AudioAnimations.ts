@@ -108,3 +108,39 @@ class AudioSlowDownOnRepeatAnimation extends ChangeAudioStateAnimation {
     } );
   }
 }
+
+
+class PlayAudioChangeImgAnimation implements IElementAnimator {
+  ready = true;
+  iteration: t_iteration = 'alternate';
+  playAudio: AudioPlayAnimation;
+  changeImg: ChangeImgAnimation;
+
+  constructor( audioSrc: string, imgSrc: string ) {
+    this.playAudio = new AudioPlayAnimation( audioSrc );
+    this.changeImg = new ChangeImgAnimation( imgSrc );
+  }
+
+  public animate( element: HTMLElement ) {
+    this.playAudio.animate( element );
+    this.changeImg.animate( element );
+  }
+}
+
+
+class StopAudioRemoveImgAnimation implements IElementAnimator {
+  ready = false;
+  iteration: t_iteration = 'alternate';
+  changeAudio: ChangeAudioAnimation;
+  changeImg: ChangeImgAnimation;
+
+  constructor() {
+    this.changeAudio = new ChangeAudioAnimation( '' );
+    this.changeImg = new ChangeImgAnimation( '' );
+  }
+
+  public animate( element: HTMLElement ) {
+    this.changeAudio.animate( element );
+    this.changeImg.animate( element );
+  }
+}

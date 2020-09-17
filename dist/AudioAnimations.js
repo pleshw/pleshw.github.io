@@ -93,3 +93,27 @@ class AudioSlowDownOnRepeatAnimation extends ChangeAudioStateAnimation {
         this.iteration = 'infinite';
     }
 }
+class PlayAudioChangeImgAnimation {
+    constructor(audioSrc, imgSrc) {
+        this.ready = true;
+        this.iteration = 'alternate';
+        this.playAudio = new AudioPlayAnimation(audioSrc);
+        this.changeImg = new ChangeImgAnimation(imgSrc);
+    }
+    animate(element) {
+        this.playAudio.animate(element);
+        this.changeImg.animate(element);
+    }
+}
+class StopAudioRemoveImgAnimation {
+    constructor() {
+        this.ready = false;
+        this.iteration = 'alternate';
+        this.changeAudio = new ChangeAudioAnimation('');
+        this.changeImg = new ChangeImgAnimation('');
+    }
+    animate(element) {
+        this.changeAudio.animate(element);
+        this.changeImg.animate(element);
+    }
+}
