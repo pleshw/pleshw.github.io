@@ -154,15 +154,15 @@
         "signature": "333179070f192f65baf9ee71cde50b3ba2f8bfe16d7531fb0a9edf705fbb0ec4"
       },
       "../src/changeimganimation.ts": {
-        "version": "bfa144b0bcb6a71eba26d0a25fe1151d9c873fc058d86b5e66719a6e34f2332a",
-        "signature": "44a91b0e2a63254502680bdac8a212e1a8e2a1b7809f18834add70558fe9158d"
+        "version": "69ef64fe5cad920f6062d6f6dc9c9780527514346aaa193fa7a98abea82b20dc",
+        "signature": "426cf0dbb906c0727537966685ee33b7cfbd5c9d18f142907fe194cbfda39cdf"
       },
       "../src/changemediaanimation.ts": {
         "version": "5c67b96429b904a1e49a2007cc4352e46cb0f43effdd41dbd397cc70c086cf11",
         "signature": "3582874f55727cdde4707b55dc2dfe636edfa80998c7c565345bf76c27b50444"
       },
       "../src/colliderelement.ts": {
-        "version": "168513beb2ae5cd5b4a54f1ea49e9212b4db852002063033bc5b8bd1dcd902cb",
+        "version": "0d022d69e2788aeca46893f4f99416d5e1c5182ed7bfed750d15e5507a3cca60",
         "signature": "9d31620c7fe46863fe01d5b3d22ec137da426283f93615bfc83da6b22c5ac11d"
       },
       "../src/ielementanimator.ts": {
@@ -250,6 +250,27 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
+      "../src/changeimganimation.ts",
+      "../src/audioanimations.ts",
+      "../src/changeaudioanimation.ts",
+      "../src/changeaudiostateanimation.ts",
+      "../src/changemediaanimation.ts",
+      "../src/colliderelement.ts",
+      "../src/ielementanimator.ts",
+      "../src/loganimation.ts",
+      "../src/musicanimator.ts",
+      "../src/defaultelement.ts",
+      "../src/draggableelement.ts",
+      "../src/draggablesticky.ts",
+      "../src/elementactions.ts",
+      "../src/elementattributes.ts",
+      "../src/elementbuilder.ts",
+      "../src/elementgeometric.ts",
+      "../src/main.ts",
+      "../src/mobileelement.ts",
+      "../src/sensitiveelement.ts",
+      "../src/shadowdiv.ts",
+      "../src/zindexqueue.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2016.d.ts",
@@ -284,28 +305,7 @@
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2019.object.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2019.string.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2019.symbol.d.ts",
-      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2019.full.d.ts",
-      "../src/changeaudioanimation.ts",
-      "../src/changeaudiostateanimation.ts",
-      "../src/changeimganimation.ts",
-      "../src/colliderelement.ts",
-      "../src/ielementanimator.ts",
-      "../src/loganimation.ts",
-      "../src/musicanimator.ts",
-      "../src/defaultelement.ts",
-      "../src/draggableelement.ts",
-      "../src/draggablesticky.ts",
-      "../src/elementactions.ts",
-      "../src/elementattributes.ts",
-      "../src/elementbuilder.ts",
-      "../src/elementgeometric.ts",
-      "../src/main.ts",
-      "../src/mobileelement.ts",
-      "../src/sensitiveelement.ts",
-      "../src/shadowdiv.ts",
-      "../src/zindexqueue.ts",
-      "../src/audioanimations.ts",
-      "../src/changemediaanimation.ts"
+      "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2019.full.d.ts"
     ]
   },
   "version": "3.6.4"

@@ -32,8 +32,10 @@
 }
 
 .rectangle.square {
-  width: 300px;
-  height: 300px;
+  width: 200px !important;
+  max-width: 200px !important;
+  height: 200px !important;
+  max-height: 200px !important;
 }
 
 

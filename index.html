@@ -45,16 +45,17 @@
 
       <div class="col-4 row justify-content-around">
         <button id="square-drag-1" class="btn-1 mt-2 mb-2">this.daisy</button>
-        <button id="square-drag-3" class="btn-3 mt-2 mb-2">this.flora</button>
+        <button id="square-drag-2" class="btn-3 mt-2 mb-2">this.flora</button>
         <!-- <button id="square-drag-4" class="btn-1 mt-2 mb-2">this.aster</button>
         <button id="square-drag-5" class="btn-1 mt-2 mb-2">this.orchid</button> -->
-        <button id="square-drag-2" class="btn-2 mt-2 mb-2">this.tulip</button>
+        <!-- <button id="square-drag-3" class="btn-2 mt-2 mb-2">this.tulip</button> -->
       </div>
 
 
-      <div id="collider" class="offset-3 col-4  row container rectangle square align-items-center" style="z-index: -1;">
-        <div class="col-12 align-items-center align-content-center">
-          <img id="testImg" class="mutable" src="" alt="">
+      <div id="collider" class="offset-3 col-4 justify-content-center row container rectangle square align-items-center"
+        style="z-index: -1;">
+        <div class="row justify-content-center align-items-center align-content-center">
+          <img id="testImg" class="col-12 mutable" src="" alt="">
         </div>
         <audio class="mutable" src=""></audio>
       </div>
@@ -73,8 +74,8 @@
     const testDrag1 = new DraggableElement(test1)
     const test2 = document.getElementById('square-drag-2')
     const testDrag2 = new DraggableElement(test2)
-    const test3 = document.getElementById('square-drag-3')
-    const testDrag3 = new DraggableElement(test3)
+    // const test3 = document.getElementById('square-drag-3')
+    // const testDrag3 = new DraggableElement(test3)
 
 
     const colliderElement = document.getElementById('collider')
@@ -83,19 +84,14 @@
       colliderElement, // elemento que é alterado
       {
         element: test1, // elemento gatilho
-        animateIn: new PlayAudioChangeImgAnimation('assets/audio/1.mpeg', 'assets/1.gif'), // animação ao entrar em contato
-        animateOut: new StopAudioRemoveImgAnimation() // animação ao sair de contato
+        animateIn: new ChangeImgAnimation('assets/img/eyes.gif'), // animação ao entrar em contato
+        animateOut: new ChangeImgAnimation('') // animação ao sair de contato
       },
       {
         element: test2, // elemento gatilho
-        animateIn: new PlayAudioChangeImgAnimation('assets/audio/2.mpeg', 'assets/2.gif'), // animação ao entrar em contato
-        animateOut: new StopAudioRemoveImgAnimation() // animação ao sair de contato
+        animateIn: new ChangeImgAnimation('assets/img/blink.gif'), // animação ao entrar em contato
+        animateOut: new ChangeImgAnimation('') // animação ao sair de contato
       },
-      {
-        element: test3, // elemento gatilho
-        animateIn: new PlayAudioChangeImgAnimation('assets/audio/3.mpeg', 'assets/3.gif'), // animação ao entrar em contato
-        animateOut: new StopAudioRemoveImgAnimation() // animação ao sair de contato
-      }
     );
     // const testCollider2 = new ColliderElement(colliderElement, test2, new ChangeImgAnimation('assets/2.png'), new ChangeImgAnimation('assets/ico.png'));
     // const testCollider3 = new ColliderElement(colliderElement, test3, new ChangeImgAnimation('assets/3.jpg'), new ChangeImgAnimation('assets/ico.png'));

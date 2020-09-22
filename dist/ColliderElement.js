@@ -57,7 +57,7 @@ class ColliderElement extends SensitiveElement {
                 const animator = this.outerQueue[this.outerQueue.length - 1];
                 if (animator.animateOut.iteration === 'alternate')
                     animator.animateIn.ready = true;
-                return (this.outerQueue.length > 0)
+                return (this.outerQueue.length > 0 && this.innerQueue.length === 0)
                     ? animator.animateOut
                     : null;
             },
