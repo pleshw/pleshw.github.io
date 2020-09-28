@@ -80,7 +80,7 @@ class ColliderElement extends SensitiveElement {
   private collide() {
     this.triggerElements.forEach(
       e => {
-        if ( collide( this.element, e.element ) ) {
+        if ( elementsCollide( this.element, e.element ) ) {
           if ( !this.innerQueue.includes( e ) )
             this.innerQueue.push( e )
           if ( this.outerQueue.includes( e ) )

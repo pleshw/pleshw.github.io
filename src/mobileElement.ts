@@ -11,9 +11,10 @@ class MobileElement extends DefaultElement {
       : this.elementRect.left - this.offsetParent.offsetLeft;
   }
   public get y(): number {
-    return ( this.offsetParent === null )
-      ? this.elementRect.top
-      : this.elementRect.top;
+    return this.elementRect.top;
+    // return ( this.offsetParent === null )
+    //   ? this.elementRect.top
+    //   : this.elementRect.top - this.offsetParent.offsetTop;
   }
 
   /**

@@ -1,58 +1,7 @@
-
-/**
-* Retorna as dimensões em altura e largura dos elementos.
-*/
-function getDimensions( element: Element ): { width: number, height: number } {
-  const rect = element.getBoundingClientRect();
-  return {
-    width: rect.width,
-    height: rect.height
-  }
-}
-/**
-* Faz com que dois elementos fiquem com a mesma altura e largura
-* @param base O elemento usado como base.
-* @param sub O elemento que vai ter suas dimensões alteradas.
-*/
-function makeProportional( base: Element, sub: HTMLDivElement ): void {
-  const dimensions = getDimensions( base );
-  const subElementStyle = sub.style;
-  subElementStyle.width = dimensions.width.toString().concat( 'px' );
-  subElementStyle.height = dimensions.height.toString().concat( 'px' );
-}
-
-/**
-* Faz com que dois elementos tenham as mesmas posições.
-* @param base O elemento usado como base.
-* @param sub O elemento que vai ter sua posição alterada.
-*/
-function stackElements( base: Element, sub: HTMLDivElement ): void {
-  const position = getPosition( base );
-  const subElementStyle = sub.style;
-  subElementStyle.left = position.x.toString().concat( 'px' );
-  subElementStyle.top = position.y.toString().concat( 'px' );
-}
-
-/**
-* Checa se dois elementos tem a mesma posição e dimensões
-*/
-function elementsFit( a: Element, b: Element ): boolean {
-  return hasSameDimensions( a, b ) || hasSamePosition( a, b );
-}
-
-/**
- * Faz com que dois elementos fiquem na mesma posição e do mesmo tamanho
- */
-function makeCover( base: Element, sub: HTMLDivElement ) {
-  stackElements( base, sub );
-  makeProportional( base, sub );
-}
-
-
 /**
 * Retorna a posição do elemento em relação a viewport.
 */
-function getPosition( element: Element ): { x: number, y: number } {
+function getElementPosition( element: HTMLElement ): Point2D {
   const rect = element.getBoundingClientRect();
   return {
     x: rect.left,
@@ -61,72 +10,89 @@ function getPosition( element: Element ): { x: number, y: number } {
 }
 
 /**
-* Retorna a posição e as dimensões do elemento.
+* Retorna as dimensões em altura e largura dos elementos.
 */
-let getElementRect =
-  ( element: Element ) => ( { ...getPosition( element ), ...getDimensions( element ) } );
+function getElementShape( element: HTMLElement ): Shape {
+  const rect = element.getBoundingClientRect();
+  return {
+    width: rect.width,
+    height: rect.height
+  }
+}
 
+function resizeElement( el: HTMLElement, shape: Shape ) {
+  const style = el.style;
+  style.width = shape.width.toString().concat( 'px' );
+  style.height = shape.height.toString().concat( 'px' );
+}
+
+
+
+
+/**
+* Faz com que dois elementos fiquem na mesma posição, caso tenham position: absolute.
+* @param base O elemento usado como base.
+* @param sub O elemento que vai ter sua posição alterada.
+*/
+function stackElements( base: HTMLElement, sub: HTMLDivElement ): void {
+  const position = getElementPosition( base );
+  const subElementStyle = sub.style;
+  subElementStyle.left = position.x.toString().concat( 'px' );
+  subElementStyle.top = position.y.toString().concat( 'px' );
+}
+
+/**
+ * Faz com que dois elementos fiquem na mesma posição e do mesmo tamanho
+ */
+function makeCover( base: HTMLElement, sub: HTMLDivElement ) {
+  stackElements( base, sub );
+  makeElementsFit( base, sub );
+}
 
 /**
 * Checa se dois elementos tem mesma altura e largura.
 */
-function hasSameDimensions( element1: Element, element2: Element ): boolean {
-  const a = getDimensions( element1 );
-  const b = getDimensions( element2 );
+function elementsSameShape( element1: HTMLElement, element2: HTMLElement ): boolean {
+  const a = getElementShape( element1 );
+  const b = getElementShape( element2 );
 
   return ( a.width === b.width ) && ( a.height === b.height );
 }
 
 /**
-* Checa se dois elementos estão na mesma posição.
+* Retorna a posição e as dimensões do elemento.
 */
-function hasSamePosition( element1: Element, element2: Element ): boolean {
-  const a = getPosition( element1 );
-  const b = getPosition( element2 );
-
-  return ( a.x === b.x ) && ( a.y === b.y );
-}
+const getElementRect =
+  ( e: HTMLElement ) => ( { ...getElementPosition( e ), ...getElementShape( e ) } );
 
 /**
 * Retorna a distância vertical, horizontal e a radial de dois elementos.
 */
-function getDistance( element1: Element, element2: Element ): { horizontal: number, vertical: number, radial: number } {
-  const a = getPosition( element1 );
-  const b = getPosition( element2 );
-
-  return {
-    horizontal: a.x - b.x,
-    vertical: a.y - b.y,
-    radial: Math.sqrt( Math.pow( b.x - a.x, 2 ) + Math.pow( b.y - a.y, 2 ) )
-  };
-}
+const getElementsDistance =
+  ( a: HTMLElement, b: HTMLElement ): Distance2DConstraints => getDistance( getElementPosition( a ), getElementPosition( b ) );
 
 /**
-* Checa se distância vertical, horizontal e a radial de dois elementos está dentro de um range selecionado.
-* Usa o tipo @t_metrics para identificar se a distância é menor, maior ou igual ao threshold ( range )
+* Checa se dois elementos estão na mesma posição.
 */
-type t_metrics = 'lower' | 'higher' | 'equal';
-function checkDistanceThreshold( element1: Element, element2: Element, threshold: number ): { horizontal: t_metrics, vertical: t_metrics, radial: t_metrics } {
-  const dis = getDistance( element1, element2 );
+const elementsSamePosition =
+  ( a: HTMLElement, b: HTMLElement ) => getElementsDistance( a, b ).radial === 0;
 
-  return {
-    horizontal:
-      ( dis.horizontal < threshold ) ? 'lower' : ( dis.horizontal === threshold ) ? 'equal' : 'higher',
-    vertical:
-      ( dis.vertical < threshold ) ? 'lower' : ( dis.vertical === threshold ) ? 'equal' : 'higher',
-    radial:
-      ( dis.radial < threshold ) ? 'lower' : ( dis.radial === threshold ) ? 'equal' : 'higher'
-  };
-}
+/**
+* Checa se dois elementos tem a mesma posição e dimensões
+*/
+const elementsFit =
+  ( a: HTMLElement, b: HTMLElement ): boolean => elementsSameShape( a, b ) || elementsSamePosition( a, b );
 
 /**
  * Retorna verdadeiro se dois elementos estão colidindo (sobrepostos)
  */
-function collide( element1: Element, element2: Element ): boolean {
-  const rect1 = getElementRect( element1 );
-  const rect2 = getElementRect( element2 );
-  return ( rect1.x < rect2.x + rect2.width &&
-    rect1.x + rect1.width > rect2.x &&
-    rect1.y < rect2.y + rect2.height &&
-    rect1.y + rect1.height > rect2.y )
-}
+const elementsCollide =
+  ( a: HTMLElement, b: HTMLElement ): boolean => collide( getElementRect( a ), getElementRect( b ) );
+
+/**
+* Faz com que dois elementos fiquem com a mesma altura e largura
+* @param base O elemento usado como base.
+* @param sub O elemento que vai ter suas dimensões alteradas.
+*/
+const makeElementsFit =
+  ( base: HTMLElement, sub: HTMLDivElement ) => resizeElement( sub, getElementShape( base ) );

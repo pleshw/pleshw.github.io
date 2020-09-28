@@ -162,7 +162,7 @@
         "signature": "3582874f55727cdde4707b55dc2dfe636edfa80998c7c565345bf76c27b50444"
       },
       "../src/colliderelement.ts": {
-        "version": "0d022d69e2788aeca46893f4f99416d5e1c5182ed7bfed750d15e5507a3cca60",
+        "version": "b165bf0c8ffd693c9d83b2eedc8c9c829024adaa087dcd53c7f608d59dbb9c76",
         "signature": "9d31620c7fe46863fe01d5b3d22ec137da426283f93615bfc83da6b22c5ac11d"
       },
       "../src/ielementanimator.ts": {
@@ -202,15 +202,15 @@
         "signature": "346ee91713a1adccbc86c2c0d28e9948d8f38943907fc1f742ba35122d786bbc"
       },
       "../src/elementgeometric.ts": {
-        "version": "0083dcf988c795f0312b6b4a46b20d02c8ac53701e505f753f2938388915788e",
-        "signature": "19afd3257a5130ebbde7c922351b232f1dca5399b508a2e1f3d30c95431f6a67"
+        "version": "77577cefc8bf7b823e62d10136ca56b32f2287d47c3e3c5a85f1434268375586",
+        "signature": "251fb11c7a46c00715e900f2345c6880a67b799ac01bda3592af4f2e7cae08e5"
       },
       "../src/main.ts": {
         "version": "93f3a3df2e9f15238646d0f967031a63536e32431e3436d04850a0ef88504106",
         "signature": "de68198eea8ac63480f8eae7379fa4b68d287d977049337e0f81411749b726ab"
       },
       "../src/mobileelement.ts": {
-        "version": "5d17ade7753e14c6e61837199625cef9db326d15d7e05f673bc9ad0a3fb44c95",
+        "version": "7e327018a128b8d297155ec58e1a3b7a1b30afe7cbc0c9edb33251cdba445e1a",
         "signature": "843d0486a9fc86ba4386722c0105c8d90623fab6ebf40e71f1a12bb618b5aab6"
       },
       "../src/sensitiveelement.ts": {
@@ -220,6 +220,10 @@
       "../src/shadowdiv.ts": {
         "version": "c6d82fa8f7f4ca6fe8265bb2af31a91bbfa053ae441f140fed2bbe00328568c1",
         "signature": "f0c539cfe95df5ddfbf2042046946c209ba93f44a8532418a33ae5a022140cbb"
+      },
+      "../src/utils.ts": {
+        "version": "23be38e84969880be226def7208c2dafa28e5c0c8b2a6671c35899ce44261528",
+        "signature": "b625e93226abbe9f650e5d422cae3ba02bbb561d1a9d8dced80bb8aadf11d6ab"
       },
       "../src/zindexqueue.ts": {
         "version": "58e62ace42654d160c6ae6bd9a3e3eb84af6619e1c4abb31ca84230e15d650e2",
@@ -250,10 +254,11 @@
     "referencedMap": {},
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
-      "../src/changeimganimation.ts",
+      "../src/elementgeometric.ts",
       "../src/audioanimations.ts",
       "../src/changeaudioanimation.ts",
       "../src/changeaudiostateanimation.ts",
+      "../src/changeimganimation.ts",
       "../src/changemediaanimation.ts",
       "../src/colliderelement.ts",
       "../src/ielementanimator.ts",
@@ -265,11 +270,11 @@
       "../src/elementactions.ts",
       "../src/elementattributes.ts",
       "../src/elementbuilder.ts",
-      "../src/elementgeometric.ts",
       "../src/main.ts",
       "../src/mobileelement.ts",
       "../src/sensitiveelement.ts",
       "../src/shadowdiv.ts",
+      "../src/utils.ts",
       "../src/zindexqueue.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
       "../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2015.d.ts",
