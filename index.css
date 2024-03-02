@@ -1,0 +1,154 @@
+@font-face {
+  font-family: Yukari;
+  src: url('./fonts/yukari.ttf') format('truetype');
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100svw !important;
+  height: 100svh !important;
+  max-width: 100svw !important;
+  max-height: 100svh !important;
+  overflow: hidden;
+}
+
+p {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+section {
+  height: 100svh;
+  width: 100svw;
+  max-height: 100svh;
+  max-width: 100svw;
+  overflow: hidden;
+}
+
+.progress {
+  pointer-events: none !important;
+}
+
+.progress-bar {
+  background: transparent !important;
+  pointer-events: none !important;
+  opacity: 0;
+  backdrop-filter: saturate(400%) blur(12px) !important;
+  transition: all .4s !important;
+}
+
+.video-small-screen:hover .progress-bar {
+  opacity: 1 !important;
+}
+
+.transparent-progress {
+  clip-path: inset(0 0 100% 0);
+  background-color: transparent;
+  opacity: 1;
+}
+
+.force-update * {
+  /* Adicione aqui as propriedades de CSS que você deseja forçar a atualização */
+  /* Por exemplo: */
+  opacity: 0;
+  /* Alteração mínima para forçar o reflow */
+}
+
+.yt-iframe-container-small *[id^="invisibleDivBlockInteraction"] {
+  position: absolute !important;
+  cursor: pointer;
+  opacity: 1 !important;
+  background-color: transparent;
+  transition: all .2s linear;
+}
+
+.yt-iframe-container-small.yt-paused *[id^="invisibleDivBlockInteraction"]::after {
+  content: attr(iframe-id);
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Yukari;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase !important;
+  backdrop-filter: blur(25px);
+  /* Adiciona o filtro de desfoque */
+}
+
+.yt-iframe-container-small.yt-playing {
+  transition: all .2s linear;
+  transform: scale(2);
+}
+
+.fw-yukari {
+  font-family: Yukari, Arial, sans-serif;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+.yt-iframe-container {
+  top: 0;
+  left: 0;
+  user-select: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.yt-iframe-container-fullscreen {
+  top: 0;
+  left: 0;
+  user-select: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: absolute !important;
+  transition: opacity .3s ease-out !important;
+  max-height: 100% !important;
+}
+
+.yt-iframe-container-fullscreen * {
+  transition: opacity .3s ease-out !important;
+}
+
+.keyhole {
+  width: 20svw;
+  height: 10svw;
+  background-color: transparent;
+  position: relative;
+}
+
+.project-title-container,
+.project-title-container * {
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+.project-title-container h1 {
+  width: 100%;
+}
+
+.keyhole::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9svw;
+  height: 9svw;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(circle at center, transparent 50%, black 52%);
+  mask-image: radial-gradient(circle at center, transparent 50%, black 52%);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

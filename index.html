@@ -1,103 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html>
 
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>_pleshw</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-
   <link rel="icon" href="assets/ico.png">
-
-  <link rel="stylesheet" href="styles/bootstrap-grid.min.css">
-  <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
-  <link rel="stylesheet" href="styles/square.css">
-
-  <script src="dist/utils.js"></script>
-  <script src="dist/elementActions.js"></script>
-  <script src="dist/elementBuilder.js"></script>
-
-  <script src="dist/shadowDiv.js"></script>
-  <script src="dist/elementAttributes.js"></script>
-  <script src="dist/elementGeometric.js"></script>
-
-  <script src="dist/defaultElement.js"></script>
-  <script src="dist/mobileElement.js"></script>
-  <script src="dist/zindexQueue.js"></script>
-  <script src="dist/draggableElement.js"></script>
-  <script src="dist/sensitiveElement.js"></script>
-  <script src="dist/IElementAnimator.js"></script>
-  <script src="dist/ColliderElement.js"></script>
-  <script src="dist/LogAnimation.js"></script>
-  <script src="dist/ChangeMediaAnimation.js"></script>
-  <script src="dist/ChangeAudioAnimation.js"></script>
-  <script src="dist/ChangeAudioStateAnimation.js"></script>
-  <script src="dist/AudioAnimations.js"></script>
-  <script src="dist/ChangeImgAnimation.js"></script>
-
-  <script src='dist/main.js'></script>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
-  <header></header>
-
-  <main class="container">
-    <section class="container row center-align align-items-center">
-
-      <div class="col-4 row justify-content-around">
-        <button id="square-drag-1" class="btn-1 mt-2 mb-2">this.daisy</button>
-        <button id="square-drag-2" class="btn-3 mt-2 mb-2">this.flora</button>
-        <!-- <button id="square-drag-4" class="btn-1 mt-2 mb-2">this.aster</button>
-        <button id="square-drag-5" class="btn-1 mt-2 mb-2">this.orchid</button> -->
-        <!-- <button id="square-drag-3" class="btn-2 mt-2 mb-2">this.tulip</button> -->
+<body class="container-fluid">
+  <main>
+    <section class="row justify-content-between align-items-center position-relative m-0 p-0">
+      <div class="position-relative project-title-container">
+        <h1>pleshw</h1>
       </div>
+    </section>
 
-
-      <div id="collider" class="offset-3 col-4 justify-content-center row container rectangle square align-items-center"
-        style="z-index: -1;">
-        <div class="row justify-content-center align-items-center align-content-center">
-          <img id="testImg" class="col-12 mutable" src="" alt="">
+    <section
+      class="container-fluid p-0 m-0 justify-content-center align-items-center border-top border-bottom border-2">
+      <div class="row w-100 h-100 p-0 m-0 justify-content-center">
+        <div class="col-3 d-flex gap-5 align-items-center justify-content-center">
+          <h1 class="display-3 text-center">
+            <i>Check these</i>
+          </h1>
         </div>
-        <audio class="mutable" src=""></audio>
+        <div class="col row justify-content-center align-items-center m-0 p-0 position-relative h-100">
+          <div id="ytIframeFullScreenContainer"
+            class="w-100 h-100 top-0 start-0 position-relative border-start border-2 p-0 m-0">
+            <!-- Videos Full Screens -->
+          </div>
+
+          <div id="ytIframeSmallScreenContainer"
+            class="d-flex w-100 h-100 flex-column position-absolute gap-4 p-0 justify-content-center">
+            <!-- Videos Small Screens -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row justify-content-between align-items-center position-relative m-0 p-0">
+      <div class="position-relative project-title-container">
+        <h1>Em construção</h1>
       </div>
     </section>
   </main>
-
-
-
-
-  <footer></footer>
-
-
+  <script src="./dist/DOMTools.js"></script>
+  <script src="./dist/SectionScroller.js"></script>
+  <script src="./dist/YoutubeIframe.js"></script>
+  <script src="./dist/ytVideos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <script>
+    let sectionScroller;
 
-    const test1 = document.getElementById('square-drag-1')
-    const testDrag1 = new DraggableElement(test1)
-    const test2 = document.getElementById('square-drag-2')
-    const testDrag2 = new DraggableElement(test2)
-    // const test3 = document.getElementById('square-drag-3')
-    // const testDrag3 = new DraggableElement(test3)
+    window.addEventListener('load', () => {
+      createYTIframeComponents();
 
+      const ytIframeSwitcher = new YoutubeIframe.YoutubeIframeSwitcher({
+        switchBetween: Array.from(setYTIframeFullScreenController)
+      });
 
-    const colliderElement = document.getElementById('collider')
+      ytIframeSwitcher.addEventListener('onalternate', (switcher, iframeToPlay, iframesToPause) => {
+        iframesToPause.forEach(i => i.iframeElement.style.opacity = '0');
+        iframeToPlay.iframeElement.style.opacity = '1';
+      });
 
-    const testCollider1 = new ColliderElement(
-      colliderElement, // elemento que é alterado
-      {
-        element: test1, // elemento gatilho
-        animateIn: new ChangeImgAnimation('assets/img/eyes.gif'), // animação ao entrar em contato
-        animateOut: new ChangeImgAnimation('') // animação ao sair de contato
-      },
-      {
-        element: test2, // elemento gatilho
-        animateIn: new ChangeImgAnimation('assets/img/blink.gif'), // animação ao entrar em contato
-        animateOut: new ChangeImgAnimation('') // animação ao sair de contato
-      },
-    );
-    // const testCollider2 = new ColliderElement(colliderElement, test2, new ChangeImgAnimation('assets/2.png'), new ChangeImgAnimation('assets/ico.png'));
-    // const testCollider3 = new ColliderElement(colliderElement, test3, new ChangeImgAnimation('assets/3.jpg'), new ChangeImgAnimation('assets/ico.png'));
+      mapYTIframeControllersByIframeId.forEach((iframeComponent, iframeId) => {
+        iframeComponent.smallScreenController.addEventListener('onplaying', evt => {
+          if (iframeComponent.elements.progressBar) {
+            iframeComponent.elements.progressBar.style.width = `${ (evt.progressPercent * 100).toString() }%`;
+          }
+        });
+      });
 
+      YoutubeIframe.YoutubeIframe.createScriptElementForYoutubeIframe();
+
+      SectionScroller.SectionScroller.makeGlobalScrollSectionScroller();
+    });
+
+    function createYTIframeComponents() {
+      createYTIframeComponent('Full DaSH', '5VMMeQ94ij8', 11);
+      createYTIframeComponent('Colours', 'yTJiKjZy5Xo', 13);
+    }
   </script>
+
 </body>
 
 </html>
