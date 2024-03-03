@@ -47,6 +47,15 @@ section {
   opacity: 1 !important;
 }
 
+.show-on-hover {
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+*:hover>.show-on-hover {
+  opacity: 1;
+}
+
 .transparent-progress {
   clip-path: inset(0 0 100% 0);
   background-color: transparent;

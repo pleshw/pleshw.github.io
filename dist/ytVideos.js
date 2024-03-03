@@ -44,7 +44,12 @@ function createYTIframeComponent(iframeId, videoId, startsAt = 0) {
   });
 
   fullScreenController.addEventListener('oniframeready', () => {
-    fullScreenController.iframeElement.style.opacity = '0';
+    const firsFSController = setYTIframeFullScreenController.values().next().value;
+    if (firsFSController && firsFSController === fullScreenController) {
+      fullScreenController.iframeElement.style.opacity = '1';
+    } else {
+      fullScreenController.iframeElement.style.opacity = '0';
+    }
   });
 
   const syncIframesController = new YoutubeIframe.YoutubeIframeSync({

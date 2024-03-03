@@ -4,8 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>_pleshw</title>
-  <link rel="icon" href="assets/ico.png">
+  <title>pleshw</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -14,38 +13,88 @@
 
 <body class="container-fluid">
   <main>
-    <section class="row justify-content-between align-items-center position-relative m-0 p-0">
-      <div class="position-relative project-title-container">
-        <h1>pleshw</h1>
+    <!-- <section class="row justify-content-between align-items-center position-relative m-0 p-0">
+      <div
+        class="col-3 p-0 m-0 position-relative project-title-container h-100 d-flex align-items-center justify-content-center">
+        <h1 class="display-3 text-center">
+          <i>Who am i</i>
+        </h1>
+      </div>
+
+      <div class="col border bg-body-tertiary h-100">
+        <h1>test</h1>
       </div>
     </section>
 
-    <section
-      class="container-fluid p-0 m-0 justify-content-center align-items-center border-top border-bottom border-2">
+    <section class="row justify-content-between align-items-center position-relative m-0 p-0">
+      <div
+        class="col-3 p-0 m-0 position-relative project-title-container h-100 d-flex align-items-center justify-content-center">
+        <h1 class="display-3 text-center">
+          <i>Things i do</i>
+        </h1>
+      </div>
+
+      <div class="col border bg-body-tertiary h-100">
+        <h1>test</h1>
+      </div>
+    </section> -->
+
+    <section class="container-fluid p-0 m-0 justify-content-center align-items-center">
       <div class="row w-100 h-100 p-0 m-0 justify-content-center">
-        <div class="col-3 d-flex gap-5 align-items-center justify-content-center">
-          <h1 class="display-3 text-center">
-            <i>Check these</i>
-          </h1>
-        </div>
-        <div class="col row justify-content-center align-items-center m-0 p-0 position-relative h-100">
-          <div id="ytIframeFullScreenContainer"
-            class="w-100 h-100 top-0 start-0 position-relative border-start border-2 p-0 m-0">
-            <!-- Videos Full Screens -->
+        <div class="col-3 row m-0 p-0 gap-5 align-items-center justify-content-center position-relative">
+          <div class="col-12">
+            <h1 class="display-3 text-center mb-3">
+              <i>Showcase</i>
+            </h1>
+            <div class="w-100 justify-content-center d-flex gap-3">
+              <button class="btn btn-outline-dark rounded-0 shadow shadow-sm" type="button"
+                data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span aria-hidden="true"></span>
+                <span>Prev</span>
+              </button>
+              <button class="btn btn-outline-dark rounded-0 shadow shadow-sm" type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next">
+                <span aria-hidden="true"></span>
+                <span>Next</span>
+              </button>
+            </div>
           </div>
+        </div>
+        <div
+          class="col row justify-content-center align-items-center m-0 p-0 position-relative h-100 border-start bg-body-tertiary">
+          <div id="carouselExample" class="carousel slide h-100 p-0 m-0">
+            <div class="carousel-inner h-100 position-relative">
+              <div class="carousel-item active h-100 p-0 m-0 position-relative">
+                <div id="ytIframeFullScreenContainer" class="w-100 h-100 top-0 start-0 position-relative p-0 m-0">
+                  <!-- Videos Full Screens -->
+                </div>
 
-          <div id="ytIframeSmallScreenContainer"
-            class="d-flex w-100 h-100 flex-column position-absolute gap-4 p-0 justify-content-center">
-            <!-- Videos Small Screens -->
+                <div id="ytIframeSmallScreenContainer"
+                  class="d-flex w-100 h-100 flex-column position-absolute gap-4 p-0 justify-content-center top-0">
+                  <!-- Videos Small Screens -->
+                </div>
+
+                <div style="width: 40%;"
+                  class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
+                  <h5 class="text-start">Youtube Iframe API</h5>
+                  <p class="text-start">Minha implementação do youtube API com funções extras e eventos adicionais,
+                    como:
+                    alternar e sincronizar vários reprodutores, evento onplaying para chamar funções baseadas no tempo
+                    de reprodução e muito mais.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+              </div>
+              <!-- 
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div> -->
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="row justify-content-between align-items-center position-relative m-0 p-0">
-      <div class="position-relative project-title-container">
-        <h1>Em construção</h1>
-      </div>
-    </section>
+
   </main>
   <script src="./dist/DOMTools.js"></script>
   <script src="./dist/SectionScroller.js"></script>
