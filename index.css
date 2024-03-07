@@ -31,6 +31,11 @@ section {
   overflow: hidden;
 }
 
+img {
+  -webkit-user-drag: none !important;
+  user-select: none !important;
+}
+
 #testButtonMovable {
   transition: all .2s linear;
 }
