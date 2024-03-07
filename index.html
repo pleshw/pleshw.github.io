@@ -48,12 +48,12 @@
             </h1>
             <div class="w-100 justify-content-center d-flex gap-3">
               <button class="btn btn-outline-dark rounded-0 shadow shadow-sm" type="button"
-                data-bs-target="#carouselExample" data-bs-slide="prev">
+                data-bs-target="#carouselShowcase" data-bs-slide="prev">
                 <span aria-hidden="true"></span>
                 <span>Prev</span>
               </button>
               <button class="btn btn-outline-dark rounded-0 shadow shadow-sm" type="button"
-                data-bs-target="#carouselExample" data-bs-slide="next">
+                data-bs-target="#carouselShowcase" data-bs-slide="next">
                 <span aria-hidden="true"></span>
                 <span>Next</span>
               </button>
@@ -62,7 +62,7 @@
         </div>
         <div
           class="col row justify-content-center align-items-center m-0 p-0 position-relative h-100 border-start bg-body-tertiary">
-          <div id="carouselExample" class="carousel slide h-100 p-0 m-0">
+          <div id="carouselShowcase" data-keyboard="false" class="carousel slide h-100 p-0 m-0">
             <div class="carousel-inner h-100 position-relative">
               <div class="carousel-item active h-100 p-0 m-0 position-relative">
                 <div id="ytIframeFullScreenContainer" class="w-100 h-100 top-0 start-0 position-relative p-0 m-0">
@@ -84,10 +84,105 @@
                     de reprodução e muito mais.</p>
                 </div>
               </div>
-              <div class="carousel-item">
+
+              <div class="carousel-item h-100 p-0 m-0 position-relative">
+                <div id="audioContainer" class="audio-container container w-100 h-100">
+                  <div class="row h-100 w-100 justify-content-center align-items-center">
+                    <h1 class="display-6 text-truncate" id="audioStatus"></h1>
+
+                  </div>
+                </div>
+
+                <div style="width: 40%;"
+                  class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
+                  <h5 class="text-start">Componente de Audio</h5>
+                  <p class="text-start">Um componente de áudio interativo, que pode ser criado em "runtime" com músicas
+                    derivadas de qualquer link, e pode ser posicionado dentro de
+                    qualquer elemento ou ficar invisível. Funciona muito bem em conjunto
+                    com uma biblioteca que adiciona comandos que disparam eventos facilmente no componente.
+                    Interessantíssimo para criar playlists e um sistema de streaming, mas só pensei nisso enquanto
+                    digitava.
+                  </p>
+                  <p>
+                    <span><small>Melhorias serão implementadas nesse componente na próxima iteração...</small></span>
+                  </p>
+                </div>
               </div>
-              <!-- 
-              <div class="carousel-item">
+
+              <div class="carousel-item h-100 p-0 m-0 position-relative">
+                <div id="imageContainer" class="image-container container">
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col-12 row justify-content-center align-items-center p-5">
+                      <input id="imageInputUrl"
+                        style="padding: .5rem 1rem; width: 100%; font-weight: bolder; color: #333;" class="col-12"
+                        type="text" value="https://picsum.photos/300/300/" oninput="changePreviewFromURL(this)">
+
+                      <div class="col-6 p-5">
+                        <h1>Imagem Completa</h1>
+                        <img id="imageFromURL">
+                      </div>
+                      <div class="col-6 p-5">
+                        <h1>Imagem Redimensionada</h1>
+                        <img id="imageFromURLResize">
+                      </div>
+                    </div>
+
+                    <div class="col-12 row justify-content-center align-items-center p-5">
+                      <input class="col-12" style="height: fit-content;" id="inputImage" type="file"
+                        onchange="previewFromInputFile(this)">
+
+                      <div class="col-6">
+                        <img id="imageFromInput">
+                      </div>
+                      <div class="col-6">
+                        <img id="imageFromInputResize">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="width: 40%;"
+                  class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
+                  <h5 class="text-start">Edição de Imagem</h5>
+                  <p class="text-start">Uma biblioteca para permitir editar propriedades da imagem via
+                    typescript e em runtime.
+                    Tem algumas features como obter a paleta das cores que mais se destacam na imagem e permitir que o
+                    usuário
+                    salve a imagem no formato e tamanho que desejar.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item h-100 p-0 m-0 position-relative">
+                <div id="gameContainer" class="game-container">
+
+                  <div id="gridContainer" class="grid-container">
+                    <div id="gameGrid" class="gameGrid"></div>
+                  </div>
+                </div>
+
+                <div style="width: 40%;"
+                  class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
+                  <h5 class="text-start">"Draggables"</h5>
+                  <p class="text-start">Uma biblioteca para transformar qualquer parte do DOM em drag e drop e adicionar
+                    interações como "grudar" em elementos, tocar um áudio, encontrar o menor caminho entre dois pontos
+                    etc. Cada interação tem seu kit de eventos únicos que são acionados de forma independente.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item h-100 p-0 m-0 position-relative">
+                <div id="resizableContainer" class="resizable-container">
+                </div>
+
+                <div style="width: 40%;"
+                  class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
+                  <h5 class="text-start">"Resizables"</h5>
+                  <p class="text-start">Uma biblioteca para permitir que o usuário mude o tamanho de qualquer elemento
+                    do DOM de forma controlada. Interessante quando combinado com o "Draggables"</p>
+                </div>
+              </div>
+
+
+              <!-- <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
               </div> -->
             </div>
@@ -97,45 +192,21 @@
     </section>
 
   </main>
+
+  <script src="./dist/ImageTools.js"></script>
+  <script src="./dist/AudioTools.js"></script>
+  <script src="./dist/FileTools.js"></script>
   <script src="./dist/DOMTools.js"></script>
   <script src="./dist/SectionScroller.js"></script>
   <script src="./dist/YoutubeIframe.js"></script>
   <script src="./dist/ytVideos.js"></script>
+  <script src="./dist/audioComponent.js"></script>
+  <script src="dist/imageComponent.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+
   <script>
-    let sectionScroller;
-
-    window.addEventListener('load', () => {
-      createYTIframeComponents();
-
-      const ytIframeSwitcher = new YoutubeIframe.YoutubeIframeSwitcher({
-        switchBetween: Array.from(setYTIframeFullScreenController)
-      });
-
-      ytIframeSwitcher.addEventListener('onalternate', (switcher, iframeToPlay, iframesToPause) => {
-        iframesToPause.forEach(i => i.iframeElement.style.opacity = '0');
-        iframeToPlay.iframeElement.style.opacity = '1';
-      });
-
-      mapYTIframeControllersByIframeId.forEach((iframeComponent, iframeId) => {
-        iframeComponent.smallScreenController.addEventListener('onplaying', evt => {
-          if (iframeComponent.elements.progressBar) {
-            iframeComponent.elements.progressBar.style.width = `${ (evt.progressPercent * 100).toString() }%`;
-          }
-        });
-      });
-
-      YoutubeIframe.YoutubeIframe.createScriptElementForYoutubeIframe();
-
-      SectionScroller.SectionScroller.makeGlobalScrollSectionScroller();
-    });
-
-    function createYTIframeComponents() {
-      createYTIframeComponent('Full DaSH', '5VMMeQ94ij8', 11);
-      createYTIframeComponent('Colours', 'yTJiKjZy5Xo', 13);
-    }
   </script>
 
 </body>

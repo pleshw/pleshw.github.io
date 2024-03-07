@@ -77,3 +77,35 @@ function createYTIframeComponent(iframeId, videoId, startsAt = 0) {
 
   return ytIframeComponent;
 }
+
+let sectionScroller;
+
+window.addEventListener('load', () => {
+  createYTIframeComponents();
+
+  const ytIframeSwitcher = new YoutubeIframe.YoutubeIframeSwitcher({
+    switchBetween: Array.from(setYTIframeFullScreenController)
+  });
+
+  ytIframeSwitcher.addEventListener('onalternate', (switcher, iframeToPlay, iframesToPause) => {
+    iframesToPause.forEach(i => i.iframeElement.style.opacity = '0');
+    iframeToPlay.iframeElement.style.opacity = '1';
+  });
+
+  mapYTIframeControllersByIframeId.forEach((iframeComponent, iframeId) => {
+    iframeComponent.smallScreenController.addEventListener('onplaying', evt => {
+      if (iframeComponent.elements.progressBar) {
+        iframeComponent.elements.progressBar.style.width = `${ (evt.progressPercent * 100).toString() }%`;
+      }
+    });
+  });
+
+  YoutubeIframe.YoutubeIframe.createScriptElementForYoutubeIframe();
+
+  SectionScroller.SectionScroller.makeGlobalScrollSectionScroller();
+});
+
+function createYTIframeComponents() {
+  createYTIframeComponent('Full DaSH', '5VMMeQ94ij8', 11);
+  createYTIframeComponent('Colours', 'yTJiKjZy5Xo', 13);
+}
