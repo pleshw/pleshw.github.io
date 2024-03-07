@@ -31,6 +31,30 @@ section {
   overflow: hidden;
 }
 
+#testButtonMovable {
+  transition: all .2s linear;
+}
+
+.ready-to-pin {
+  transition: padding .3s;
+}
+
+.pinned {
+  transition: transform .1s;
+}
+
+.dragging {
+  cursor: grabbing !important;
+}
+
+.dragging>* {
+  cursor: grabbing !important;
+}
+
+.pinned {
+  filter: drop-shadow(2px 2px 6px #4444dd);
+}
+
 .progress {
   pointer-events: none !important;
 }

@@ -64,6 +64,7 @@
           class="col row justify-content-center align-items-center m-0 p-0 position-relative h-100 border-start bg-body-tertiary">
           <div id="carouselShowcase" data-keyboard="false" class="carousel slide h-100 p-0 m-0">
             <div class="carousel-inner h-100 position-relative">
+              <!-- YT CAROUSEL ITEM -->
               <div class="carousel-item active h-100 p-0 m-0 position-relative">
                 <div id="ytIframeFullScreenContainer" class="w-100 h-100 top-0 start-0 position-relative p-0 m-0">
                   <!-- Videos Full Screens -->
@@ -77,13 +78,64 @@
                 <div style="width: 40%;"
                   class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
                   <h5 class="text-start">Youtube Iframe API</h5>
-                  <p class="text-start">Minha implementação de uma biblioteca para Youtube Iframe API com funções extras
+                  <p class="text-start">Minha implementação de uma biblioteca para Youtube Iframe API com funções
+                    extras
                     e eventos adicionais,
                     como:
                     alternar e sincronizar vários reprodutores, evento onplaying para chamar funções baseadas no tempo
                     de reprodução e muito mais.</p>
                 </div>
               </div>
+
+              <div class="carousel-item active h-100 p-0 m-0 position-relative">
+                <div id="gameContainer" class="game-container">
+
+                  <div id="gridContainer" class="grid-container">
+                    <div id="gameGrid" class="game-grid container">
+                      <div class="row w-100 h-100 gap-4 align-items-center p-5 justify-content-around">
+                        <div class="col-12 row gap-5">
+                          <button class="btn btn-outline-dark btn-lg col-2 rounded-0" id="testButtonDraggable">Test
+                            Draggable Below Everything</button>
+                          <button class="btn btn-outline-danger btn-lg col-5 rounded-0" id="testButtonMovable"
+                            onclick="moveDown()">Test
+                            Button
+                            Movable - move
+                            down onclick
+                            100px</button>
+                        </div>
+                        <div class="row col-12 justify-content-start gap-5 container px-5">
+                          <div class="col-5"
+                            style="width: 320px; height: 320px; border: 2px dashed blue; position: relative;">
+                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+                              class="stone-evolve-flag thunder-type img-fluid attribute-target pin-target"
+                              style="position: absolute; top: 0; left: 0; width: 100%; height:100%;" />
+                          </div>
+                          <div id="thunderStone" shared-attribute-name="src"
+                            shared-attribute-value="https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png"
+                            style="width: 40px; height: 40px;"
+                            class="row col-5 justify-content-center align-items-center m-0 p-0 rounded-circle">
+                            <span class="p-0 m-0 text-center">
+                              <img class="img-fluid"
+                                src="https://archives.bulbagarden.net/media/upload/thumb/a/a5/Dream_Thunder_Stone_Sprite.png/100px-Dream_Thunder_Stone_Sprite.png" />
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="width: 40%;"
+                    class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
+                    <h5 class="text-start">"Draggables"</h5>
+                    <p class="text-start">Uma biblioteca para transformar qualquer parte do DOM em drag e drop e
+                      adicionar
+                      interações como "grudar" em elementos, tocar um áudio, encontrar o menor caminho entre dois pontos
+                      etc. Cada interação tem seu kit de eventos únicos que são acionados de forma independente.</p>
+                  </div>
+                </div>
+              </div>
+
 
               <div class="carousel-item h-100 p-0 m-0 position-relative">
                 <div id="audioContainer" class="audio-container container w-100 h-100">
@@ -96,7 +148,8 @@
                 <div style="width: 40%;"
                   class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
                   <h5 class="text-start">Componente de Audio</h5>
-                  <p class="text-start">Um componente de áudio interativo, que pode ser criado em "runtime" com músicas
+                  <p class="text-start">Um componente de áudio interativo, que pode ser criado em "runtime" com
+                    músicas
                     derivadas de qualquer link, e pode ser posicionado dentro de
                     qualquer elemento ou ficar invisível. Funciona muito bem em conjunto
                     com uma biblioteca que adiciona comandos que disparam eventos facilmente no componente.
@@ -152,22 +205,6 @@
                 </div>
               </div>
 
-              <div class="carousel-item h-100 p-0 m-0 position-relative">
-                <div id="gameContainer" class="game-container">
-
-                  <div id="gridContainer" class="grid-container">
-                    <div id="gameGrid" class="gameGrid"></div>
-                  </div>
-                </div>
-
-                <div style="width: 40%;"
-                  class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
-                  <h5 class="text-start">"Draggables"</h5>
-                  <p class="text-start">Uma biblioteca para transformar qualquer parte do DOM em drag e drop e adicionar
-                    interações como "grudar" em elementos, tocar um áudio, encontrar o menor caminho entre dois pontos
-                    etc. Cada interação tem seu kit de eventos únicos que são acionados de forma independente.</p>
-                </div>
-              </div>
 
               <div class="carousel-item h-100 p-0 m-0 position-relative">
                 <div id="resizableContainer" class="resizable-container">
@@ -193,6 +230,10 @@
 
   </main>
 
+  <script src="./dist/CollisionAction.js"></script>
+  <script src="./dist/CollisionEvents.js"></script>
+  <script src="./dist/MovableElement.js"></script>
+  <script src="./dist/DraggableElement.js"></script>
   <script src="./dist/ImageTools.js"></script>
   <script src="./dist/AudioTools.js"></script>
   <script src="./dist/FileTools.js"></script>
@@ -202,11 +243,58 @@
   <script src="./dist/ytVideos.js"></script>
   <script src="./dist/audioComponent.js"></script>
   <script src="dist/imageComponent.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
   <script>
+    window.addEventListener('load', () => {
+      const thunderStone = document.getElementById('thunderStone');
+      DraggableElement.DraggableElement.makeElementDraggable(thunderStone);
+
+      const pinEvent = new CollisionAction.PinCollisionEvent({
+        pinPositionFormula: pinCollisionFormulaTopRight,
+        onPin: (draggable, target) => {
+          console.log(draggable, target);
+        },
+        onUnpin: (draggable, target) => {
+          console.log('draggable, target');
+        }
+      });
+      const shareAttributeEvent = new CollisionAction.ShareAttributeCollisionEvent();
+      CollisionAction.initComplexCollisionCheck(thunderStone, '.stone-evolve-flag.thunder-type', [pinEvent, shareAttributeEvent])
+    });
+
+
+    let movable;
+    window.addEventListener('load', () => {
+      movable = MovableElement.MovableElement.makeElementMovable(document.getElementById('testButtonMovable'));
+
+      DraggableElement.DraggableElement.makeElementDraggable(document.getElementById('testButtonDraggable'));
+    });
+
+    function moveDown() {
+      movable.y += 100;
+    }
+
+    function pinCollisionFormulaTopLeft(draggableRect, targetRect, draggableTransformPosition, distanceFromBorder, marginLeft = 10, marginTop = 10) {
+      const targetLeftPosition = draggableTransformPosition.x - distanceFromBorder.left + (draggableRect.width / 2); /// adiciona a largura/2 porque a distancia da borda é baseada no centro do draggable
+      const targetTopPosition = draggableTransformPosition.y - distanceFromBorder.top + (draggableRect.height / 2);
+      return {
+        x: targetLeftPosition + marginLeft,
+        y: targetTopPosition + marginTop
+      }
+    }
+
+    function pinCollisionFormulaTopRight(draggableRect, targetRect, draggableTransformPosition, distanceFromBorder, marginRight = 10, marginTop = 10) {
+      const targetLeftPosition = draggableTransformPosition.x + distanceFromBorder.right - (draggableRect.width / 2); /// adiciona a largura/2 porque a distancia da borda é baseada no centro do draggable
+      const targetTopPosition = draggableTransformPosition.y - distanceFromBorder.top + (draggableRect.height / 2);
+      return {
+        x: targetLeftPosition - marginRight,
+        y: targetTopPosition + marginTop
+      }
+    }
   </script>
 
 </body>
