@@ -100,9 +100,7 @@ window.addEventListener('load', () => {
     });
   });
 
-  YoutubeIframe.YoutubeIframe.createScriptElementForYoutubeIframe();
-
-  SectionScroller.SectionScroller.makeGlobalScrollSectionScroller();
+  YoutubeIframe.YoutubeIframe.buildIframes();
 });
 
 function createYTIframeComponents() {

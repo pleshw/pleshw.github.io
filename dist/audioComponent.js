@@ -4,7 +4,7 @@ window.addEventListener('load', async () => {
   const audioURL = 'http://theemon.com/t/transport-wp/PlaceHolder/wp-content/uploads/2015/09/BlueDucks_FourFlossFiveSix.wav';
   audioStatus.innerHTML = pausedMessage;
 
-  AudioTools.createAudioComponent(audioURL).then((component) => {
+  AudioTools.createAudioComponentOnBody({ src: audioURL }).then((component) => {
     DOMTools.addActionKey({
       key: 'Space',
       keydown: () => {

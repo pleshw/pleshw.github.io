@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>sound table</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="soundTable.css">
+</head>
+
+<body class="container-fluid">
+
+  <main class="h-100">
+    <section class="container">
+      <div id="containerYTTable" class="row gap-4 h-100 justify-content-around align-items-center">
+
+      </div>
+    </section>
+  </main>
+
+  <script src="./dist/YoutubeIframe.js"></script>
+  <script src="./dist/SoundTable.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('load', () => {
+      new SoundTable.SoundTable({
+        container: document.getElementById('containerYTTable'),
+        arrMediaSrc: [
+          './assets/Kanye West - Runaway.mp4'
+        ],
+        arrVideoId: [
+          'HXYNW0ft5o4',
+          'ZtVMTsEiG_c',
+          'O3up5FNl9eg'
+        ],
+        containersClassList: ['col-3', 'shadow', 'p-0', 'm-0', 'rounded-0', 'overflow-hidden'],
+      });
+    })
+  </script>
+
+</body>
+
+</html>
