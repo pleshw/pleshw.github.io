@@ -38,8 +38,9 @@ img {
 }
 
 .sound-table-item-container {
-  width: 100px;
-  height: 100px;
+  min-width: 20%;
+  height: 200px;
+  position: relative;
 }
 
 .audio-component-div-block-interaction,
@@ -57,12 +58,23 @@ img {
   width: 100%;
   height: 100%;
   text-transform: uppercase !important;
-  backdrop-filter: brightness(30%) blur(25px);
+  backdrop-filter: brightness(0%) blur(35px);
+}
+
+.sound-table-input-container {
+  position: absolute;
+  z-index: 1200;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sound-table-input {
+  border-radius: 0 !important;
 }
 
 .audio-component-div-block-interaction::after,
 .yt-div-block-interaction::after {
-  content: attr(yt-iframe-video-name);
   text-align: center;
   font-size: 10px !important;
   font-weight: bolder;
@@ -74,7 +86,15 @@ img {
   width: 100%;
   height: 100%;
   text-transform: uppercase !important;
-  backdrop-filter: brightness(40%) blur(25px);
+  backdrop-filter: brightness(0%) blur(35px);
+}
+
+.audio-component-div-block-interaction::after {
+  content: attr(audio-component-name);
+}
+
+.yt-div-block-interaction::after {
+  content: attr(yt-iframe-video-name);
 }
 
 .sound-table-item-container {
@@ -83,6 +103,5 @@ img {
 
 .sound-table-item-container.audio-component-playing,
 .sound-table-item-container.yt-playing {
-  transform: scale(2);
-  backdrop-filter: brightness(20%) blur(15px);
+  transform: translateY(-10px);
 }
