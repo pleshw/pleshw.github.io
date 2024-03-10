@@ -44,25 +44,7 @@ img {
 }
 
 .sound-table-item-container {
-  min-width: 20%;
   position: relative;
-}
-
-.audio-component-div-block-interaction,
-.yt-div-block-interaction {
-  opacity: 1 !important;
-  cursor: pointer;
-  text-align: center;
-  font-size: 10px !important;
-  font-weight: bolder;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-transform: uppercase !important;
 }
 
 .sound-table-input-container {
@@ -79,8 +61,9 @@ img {
   border: none !important;
 }
 
-.audio-component-div-block-interaction::after,
-.yt-div-block-interaction::after {
+.audio-component-div-block-interaction,
+.yt-div-block-interaction {
+  cursor: pointer;
   opacity: 0;
   text-align: center;
   font-size: 10px !important;
@@ -93,14 +76,28 @@ img {
   width: 100%;
   height: 100%;
   text-transform: uppercase !important;
-  backdrop-filter: brightness(160%) saturate(210%);
-  transition: opacity .3s linear;
-  pointer-events: none !important;
 }
 
-.sound-table-item:hover .yt-div-block-interaction::after,
-.sound-table-item:hover .audio-component-div-block-interaction::after {
+.audio-component-div-block-interaction:hover,
+.yt-div-block-interaction:hover {
   opacity: 1 !important;
+  backdrop-filter: brightness(80%) saturate(290%) blur(4px);
+}
+
+.audio-component-div-block-interaction::after,
+.yt-div-block-interaction::after {
+  text-align: center;
+  font-size: 10px !important;
+  font-weight: bolder;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase !important;
+  backdrop-filter: brightness(160%) saturate(190%) blur(4px);
 }
 
 .audio-component-div-block-interaction::after {
@@ -118,4 +115,8 @@ img {
 .sound-table-item-container.audio-component-playing,
 .sound-table-item-container.yt-playing {
   transform: translateY(-10px);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
