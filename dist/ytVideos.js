@@ -104,6 +104,6 @@ window.addEventListener('load', () => {
 });
 
 function createYTIframeComponents() {
-  createYTIframeComponent('Full DaSH', '5VMMeQ94ij8', 11);
-  createYTIframeComponent('Colours', 'yTJiKjZy5Xo', 13);
+  createYTIframeComponent('Lightbringer', 'oUiOylPbfV0', 11);
+  createYTIframeComponent('LastWhisper', 'op2XTE3pNkg', 13);
 }
