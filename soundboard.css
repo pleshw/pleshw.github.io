@@ -53,7 +53,6 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 20px !important;
 }
 
 .sound-table-input {
@@ -82,6 +81,15 @@ img {
 .yt-div-block-interaction:hover {
   opacity: 1 !important;
   backdrop-filter: brightness(80%) saturate(290%) blur(4px);
+}
+
+.sound-table-item-container .sound-table-input-container {
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.sound-table-item-container:hover .sound-table-input-container {
+  opacity: 1 !important;
 }
 
 .audio-component-div-block-interaction::after,

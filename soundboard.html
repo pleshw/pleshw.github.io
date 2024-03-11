@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="col-3 col-lg-1 col-xl-1 row justify-content-center align-items-center">
-            <button onclick="addMedia()" type="button"
+            <button style="width: 40px !important; height: 40px !important;" onclick="addMedia()" type="button"
               class="btn btn-dark rounded-0 add-media-btn d-flex justify-content-center align-items-center w-100 p-0 m-0">
               +
             </button>
@@ -85,7 +85,8 @@
         arrMediaSrc: [
           ...riotVideos,
         ],
-        containersClassList: ['col-5', 'border', 'col-md-4', 'col-lg-2', 'col-xl-2', 'mb-3', 'mb-xl-0', 'mb-lg-0', 'shadow', 'p-0', 'mx-0', 'rounded-0', 'overflow-hidden'],
+        itemClassList: ['sound-table-item', 'mw-100', 'mh-100'],
+        containersClassList: ['mw-100', 'mh-100', 'col-5', 'border', 'col-md-4', 'col-lg-2', 'col-xl-2', 'mb-3', 'mb-xl-0', 'mb-lg-0', 'shadow', 'p-0', 'mx-0', 'rounded-0'],
       });
 
       soundboard.addEventListener('oninput', (inputValue, component) => {
@@ -93,6 +94,10 @@
       });
 
       soundboard.addMediaList([
+        {
+          src: 'https://archive.org/download/OP5SingleSeishunKyousoukyoku/01%20Seishun%20Kyousoukyoku.mp3',
+          autoRepeatOnPlay: false
+        }
         // {
         //   src: 'https://www.youtube.com/watch?v=xy_NKN75Jhw&list=RDQMnpaBn3-wHcs&start_radio=1',
         //   autoRepeatOnPlay: false
