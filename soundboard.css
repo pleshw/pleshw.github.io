@@ -60,7 +60,7 @@ img {
   border: none !important;
 }
 
-.audio-component-div-block-interaction,
+.media-component-div-block-interaction,
 .yt-div-block-interaction {
   cursor: pointer;
   opacity: 0;
@@ -77,7 +77,7 @@ img {
   text-transform: uppercase !important;
 }
 
-.audio-component-div-block-interaction:hover,
+.media-component-div-block-interaction:hover,
 .yt-div-block-interaction:hover {
   opacity: 1 !important;
   backdrop-filter: brightness(80%) saturate(290%) blur(4px);
@@ -92,7 +92,7 @@ img {
   opacity: 1 !important;
 }
 
-.audio-component-div-block-interaction::after,
+.media-component-div-block-interaction::after,
 .yt-div-block-interaction::after {
   text-align: center;
   font-size: 10px !important;
@@ -108,8 +108,8 @@ img {
   backdrop-filter: brightness(160%) saturate(190%) blur(4px);
 }
 
-.audio-component-div-block-interaction::after {
-  content: attr(audio-component-name);
+.media-component-div-block-interaction::after {
+  content: attr(media-component-name);
 }
 
 .yt-div-block-interaction::after {
@@ -120,11 +120,88 @@ img {
   transition: all .3s linear;
 }
 
-.sound-table-item-container.audio-component-playing,
+.sound-table-item-container.media-component-playing,
 .sound-table-item-container.yt-playing {
   transform: translateY(-10px);
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.not-ready,
+.loading {
+  display: block !important;
+  position: relative !important;
+  opacity: 1 !important;
+  transition: opacity .3s;
+}
+
+.not-ready::before,
+.loading::before {
+  position: absolute;
+  content: "loading";
+  font-weight: bolder;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 14px !important;
+  color: white;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase !important;
+  z-index: 999;
+  background: linear-gradient(229deg, #11cc9c, #782281);
+  background-size: 400% 400%;
+
+  -webkit-animation: MovingGradient 10s ease infinite;
+  -moz-animation: MovingGradient 10s ease infinite;
+  animation: MovingGradient 10s ease infinite;
+}
+
+
+@-webkit-keyframes MovingGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes MovingGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes MovingGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
