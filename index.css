@@ -15,6 +15,7 @@ body {
   height: 100svh !important;
   max-width: 100svw !important;
   max-height: 100svh !important;
+  scroll-behavior: smooth !important;
   overflow: hidden;
 }
 
@@ -34,6 +35,18 @@ section {
 img {
   -webkit-user-drag: none !important;
   user-select: none !important;
+}
+
+.page-menu-item a {
+  text-decoration: none !important;
+}
+
+.page-menu-item a:hover {
+  text-decoration: underline dashed !important;
+}
+
+.page-menu-item h1 {
+  font-size: 3vw !important;
 }
 
 #testButtonMovable {

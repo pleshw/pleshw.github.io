@@ -13,18 +13,43 @@
 
 <body class="container-fluid">
   <main>
-    <!-- <section class="row justify-content-between align-items-center position-relative m-0 p-0">
+    <section class="row justify-content-between align-items-center position-relative m-0 p-0">
       <div
         class="col-3 p-0 m-0 position-relative project-title-container h-100 d-flex align-items-center justify-content-center">
         <h1 class="display-3 text-center">
-          <i>Who am i</i>
+
         </h1>
       </div>
 
-      <div class="col border bg-body-tertiary h-100">
-        <h1>test</h1>
+      <div class="col border bg-body-tertiary h-100 w-100 container">
+        <div class="row w-100 h-100 justify-content-center align-items-center">
+          <div class="page-menu">
+            <ul class="page-menu-options rounded-0">
+              <li class="list-group-item page-menu-item d-flex justify-content-between align-items-start my-5">
+                <a href="#sectionShowcase">
+                  <h1>Showcase</h1>
+                </a>
+              </li>
+              <li class="list-group-item page-menu-item d-flex justify-content-between align-items-start my-5">
+                <a target="_blank" href="soundboard.html">
+                  <h1>Soundboard</h1>
+                </a>
+              </li>
+              <li class="list-group-item page-menu-item d-flex justify-content-between align-items-start my-5">
+                <h1>
+                  <a target="_blank" href="https://pleshw.tech/a-star-pathfinding/">Web game</a> -
+                  <code>[ in progress ]</code>
+                </h1>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </section>
+
+    <!-- 
+
 
     <section class="row justify-content-between align-items-center position-relative m-0 p-0">
       <div
@@ -39,7 +64,7 @@
       </div>
     </section> -->
 
-    <section class="container-fluid p-0 m-0 justify-content-center align-items-center">
+    <section id="sectionShowcase" class="container-fluid p-0 m-0 justify-content-center align-items-center">
       <div class="row w-100 h-100 p-0 m-0 justify-content-center">
         <div class="col-3 row m-0 p-0 gap-5 align-items-center justify-content-center position-relative">
           <div class="col-12">
@@ -74,16 +99,14 @@
                   class="d-flex w-100 h-100 flex-column position-absolute gap-4 p-0 justify-content-center top-0">
                   <!-- Videos Small Screens -->
                 </div>
-
-                <div style="width: 40%; z-index: 999;"
+                <div style="width: 40%;"
                   class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
-                  <h5 class="text-start">Youtube Iframe API</h5>
-                  <p class="text-start">Minha implementação de uma biblioteca para Youtube Iframe API com funções
-                    extras
-                    e eventos adicionais,
-                    como:
-                    alternar e sincronizar vários reprodutores, evento onplaying para chamar funções baseadas no tempo
-                    de reprodução e muito mais.</p>
+                  <h5 class="text-start">YouTube Video Player Library</h5>
+                  <p class="text-start">This is my implementation of a library for the YouTube Iframe API. It includes
+                    extra functions
+                    and additional events such as: toggling and synchronizing multiple players, using the onplaying
+                    event to trigger
+                    functions based on playback time, and much more.</p>
                 </div>
               </div>
 
@@ -125,13 +148,14 @@
                     </div>
                   </div>
 
-                  <div style="width: 40%; z-index: 999;"
+                  <div style="width: 40%;"
                     class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
-                    <h5 class="text-start">"Draggables"</h5>
-                    <p class="text-start">Uma biblioteca para transformar qualquer parte do DOM em drag e drop e
-                      adicionar
-                      interações como "grudar" em elementos, tocar um áudio, encontrar o menor caminho entre dois pontos
-                      etc. Cada interação tem seu kit de eventos únicos que são acionados de forma independente.</p>
+                    <h5 class="text-start">Draggable Elements Library</h5>
+                    <p class="text-start">This is a library that allows you to make any part of a webpage draggable and
+                      droppable. It also
+                      adds interactions like snapping to elements, playing audio, finding the shortest path between two
+                      points, etc. Each
+                      interaction has its own set of unique events that are triggered independently.</p>
                   </div>
                 </div>
               </div>
@@ -145,21 +169,20 @@
                   </div>
                 </div>
 
-                <div style="width: 40%; z-index: 999;"
+                <div style="width: 40%;"
                   class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
-                  <h5 class="text-start">Componente de Audio</h5>
-                  <p class="text-start">Um componente de áudio interativo, que pode ser criado em "runtime" com
-                    músicas
-                    derivadas de qualquer link, e pode ser posicionado dentro de
-                    qualquer elemento ou ficar invisível. Funciona muito bem em conjunto
-                    com uma biblioteca que adiciona comandos que disparam eventos facilmente no componente.
-                    Interessantíssimo para criar playlists e um sistema de streaming, mas só pensei nisso enquanto
-                    digitava.
-                  </p>
-                  <p>
-                    <span><small>Melhorias serão implementadas nesse componente na próxima iteração...</small></span>
-                  </p>
+                  <h5 class="text-start">Audio Component</h5>
+                  <p class="text-start">An interactive audio component that can be created on-the-fly with music from
+                    any link. It can
+                    be positioned within any element or kept invisible. It works seamlessly with a library that adds
+                    commands to easily
+                    trigger events in the component. It's great for creating playlists and a streaming system. I just
+                    came up with this
+                    idea while typing.</p>
+                  <p><span><small>Improvements will be implemented in this component in the next
+                        iteration...</small></span></p>
                 </div>
+
               </div>
 
               <div class="carousel-item h-100 p-0 m-0 position-relative">
@@ -171,11 +194,11 @@
                         type="text" value="https://picsum.photos/300/300/" oninput="changePreviewFromURL(this)">
 
                       <div class="col-6 p-5">
-                        <h1>Imagem Completa</h1>
+                        <h1>Complete image</h1>
                         <img id="imageFromURL">
                       </div>
                       <div class="col-6 p-5">
-                        <h1>Imagem Redimensionada</h1>
+                        <h1>Resized</h1>
                         <img id="imageFromURLResize">
                       </div>
                     </div>
@@ -194,29 +217,30 @@
                   </div>
                 </div>
 
-                <div style="width: 40%; z-index: 999;"
+                <div style="width: 40%;"
                   class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
-                  <h5 class="text-start">Edição de Imagem</h5>
-                  <p class="text-start">Uma biblioteca para permitir editar propriedades da imagem via
-                    typescript e em runtime.
-                    Tem algumas features como obter a paleta das cores que mais se destacam na imagem e permitir que o
-                    usuário
-                    salve a imagem no formato e tamanho que desejar.</p>
+                  <h5 class="text-start">Image Editing Library</h5>
+                  <p class="text-start">This library enables you to edit image properties using TypeScript during
+                    runtime. It includes
+                    features like extracting the prominent color palette from the image and allowing users to save the
+                    image in their
+                    desired format and size.</p>
                 </div>
+
               </div>
 
 
-              <div class="carousel-item h-100 p-0 m-0 position-relative">
+              <!-- <div class="carousel-item h-100 p-0 m-0 position-relative">
                 <div id="resizableContainer" class="resizable-container">
                 </div>
 
-                <div style="width: 40%; z-index: 999;"
+                <div style="width: 40%;"
                   class="carousel-caption show-on-hover d-none d-md-block bg-black position-absolute start-0 px-5 py-2 mx-2 mb-2 shadow border">
                   <h5 class="text-start">"Resizables"</h5>
                   <p class="text-start">Uma biblioteca para permitir que o usuário mude o tamanho de qualquer elemento
                     do DOM de forma controlada. Interessante quando combinado com o "Draggables"</p>
                 </div>
-              </div>
+              </div> -->
 
 
               <!-- <div class="carousel-item">
@@ -244,6 +268,7 @@
   <script src="./dist/audioComponent.js"></script>
   <script src="dist/imageComponent.js"></script>
   <script src="dist/draggableComponent.js"></script>
+  <script src="dist/index.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

@@ -117,7 +117,7 @@ img {
 }
 
 .sound-table-item-container {
-  transition: all .3s linear;
+  transition: all .1s linear;
 }
 
 .sound-table-item-container.media-component-playing,

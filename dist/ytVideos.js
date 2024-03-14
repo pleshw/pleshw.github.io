@@ -78,8 +78,6 @@ function createYTIframeComponent(iframeId, videoId, startsAt = 0) {
   return ytIframeComponent;
 }
 
-let sectionScroller;
-
 window.addEventListener('load', () => {
   createYTIframeComponents();
 
@@ -104,6 +102,6 @@ window.addEventListener('load', () => {
 });
 
 function createYTIframeComponents() {
-  createYTIframeComponent('Lightbringer', 'oUiOylPbfV0', 11);
-  createYTIframeComponent('LastWhisper', 'op2XTE3pNkg', 13);
+  createYTIframeComponent('Lightbringer', 'oUiOylPbfV0', 0);
+  createYTIframeComponent('LastWhisper', 'op2XTE3pNkg', 0);
 }

@@ -14,6 +14,7 @@
 <body class="container-fluid">
 
   <main class="h-lg-100 h-xl-100 container-fluid p-0">
+
     <section class="container-fluid row justify-content-center p-0 m-0">
       <div class="container col-12 d-flex m-0 justify-content-center w-100 gap-0 h-25">
 
@@ -95,13 +96,13 @@
         },
         {
           src: 'https://www.myinstants.com/media/sounds/among.mp3',
-          autoRepeatOnPlay: true,
-          startsAt: 0.2
+          autoRepeatOnPlay: false,
+          startsAt: 0
         },
         {
-          src: 'https://www.myinstants.com/media/sounds/de-copao-na-mao-estourado.mp3',
+          src: 'https://www.myinstants.com/media/sounds/clown-horn-short.mp3',
           autoRepeatOnPlay: true,
-          startsAt: 0.2
+          startsAt: 0
         }
       ]);
     });
@@ -110,6 +111,10 @@
       const urlInputNewMediaSource = document.getElementById('urlInputNewMediaSource');
       const switchAutoRepeatOnclickSelect = document.getElementById('switchAutoRepeatOnclickSelect');
       if (!urlInputNewMediaSource) {
+        return;
+      }
+
+      if (!urlInputNewMediaSource.value) {
         return;
       }
 
