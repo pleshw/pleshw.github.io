@@ -1,19 +1,25 @@
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+  const evolvingSound = await AudioTools.createAudioComponentOnBody({ src: 'https://www.myinstants.com/media/sounds/pokemon-evolve.mp3' });
+  const itsPikachu = await AudioTools.createAudioComponentOnBody({ src: 'https://www.myinstants.com/media/sounds/its-pikachu_ecUb5Pn.mp3' });
+
   const thunderStone = document.getElementById('thunderStone');
   DraggableElement.DraggableElement.makeElementDraggable(thunderStone);
 
   const pinEvent = new CollisionAction.PinCollisionEvent({
     pinPositionFormula: pinCollisionFormulaTopRight,
     onPin: (draggable, target) => {
-      console.log(draggable, target);
+      itsPikachu.stop();
+      evolvingSound.play();
     },
     onUnpin: (draggable, target) => {
-      console.log('draggable, target');
+      evolvingSound.stop();
+      itsPikachu.play();
     }
   });
+
   const shareAttributeEvent = new CollisionAction.ShareAttributeCollisionEvent();
-  CollisionAction.initComplexCollisionCheck(thunderStone, '.stone-evolve-flag.thunder-type', [pinEvent, shareAttributeEvent])
+  CollisionAction.initComplexCollisionCheck(thunderStone, '.stone-evolve-flag.thunder-type', [pinEvent, shareAttributeEvent]);
 });
 
 

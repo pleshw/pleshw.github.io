@@ -37,8 +37,11 @@ img {
   user-select: none !important;
 }
 
+
+
 .page-menu-item a {
   text-decoration: none !important;
+  color: #4444dd;
 }
 
 .page-menu-item a:hover {
@@ -59,6 +62,10 @@ img {
 
 .pinned {
   transition: transform .1s;
+}
+
+.draggable {
+  cursor: grab !important;
 }
 
 .dragging {
